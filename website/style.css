@@ -8,15 +8,15 @@
     /* Sage/Concrete */
     --sem-light: #d4a373;
     /* Warm/Photon (muted) */
-    --sem-void: #6c757d;
-    /* Deep Grey */
+    --sem-void: #dc143c;
+    /* Crimson Red */
     --sem-structure: #4a6fa5;
     /* Steel Blue */
     --sem-time: #b08968;
     /* Sepia/Sand */
 
-    --font-body: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --font-body: 'Times New Roman', Times, serif;
+    --font-mono: 'Times New Roman', Times, serif;
 }
 
 * {
@@ -29,46 +29,49 @@ body {
     background-color: var(--bg-paper);
     color: var(--text-black);
     font-family: var(--font-body);
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    perspective: 1000px;
 }
 
+/* ─── GRID: 4×3 ───────────────────────────────────────── */
 .grid-system {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(4, 335px);
+    grid-template-rows: repeat(3, 340px);
+    gap: 2rem 2.5rem;
     width: 100%;
-    max-width: 1400px;
+    justify-content: center;
 }
 
-/* CELL */
+/* ─── CELL ─────────────────────────────────────────────── */
 .grid-cell {
     position: relative;
-    height: 300px;
     padding: 0;
     overflow: hidden;
-    /* Strict clipping */
-    transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+    transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
     cursor: default;
     background: transparent;
+    max-height: 340px;
+    will-change: transform, font-size;
+    transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.8s ease;
 }
 
-/* Interaction: Scale & Blur */
+/* Interaction: Subtle pop without scale raster blur */
 .grid-cell:hover {
-    transform: scale(1.02);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     z-index: 100;
-    overflow: visible;
-    /* Optional: allow slight breakout? No, strict clipping requested. */
-    overflow: hidden;
 }
 
 .grid-system:has(.grid-cell:hover) .grid-cell:not(:hover) {
-    filter: blur(1.5px) opacity(0.7);
+    filter: blur(3px) opacity(0.7);
 }
 
-/* LAYERS */
+/* ─── LAYERS ───────────────────────────────────────────── */
 .text-layer {
     position: absolute;
     top: 0;
@@ -77,6 +80,14 @@ body {
     height: 100%;
     z-index: 2;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.body-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
 }
 
 .diagram-layer {
@@ -85,83 +96,165 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    /* Below text? "Lines may overlap text visually" -> implies Top, but "Black rectangles function as data nodes embedded...". Usually Lines top looks better. Let's put Diagram ON TOP but `pointer-events: none`. */
+    z-index: 3;
     pointer-events: none;
+    overflow: hidden;
 }
 
-/* TYPOGRAPHY */
+/* ─── DOCUMENT HEADER ──────────────────────────────────── */
+.doc-header {
+    padding: 0 0 4px 0;
+    margin-bottom: 6px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+    color: var(--text-black);
+}
+
+.doc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.doc-label {
+    color: var(--text-muted);
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.doc-value {
+    text-align: right;
+    color: var(--text-black);
+    font-weight: 400;
+}
+
+.doc-subject {
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.doc-divider {
+    border-bottom: 0.5px solid var(--text-black);
+    margin: 3px 0;
+    opacity: 0.3;
+}
+
+/* ─── TYPOGRAPHY ───────────────────────────────────────── */
 .text-content {
-    font-size: 11px;
-    line-height: 1.6;
+    font-size: 10px;
+    line-height: 1.65;
     text-align: justify;
     text-align-last: left;
-    /* Or justify, reference showed justify */
     color: var(--text-black);
     margin: 0;
     font-weight: 500;
-    letter-spacing: -0.01em;
-}
-
-/* SEMANTIC & REDACTION */
-.ref-placeholder {
-    opacity: 0;
-    /* Important: The text is hidden so the rect can take its place */
-}
-
-/* Semantic Word Classes */
-.sem-word {
-    transition: color 0.3s ease;
-    cursor: help;
-    /* Subtle hint */
+    letter-spacing: 0.03em;
+    height: 100%;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: subpixel-antialiased;
     position: relative;
-    z-index: 10;
-    /* Ensure text sits above lines if needed */
+    z-index: 2;
 }
 
-/* Color Activation on Hover (of the word only) */
-.grid-cell:hover .sem-material {
-    color: var(--sem-material);
+.grid-cell:hover .text-content {
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
-.grid-cell:hover .sem-light {
-    color: var(--sem-light);
+.text-content::-webkit-scrollbar {
+    width: 2px;
 }
 
-.grid-cell:hover .sem-void {
-    color: var(--sem-void);
+.text-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
 }
 
-.grid-cell:hover .sem-structure {
-    color: var(--sem-structure);
+.text-content::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-.grid-cell:hover .sem-time {
-    color: var(--sem-time);
+/* ─── SEMANTIC & REDACTION ─────────────────────────────── */
+.ref-placeholder {
+    background: var(--text-black);
+    color: transparent;
+    display: inline;
+    padding: 0 0 0 0.25em;
+    margin-left: -0.25em;
+    user-select: none;
+    font-size: 0.95em;
+    vertical-align: baseline;
+    transition: color 0.8s ease;
 }
 
-/* SVG */
+/* Hover: all black boxes — keep solid black, show white text */
+.grid-cell:hover .ref-placeholder {
+    color: #ffffff;
+    text-shadow: 0 0 1px rgba(255,255,255,0.8);
+}
+
+/* Hover: violence words — crimson red, no box */
+.grid-cell:hover .sem-word.sem-void {
+    color: #dc143c;
+}
+
+/* Hover: SUBJECT title — crimson red + larger */
+.grid-cell:hover .doc-subject {
+    color: #dc143c;
+    font-size: 1.35em;
+    transition: color 0.6s ease, font-size 0.6s ease;
+}
+
+.sem-word {
+    transition: color 0.6s ease;
+}
+
+/* ─── SVG ──────────────────────────────────────────────── */
 .diagram-svg {
     width: 100%;
     height: 100%;
-    overflow: visible;
+    overflow: hidden;
 }
 
-/* Mosaics (Nodes) */
 .node-rect {
     fill: black;
     shape-rendering: crispEdges;
-    /* Mosaic look */
 }
 
-/* Lines */
 .data-line {
     stroke: black;
-    stroke-width: 0.8px;
+    stroke-width: 0.6px;
     vector-effect: non-scaling-stroke;
 }
 
-/* Responsive */
+/* Red lines (violence words) — behind text */
+.red-line-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.red-line {
+    stroke: #dc143c;
+    stroke-width: 0.6px;
+    opacity: 0.3;
+    vector-effect: non-scaling-stroke;
+}
+
+.date-redacted {
+    background-color: var(--text-black);
+    color: transparent;
+    user-select: none;
+}
+
+/* ─── RESPONSIVE ───────────────────────────────────────── */
 @media (max-width: 1000px) {
     .grid-system {
         grid-template-columns: repeat(2, 1fr);
@@ -171,5 +264,9 @@ body {
 @media (max-width: 600px) {
     .grid-system {
         grid-template-columns: 1fr;
+    }
+
+    body {
+        padding: 1.5rem;
     }
 }
