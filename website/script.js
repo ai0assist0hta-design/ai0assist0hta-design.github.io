@@ -355,7 +355,7 @@ function typeText(el, text, baseDelay) {
                 const typed = text.substring(0, i);
                 const untyped = text.substring(i);
                 el.innerHTML = typed + '<span style="visibility: hidden;">' + untyped + '</span>';
-                
+
                 // Irregular delay: faster for letters, slower for spaces/punctuation
                 const char = text[i - 1];
                 let delay = baseDelay + Math.random() * baseDelay * 0.8;
@@ -380,19 +380,35 @@ async function typeHeaders() {
         const values = cell.querySelectorAll('.doc-value');
         const labels = cell.querySelectorAll('.doc-label');
 
-        // Show labels immediately
-        labels.forEach(l => { l.style.visibility = 'visible'; });
+        // Type each label with unique timing per cell
+        labels.forEach((label, labelIdx) => {
+            const originalText = label.textContent;
+            label.textContent = '';
+            label.style.visibility = 'visible';
+
+            // Base delay for typing labels
+            const baseDelay = 15 + (cellIdx * 3) + (labelIdx * 5) + Math.random() * 15;
+            // Start before values do
+            const startDelay = labelIdx * 80 + cellIdx * 20 + Math.random() * 30;
+
+            const p = new Promise(resolve => {
+                setTimeout(() => {
+                    typeText(label, originalText, baseDelay).then(resolve);
+                }, startDelay);
+            });
+            allPromises.push(p);
+        });
 
         // Type each value with unique timing per cell
         values.forEach((val, valIdx) => {
             const originalText = val.textContent;
             val.textContent = '';
             val.style.visibility = 'visible';
-            
+
             // Each cell+field gets a different base delay for variety
-            const baseDelay = 60 + (cellIdx * 6) + (valIdx * 15) + Math.random() * 40;
+            const baseDelay = 22 + (cellIdx * 3) + (valIdx * 8) + Math.random() * 20;
             // Stagger start: each field starts slightly after the previous
-            const startDelay = valIdx * 300 + cellIdx * 80 + Math.random() * 200;
+            const startDelay = valIdx * 110 + cellIdx * 30 + Math.random() * 80;
             const p = new Promise(resolve => {
                 setTimeout(() => {
                     if (val.classList.contains('date-redacted')) {
@@ -418,7 +434,7 @@ async function typeHeaders() {
         // Show dividers after a delay
         const dividers = cell.querySelectorAll('.doc-divider');
         dividers.forEach(d => {
-            setTimeout(() => { d.style.visibility = 'visible'; }, 400 + cellIdx * 60);
+            setTimeout(() => { d.style.visibility = 'visible'; }, 180 + cellIdx * 30);
         });
     });
 
@@ -442,7 +458,7 @@ async function typeBodyTexts() {
                 if (i < spans.length) {
                     const span = spans[i];
                     span.style.visibility = 'visible';
-                    
+
                     // Accelerate: Decrease delay by 3% each word (faster typing over time), up to a max 85% speedup 
                     speedMultiplier = Math.max(0.15, speedMultiplier * 0.97);
 
@@ -468,27 +484,27 @@ async function typeBodyTexts() {
                         // Micro Y-jitter on appearance
                         const jitter = (Math.random() - 0.5) * 0.6;
                         span.style.transform = `translateY(${jitter}px)`;
-                        
+
                         i++;
                         // Variable delay per word for REDACTED words since they show up as a chunk mostly
                         const delay = (40 + Math.random() * 40) * speedMultiplier;
                         setTimeout(typeNextWord, delay);
                     } else {
-                         // Standard word - type out letter by letter like the header
-                         const originalText = span.textContent;
-                         // base delay for typing characters in body
-                         const textDelay = (10 + Math.random() * 15) * Math.max(0.3, speedMultiplier); 
-                         
-                         // Micro Y-jitter on appearance
-                         const wordJitter = (Math.random() - 0.5) * 0.6;
-                         span.style.transform = `translateY(${wordJitter}px)`;
-                         
-                         typeText(span, originalText, textDelay).then(() => {
-                             i++;
-                             // delay between words
-                             const wordDelay = (15 + Math.random() * 20) * speedMultiplier;
-                             setTimeout(typeNextWord, wordDelay);
-                         });
+                        // Standard word - type out letter by letter like the header
+                        const originalText = span.textContent;
+                        // base delay for typing characters in body
+                        const textDelay = (10 + Math.random() * 15) * Math.max(0.3, speedMultiplier);
+
+                        // Micro Y-jitter on appearance
+                        const wordJitter = (Math.random() - 0.5) * 0.6;
+                        span.style.transform = `translateY(${wordJitter}px)`;
+
+                        typeText(span, originalText, textDelay).then(() => {
+                            i++;
+                            // delay between words
+                            const wordDelay = (15 + Math.random() * 20) * speedMultiplier;
+                            setTimeout(typeNextWord, wordDelay);
+                        });
                     }
                 } else {
                     resolve();
@@ -505,6 +521,7 @@ async function typeBodyTexts() {
 
 // Init: hide everything, then run phases
 async function initTypewriter() {
+    document.body.classList.add('is-loading');
     // Hide all text initially
     document.querySelectorAll('.doc-label, .doc-value, .doc-divider').forEach(el => {
         el.style.visibility = 'hidden';
@@ -519,18 +536,32 @@ async function initTypewriter() {
     // Small delay before starting
     await new Promise(r => setTimeout(r, 600));
 
-    // Headers and body start simultaneously
-    await Promise.all([typeHeaders(), typeBodyTexts()]);
+    // 1. Start typing the headers first
+    const headerPromise = typeHeaders();
+
+    // 2. Start the body texts when the headers are nearly complete
+    const bodyPromise = new Promise(resolve => {
+        setTimeout(async () => {
+            await typeBodyTexts();
+            resolve();
+        }, 1200);
+    });
+
+    // Make cells hoverable midway through the overall animation (approx 2.5s)
+    setTimeout(() => {
+        document.body.classList.remove('is-loading');
+    }, 2500);
+
+    await Promise.all([headerPromise, bodyPromise]);
 }
 
 initTypewriter();
 
-window.onload = () => {
-    const cells = document.querySelectorAll('.grid-cell');
-
+function setupCellInteractions(cells) {
     cells.forEach(cell => {
         const bodyWrapper = cell.querySelector('.body-wrapper');
         const textContent = cell.querySelector('.text-content');
+        if (!bodyWrapper || !textContent) return;
         const placeholders = textContent.querySelectorAll('.ref-placeholder');
         const violenceWords = textContent.querySelectorAll('.sem-word.sem-void');
         const svg = cell.querySelector('.diagram-svg');
@@ -555,7 +586,7 @@ window.onload = () => {
                     id,
                     centerX: rect.left - wrapperRect.left + rect.width / 2,
                     centerY: rect.top - wrapperRect.top + rect.height / 2,
-                    visible: rect.top >= wrapperRect.top && rect.bottom <= wrapperRect.bottom
+                    visible: span.style.visibility !== 'hidden' && rect.top >= wrapperRect.top && rect.bottom <= wrapperRect.bottom
                 };
             });
         }
@@ -568,12 +599,11 @@ window.onload = () => {
                     id,
                     centerX: rect.left - wrapperRect.left + rect.width / 2,
                     centerY: rect.top - wrapperRect.top + rect.height / 2,
-                    visible: rect.top >= wrapperRect.top && rect.bottom <= wrapperRect.bottom
+                    visible: span.style.visibility !== 'hidden' && rect.top >= wrapperRect.top && rect.bottom <= wrapperRect.bottom
                 };
             });
         }
 
-        // Build connections (nearest neighbor, distance < 100px)
         function buildLines(positions) {
             svg.innerHTML = '';
             const lines = [];
@@ -695,13 +725,11 @@ window.onload = () => {
 
         cellLineManagers.set(cell, { revealNode });
 
-        // Initial — lines build progressively via typewriter
         let positions = getNodePositions();
         let currentLines = [];
         let redLinePositions = [];
         let currentRedLines = [];
 
-        // ─── Scroll: recalculate + wobble ─────────────
         let scrollVelocity = 0;
         let lastScrollTop = 0;
         let wobbleDecay = 0;
@@ -758,17 +786,14 @@ window.onload = () => {
             wobbleUpdate();
         });
 
-        // ─── Hover: micro-jitter on lines + boxes ─────────────
         let animationFrame;
         let isHovering = false;
         const allPlaceholders = Array.from(placeholders);
 
         function hoverUpdate() {
             if (!isHovering) return;
-            // Faster time scalar for rapid jittery line movement during hover
             const time = Date.now() * 0.005;
 
-            // Black lines: independent inertia per endpoint
             currentLines.forEach(l => {
                 const sx = Math.sin(time + l.source.id * 1.3) * 3;
                 const sy = Math.cos(time + l.source.id * 0.7) * 2.5;
@@ -781,7 +806,6 @@ window.onload = () => {
                 l.el.setAttribute('y2', l.target.centerY + ty);
             });
 
-            // Red lines: same inertia
             currentRedLines.forEach(l => {
                 const sx = Math.sin(time + l.source.id * 1.5) * 2.5;
                 const sy = Math.cos(time + l.source.id * 0.9) * 2;
@@ -794,7 +818,6 @@ window.onload = () => {
                 l.el.setAttribute('y2', l.target.centerY + ty);
             });
 
-            // Boxes: independent micro-wobble per placeholder
             allPlaceholders.forEach((span, i) => {
                 const bx = Math.sin(time * 1.2 + i * 0.7) * 1.2;
                 const by = Math.cos(time * 0.9 + i * 1.1) * 0.8;
@@ -808,7 +831,6 @@ window.onload = () => {
             isHovering = true;
             positions = getNodePositions();
             currentLines = buildLines(positions);
-            // Build red lines on hover
             redLinePositions = getViolencePositions();
             currentRedLines = buildRedLines(redLinePositions);
             hoverUpdate();
@@ -818,20 +840,359 @@ window.onload = () => {
             isHovering = false;
             cancelAnimationFrame(animationFrame);
             cancelAnimationFrame(wobbleFrame);
-            // Reset black lines
             currentLines.forEach(l => {
                 l.el.setAttribute('x1', l.source.centerX);
                 l.el.setAttribute('y1', l.source.centerY);
                 l.el.setAttribute('x2', l.target.centerX);
                 l.el.setAttribute('y2', l.target.centerY);
             });
-            // Clear red lines
             redSvg.innerHTML = '';
             currentRedLines = [];
-            // Reset boxes
             allPlaceholders.forEach(span => {
                 span.style.transform = '';
             });
         });
+
+        // Click handler for physics sub page transition
+        cell.addEventListener('click', () => {
+            if (document.body.classList.contains('is-loading')) return;
+            openPhysicsSubpage(cell);
+        });
     });
+}
+
+function initCellInteractions() {
+    const cells = document.querySelectorAll('.grid-cell');
+    setupCellInteractions(cells);
+}
+
+window.onload = () => {
+    initCellInteractions();
 };
+
+/* ─── PHYSICS SUBPAGE: THEME 01 ────────────────────────── */
+const PHYSICS_BODY = [
+    "Violence quickly grows old and loses confidence in itself. To maintain a respectable face it summons falsehood as its ally. Violence cannot conceal itself without lies, and lies cannot be sustained without violence. The system does not demand daily physical force upon every shoulder — only obedience to lies and daily participation in them. All loyalty to the regime is contained in that single demand.",
+    "Lies have dragged society so far from normality that one can no longer see a single pillar through the dense, gray fog. Even if they offered us the chance to learn the truth, would our free people even want to know it? Only what the radio hammers in day after day drills into the brain; everything else is conveniently forgotten.",
+    "The simplest and most accessible key to self-neglected liberation lies in personal non-participation in lies. Though lies conceal everything, though they embrace everything — not with any help from me. When people renounce lies it simply cuts short their existence — like an infection, they can survive only in a living organism. This opens a breach in the imaginary encirclement caused by our inaction."
+];
+
+const PHYSICS_KEYWORDS = ["violence", "falsehood", "lies", "obedience", "infection"];
+
+let physicsAnimationFrame;
+
+function openPhysicsSubpage(clickedCell) {
+    const themeId = parseInt(clickedCell.dataset.themeId);
+    if (themeId !== 1) return;
+
+    if (document.getElementById('physics-subpage')) return; // Already open
+
+    // Create the container
+    const container = document.createElement('div');
+    container.id = 'physics-subpage';
+
+    // Canvas for wires
+    const canvas = document.createElement('canvas');
+    canvas.id = 'physics-canvas';
+    container.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+
+    // Content wrapper for 3D perspective
+    const wrapper = document.createElement('div');
+    wrapper.className = 'physics-content-wrapper';
+
+    // Text container
+    const textContainer = document.createElement('div');
+    textContainer.className = 'physics-text-container';
+
+    // Back button
+    const backBtn = document.createElement('button');
+    backBtn.className = 'physics-back-btn';
+    backBtn.textContent = '← RETRACT';
+    backBtn.onclick = () => {
+        container.style.opacity = '0';
+        cancelAnimationFrame(physicsAnimationFrame);
+        setTimeout(() => container.remove(), 500);
+    };
+    container.appendChild(backBtn);
+
+    // Build paragraphs with span anchors
+    PHYSICS_BODY.forEach(text => {
+        const p = document.createElement('p');
+        let html = text;
+        PHYSICS_KEYWORDS.forEach(kw => {
+            const regex = new RegExp(`\\b(${kw})(s)?\\b`, 'gi');
+            html = html.replace(regex, '<span class="tension-word">$1$2</span>');
+        });
+        p.innerHTML = html;
+        textContainer.appendChild(p);
+    });
+
+    wrapper.appendChild(textContainer);
+    container.appendChild(wrapper);
+    document.body.appendChild(container);
+
+    // Initial show
+    requestAnimationFrame(() => {
+        container.classList.add('is-visible');
+        resizeCanvas();
+    });
+
+    // Setup Physics
+    const words = Array.from(textContainer.querySelectorAll('.tension-word'));
+    let nodes = [];
+    let wires = [];
+    let signals = [];
+
+    // Initialize the perspective wire system (2-point perspective style)
+    function initPhysicsNodes() {
+        nodes = words.map((span) => {
+            return {
+                el: span,
+                baseX: 0,
+                baseY: 0,
+                x: 0,
+                y: 0,
+                vx: 0,
+                vy: 0,
+                isDragging: false,
+                connectedWires: []
+            };
+        });
+
+        // Procedural Wire Generation: Wires go vertically to +/- large Y, with Z-depth.
+        wires = [];
+        nodes.forEach(node => {
+            // Generate 4-7 wires per word
+            const numWires = 4 + Math.floor(Math.random() * 3);
+            for (let i = 0; i < numWires; i++) {
+                const isCeiling = Math.random() > 0.5;
+                const endY = isCeiling ? -2000 : 2000;
+                
+                // Random depth and random horizontal spread
+                const endZ = (Math.random() - 0.5) * 1500;
+                // Since wires are strictly vertical in 3D perspective, x-variation should be small relative to depth
+                const endXOffset = (Math.random() - 0.5) * 700; 
+
+                const wire = {
+                    node: node,
+                    endY: endY,
+                    endZ: endZ,
+                    endXOffset: endXOffset
+                };
+                wires.push(wire);
+                node.connectedWires.push(wire);
+            }
+        });
+    }
+
+    setTimeout(initPhysicsNodes, 100);
+
+    // Resize handling
+    let cw = 0, ch = 0;
+    function resizeCanvas() {
+        canvas.width = window.innerWidth * window.devicePixelRatio;
+        canvas.height = window.innerHeight * window.devicePixelRatio;
+        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+        cw = window.innerWidth;
+        ch = window.innerHeight;
+        
+        if (nodes.length > 0) initPhysicsNodes();
+    }
+    window.addEventListener('resize', resizeCanvas);
+
+    // 3D Perspective Projection Matrix Helper
+    const focalLength = 1000;
+    function project3D(x, y, z) {
+        // Assume origin is center of screen
+        const scale = focalLength / (focalLength + z);
+        return {
+            x: (x * scale) + (cw / 2),
+            y: (y * scale) + (ch / 2),
+            scale: scale
+        };
+    }
+
+    // Signal Class for the Red Pulses
+    class Signal {
+        constructor(wire, originNode) {
+            this.wire = wire;
+            this.progress = 0; // 0 to 1
+            this.speed = 0.015 + Math.random() * 0.02;
+            this.type = Math.random() > 0.5 ? 'inflow' : 'outflow';
+            this.node = originNode;
+        }
+
+        update() {
+            this.progress += this.speed;
+        }
+    }
+
+    // Drag Interaction variables
+    let activeNode = null;
+    let dragOffsetX = 0;
+    let dragOffsetY = 0;
+    let mouseX = 0;
+    let mouseY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (activeNode && activeNode.isDragging) {
+            activeNode.x = (mouseX - activeNode.dragStartX) * 1.5;
+            activeNode.y = (mouseY - activeNode.dragStartY) * 1.5;
+        }
+    });
+
+    window.addEventListener('mouseup', () => {
+        if (activeNode) {
+            activeNode.isDragging = false;
+            // Spawn an outflow signal upon resolving a drag
+            triggerSignal(activeNode, 'outflow');
+            activeNode = null;
+        }
+    });
+
+    function triggerSignal(node, forceType = null) {
+        if (!node || node.connectedWires.length === 0) return;
+        // spawn 2-3 signals for better visual
+        for(let j=0; j<3; j++) {
+            const wire = node.connectedWires[Math.floor(Math.random() * node.connectedWires.length)];
+            const sig = new Signal(wire, node);
+            if (forceType) sig.type = forceType;
+            // stagger them slightly
+            sig.progress = -Math.random() * 0.3; 
+            signals.push(sig);
+        }
+    }
+
+    words.forEach((span, idx) => {
+        span.addEventListener('mousedown', (e) => {
+            if (!nodes[idx]) return;
+            activeNode = nodes[idx];
+            activeNode.isDragging = true;
+            activeNode.dragStartX = e.clientX;
+            activeNode.dragStartY = e.clientY;
+            
+            // Interaction triggers inflow pulses
+            triggerSignal(activeNode, 'inflow');
+        });
+    });
+
+    // Physics Loop constants
+    const k = 0.08; // Spring stiffness
+    const damp = 0.85; // Damping (friction)
+
+    function updatePhysics() {
+        ctx.clearRect(0, 0, cw, ch);
+        
+        let totalKineticEnergy = 0;
+
+        nodes.forEach(node => {
+            if (!node.isDragging) {
+                const fx = (node.baseX - node.x) * k;
+                const fy = (node.baseY - node.y) * k;
+
+                node.vx += fx;
+                node.vy += fy;
+
+                node.vx *= damp;
+                node.vy *= damp;
+
+                node.x += node.vx;
+                node.y += node.vy;
+            }
+
+            totalKineticEnergy += Math.abs(node.vx) + Math.abs(node.vy);
+            
+            // Pulse glow: If an inflow signal is reaching the node (progress > 0.8)
+            let glowIntensity = 0;
+            signals.forEach(s => {
+                if (s.node === node && s.type === 'inflow' && s.progress > 0.7 && s.progress <= 1.0) {
+                    glowIntensity = Math.max(glowIntensity, (s.progress - 0.7) * 3.33); // 0 to 1
+                }
+            });
+
+            if (glowIntensity > 0) {
+                node.el.style.textShadow = `0 0 ${25 * glowIntensity}px rgba(255, 0, 0, ${0.9 * glowIntensity})`;
+                node.el.style.transform = `translate(${node.x}px, ${node.y}px) scale(${1 + 0.1 * glowIntensity})`;
+            } else {
+                node.el.style.textShadow = '0 0 5px rgba(255, 0, 0, 0.2)'; // Faint base glow
+                node.el.style.transform = `translate(${node.x}px, ${node.y}px)`;
+            }
+        });
+
+        // Manage Signals
+        for (let i = signals.length - 1; i >= 0; i--) {
+            signals[i].update();
+            if (signals[i].progress >= 1) {
+                // Remove finished signal
+                signals.splice(i, 1);
+            }
+        }
+
+        // Draw 3D Wires & Signals
+        wires.forEach(wire => {
+            const node = wire.node;
+            const rect = node.el.getBoundingClientRect();
+            // Start of wire is the physical 2D DOM projection of the word
+            const startX = rect.left + rect.width / 2;
+            const startY = rect.top + rect.height / 2;
+
+            // Project the 3D endpoint of the wire to 2D
+            // Convert screen center to 0,0 locally
+            const cxOffset = startX - (cw / 2);
+            // End point logic: wire ends far away with some depth
+            const end3D = project3D(cxOffset + wire.endXOffset, wire.endY, wire.endZ);
+
+            // Draw base wire
+            // Perspective translates depth to opacity/thickness
+            const baseAlpha = Math.max(0.05, Math.min(0.2, end3D.scale * 0.4));
+            ctx.lineWidth = Math.max(0.5, end3D.scale * 2.0);
+            ctx.strokeStyle = `rgba(0, 0, 0, ${baseAlpha})`; 
+            
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(end3D.x, end3D.y);
+            ctx.stroke();
+
+            // Draw any signals on this wire
+            signals.forEach(sig => {
+                if (sig.wire === wire && sig.progress > 0) {
+                    const p = sig.type === 'inflow' ? (1 - sig.progress) : sig.progress;
+                    // Segment size
+                    const segLen = 0.25;
+                    const pStart = Math.max(0, p - segLen);
+                    const pEnd = Math.min(1, p + segLen);
+
+                    const rx1 = startX + (end3D.x - startX) * pStart;
+                    const ry1 = startY + (end3D.y - startY) * pStart;
+                    const rx2 = startX + (end3D.x - startX) * pEnd;
+                    const ry2 = startY + (end3D.y - startY) * pEnd;
+
+                    // Light pulse intensity
+                    ctx.lineWidth = Math.max(1.5, end3D.scale * 5.0);
+                    ctx.strokeStyle = `rgba(220, 20, 60, ${Math.sin(sig.progress * Math.PI) * 0.9})`; // Pulse opacity
+                    ctx.beginPath();
+                    ctx.moveTo(rx1, ry1);
+                    ctx.lineTo(rx2, ry2);
+                    ctx.stroke();
+                }
+            });
+        });
+
+        // Kinetic Typography (Dynamic Skewing based on energy)
+        const energyCap = Math.min(totalKineticEnergy, 150); // Cap extreme shakes
+        const skewX = (Math.random() - 0.5) * energyCap * 0.08; 
+        const skewY = (Math.random() - 0.5) * energyCap * 0.08;
+        const shudderY = (Math.random() - 0.5) * energyCap * 0.15;
+
+        // Apply skewed shudder to the whole container
+        textContainer.style.transform = `rotateX(25deg) translateY(-20px) skew(${skewX}deg, ${skewY}deg) translate3d(0, ${shudderY}px, 0)`;
+
+        physicsAnimationFrame = requestAnimationFrame(updatePhysics);
+    }
+
+    updatePhysics();
+}

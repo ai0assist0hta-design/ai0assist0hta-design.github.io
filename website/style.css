@@ -37,6 +37,10 @@ body {
     perspective: 1000px;
 }
 
+body.is-loading .grid-cell {
+    pointer-events: none;
+}
+
 /* ─── GRID: 4×3 ───────────────────────────────────────── */
 .grid-system {
     display: grid;
@@ -52,12 +56,11 @@ body {
     position: relative;
     padding: 0;
     overflow: hidden;
-    transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
-    cursor: default;
+    cursor: zoom-in;
     background: transparent;
     max-height: 340px;
-    will-change: transform, font-size;
-    transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.8s ease;
+    will-change: transform, font-size, filter, opacity;
+    transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
 }
 
 /* Interaction: Subtle pop without scale raster blur */
@@ -131,6 +134,7 @@ body {
 }
 
 .doc-subject {
+    font-size: 1.1em;
     font-weight: 600;
     letter-spacing: 0.05em;
 }
@@ -186,7 +190,7 @@ body {
     user-select: none;
     font-size: 0.95em;
     vertical-align: baseline;
-    transition: color 0.8s ease;
+    transition: color 0.2s ease;
 }
 
 /* Hover: all black boxes — keep solid black, show white text */
@@ -204,11 +208,11 @@ body {
 .grid-cell:hover .doc-subject {
     color: #dc143c;
     font-size: 1.35em;
-    transition: color 0.6s ease, font-size 0.6s ease;
+    transition: color 0.2s ease, font-size 0.2s ease;
 }
 
 .sem-word {
-    transition: color 0.6s ease;
+    transition: color 0.2s ease;
 }
 
 /* ─── SVG ──────────────────────────────────────────────── */
@@ -252,6 +256,144 @@ body {
     background-color: var(--text-black);
     color: transparent;
     user-select: none;
+}
+
+/* ─── SUB PAGE TRANSITION ─────────────────────────────── */
+
+/* Shake animation on click */
+@keyframes card-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+.grid-cell.is-shaking {
+    animation: card-shake 0.1s ease 2;
+}
+
+/* Fade out other cards */
+.grid-cell.is-fading-out {
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: opacity 0.2s ease !important;
+}
+
+/* Expanding card */
+.grid-cell.is-expanding {
+    position: fixed !important;
+    z-index: 9999 !important;
+    overflow: visible !important;
+    max-height: none !important;
+    transition: none !important;
+    will-change: transform;
+    cursor: default !important;
+}
+
+.grid-cell.is-expanding:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.grid-cell.is-expanding .text-layer {
+    position: relative;
+    height: auto;
+}
+
+/* ─── PHYSICS SUBPAGE ───────────────────────────────────── */
+#physics-subpage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff; /* White brutalist bg */
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+#physics-subpage.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#physics-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.physics-content-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    max-width: 1000px;
+    perspective: 1500px;
+}
+
+.physics-text-container {
+    transform: rotateX(25deg) translateY(-20px);
+    transform-style: preserve-3d;
+    font-family: 'Noto Sans', sans-serif;
+    color: #111111; /* Black text for white BG */
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Downward Drop Shadow */
+    text-align: justify;
+    line-height: 1.8;
+    will-change: transform;
+}
+
+.physics-text-container p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    user-select: none;
+}
+
+.tension-word {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
+    color: #FF0000;
+    cursor: grab;
+    display: inline-block;
+    position: relative;
+    user-select: none;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.2); /* Replaced with JS dimming */
+}
+
+.tension-word:active {
+    cursor: grabbing;
+}
+
+.physics-back-btn {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 3000;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #111111;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+    transition: opacity 0.3s, text-shadow 0.3s;
+}
+
+.physics-back-btn:hover {
+    opacity: 1;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* ─── RESPONSIVE ───────────────────────────────────────── */
