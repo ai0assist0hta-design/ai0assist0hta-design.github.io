@@ -870,329 +870,698 @@ window.onload = () => {
     initCellInteractions();
 };
 
-/* ─── PHYSICS SUBPAGE: THEME 01 ────────────────────────── */
-const PHYSICS_BODY = [
-    "Violence quickly grows old and loses confidence in itself. To maintain a respectable face it summons falsehood as its ally. Violence cannot conceal itself without lies, and lies cannot be sustained without violence. The system does not demand daily physical force upon every shoulder — only obedience to lies and daily participation in them. All loyalty to the regime is contained in that single demand.",
-    "Lies have dragged society so far from normality that one can no longer see a single pillar through the dense, gray fog. Even if they offered us the chance to learn the truth, would our free people even want to know it? Only what the radio hammers in day after day drills into the brain; everything else is conveniently forgotten.",
-    "The simplest and most accessible key to self-neglected liberation lies in personal non-participation in lies. Though lies conceal everything, though they embrace everything — not with any help from me. When people renounce lies it simply cuts short their existence — like an infection, they can survive only in a living organism. This opens a breach in the imaginary encirclement caused by our inaction."
+/* ─── 3D MODEL SUBPAGE: THEME 01 ───────────────────────── */
+
+let threeModules = null;
+
+async function loadThreeModules() {
+    if (threeModules) return threeModules;
+    const THREE = await import('three');
+    const { GLTFLoader } = await import('three/addons/loaders/GLTFLoader.js');
+    const { EffectComposer } = await import('three/addons/postprocessing/EffectComposer.js');
+    const { RenderPass } = await import('three/addons/postprocessing/RenderPass.js');
+    const { UnrealBloomPass } = await import('three/addons/postprocessing/UnrealBloomPass.js');
+    threeModules = { THREE, GLTFLoader, EffectComposer, RenderPass, UnrealBloomPass };
+    return threeModules;
+}
+
+const TEXT_CHUNKS = [
+    `Violence quickly grows old and loses confidence in itself. To maintain a respectable face it summons falsehood as its ally. Violence cannot conceal itself without lies, and lies cannot be sustained without violence.`,
+    `The system does not demand daily physical force upon every shoulder. It demands only obedience to lies and daily participation in them. All loyalty to the regime is contained in that single demand.`,
+    `Lies have dragged society so far from normality that one can no longer see a single pillar through the dense, gray fog. Even if they offered us the chance to learn the truth, would our free people even want to know it?`,
+    `Only what the radio hammers in day after day drills into the brain. Everything else is conveniently forgotten.`,
+    `The simplest and most accessible key to self-neglected liberation lies in personal non-participation in lies.`,
+    `Though lies conceal everything, though they embrace everything, not with any help from me. When people renounce lies it simply cuts short their existence.`,
+    `Like an infection, they can survive only in a living organism. This opens a breach in the imaginary encirclement caused by our inaction.`,
+    `SOURCES: Live Not by Lies (1974) / The Gulag Archipelago, Part I, Ch. 8 CLASSIFICATION: SUPPRESSED`
 ];
 
-const PHYSICS_KEYWORDS = ["violence", "falsehood", "lies", "obedience", "infection"];
+function generatePartTexture(textChunks, fontSize, color, keyword) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 4096; canvas.height = 4096;
+    const ctx = canvas.getContext('2d');
 
-let physicsAnimationFrame;
+    // Modern bold font
+    const FONT_FAM = `'Inter', 'Helvetica Neue', 'Arial', sans-serif`;
+
+    // 0. Fill background with tiny micro-text (Data Noise/Density)
+    ctx.fillStyle = '#1a1a1a';
+    ctx.font = `600 ${fontSize * 0.4}px ${FONT_FAM}`;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'top';
+    const microStr = "0101 STANDARDIZATION ISO SEQ-992 0182 DATA STREAM NULL CONFIRM // ";
+    let mY = 0;
+    while (mY < canvas.height) {
+        let line = "";
+        while (ctx.measureText(line).width < canvas.width * 1.5) line += microStr;
+        ctx.fillText(line, -20, mY);
+        mY += fontSize * 0.4;
+    }
+
+    // 1. Draw massive giant keyword in background
+    ctx.fillStyle = '#333333';
+    ctx.font = `900 1000px ${FONT_FAM}`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(keyword, canvas.width / 2, canvas.height / 2);
+    ctx.fillText(keyword, canvas.width / 2, 400);
+    ctx.fillText(keyword, canvas.width / 2, canvas.height - 400);
+
+    // 2. Overlay dense data text with tight line height
+    ctx.font = `800 ${fontSize}px ${FONT_FAM}`; // Bolder, modern text
+    ctx.fillStyle = color;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+
+    // Create an infinite word pool
+    const textPool = textChunks.join(' ').split(' ');
+    let wordIdx = 0;
+
+    const lh = fontSize * 0.95;
+    let y = fontSize;
+
+    // Fill the canvas completely with unbroken text
+    while (y < canvas.height + lh) {
+        let currentLine = '';
+        while (true) {
+            const nextWord = textPool[wordIdx % textPool.length];
+            const testLine = currentLine ? currentLine + ' ' + nextWord : nextWord;
+
+            // If the next word overflows the canvas, print currentLine and move down
+            if (ctx.measureText(testLine).width > canvas.width - 40) {
+                ctx.fillText(currentLine, 20, y);
+                y += lh;
+                break; // move to next line without advancing wordIdx just yet (well, we haven't)
+            } else {
+                currentLine = testLine;
+                wordIdx++;
+            }
+        }
+    }
+
+    return canvas;
+}
+
+// Per-part texture configs (Law of Extreme Hierarchical Scale)
+const PART_CONFIG = {
+    // Massive focus items (Huge text)
+    equipment: { textIdx: [0, 1, 7], fontSize: 48, color: '#ffffff', keyword: 'SYSTEM', uvScale: 0.0007 },
+
+    // Large structural cores (Medium-Huge text)
+    pole_body: { textIdx: [1, 5, 6], fontSize: 36, color: '#ededed', keyword: 'POWER', uvScale: 0.0025 },
+
+    // Medium connection elements
+    hardware: { textIdx: [2, 3, 5], fontSize: 24, color: '#cccccc', keyword: 'NODE', uvScale: 0.0045 },
+    connectors: { textIdx: [0, 6, 7], fontSize: 20, color: '#cccccc', keyword: 'LINK', uvScale: 0.007 },
+
+    // Small dense elements
+    crossbar: { textIdx: [4, 6, 7], fontSize: 16, color: '#bbbbbb', keyword: 'SPAN', uvScale: 0.012 },
+
+    // Microscopic extreme detail
+    insulators: { textIdx: [3, 4, 7], fontSize: 12, color: '#aaaaaa', keyword: 'ISOLATE', uvScale: 0.018 }
+};
+
+function createPartShaderMaterial(THREE, tex, uvScale) {
+    return new THREE.ShaderMaterial({
+        transparent: true,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+        uniforms: {
+            uTime: { value: 0 }, uTextMap: { value: tex }, uUvScale: { value: uvScale },
+            uUvOffset: { value: new THREE.Vector2(Math.random() * 100.0, Math.random() * 100.0) },
+            uFresnelPower: { value: 1.5 }, uFresnelColor: { value: new THREE.Color(0xdc143c) },
+            uBaseColor: { value: new THREE.Color(0xffffff) }, uAccentColor: { value: new THREE.Color(0xdc143c) },
+            uModelAngle: { value: 0.0 } // Sync dynamically to rotation.y
+        },
+        vertexShader: `
+            uniform float uTime;
+            varying vec3 vWorldNormal, vWorldPos, vViewDir;
+            varying float vDepth;
+            void main() {
+                vWorldNormal = normalize(mat3(modelMatrix) * normal);
+                vec4 wp = modelMatrix * vec4(position, 1.0);
+                vWorldPos = wp.xyz;
+                
+                vec4 mv = modelViewMatrix * vec4(position, 1.0);
+                vViewDir = -normalize(mv.xyz);
+                vDepth = -mv.z;
+                gl_Position = projectionMatrix * mv;
+            }
+        `,
+        fragmentShader: `
+            uniform float uTime, uFresnelPower, uUvScale, uModelAngle;
+            uniform vec2 uUvOffset;
+            uniform sampler2D uTextMap;
+            uniform vec3 uFresnelColor, uBaseColor, uAccentColor;
+            varying vec3 vWorldNormal, vWorldPos, vViewDir;
+            varying float vDepth;
+
+            // Law of Orthogonal Conformity: Locked World Triplanar
+            float triplanarText(vec3 pos, vec3 norm, float scale) {
+                vec3 blend = abs(norm);
+                // 자연스러운 곡면 매핑을 위해 혼합 지수를 낮춤 (원형 오브젝트에서 끊김 방지)
+                blend = pow(blend, vec3(5.0)); 
+                blend /= dot(blend, vec3(1.0));
+                
+                // 가로로만 흐르도록 강제 제어 (수평 흐름의 절대 법칙)
+                float speed = uTime * 0.005; 
+                
+                // 완벽히 독립된 각 축의 면에서 텍스트가 바르게 누워야 하므로,
+                vec2 uvX = (vec2(pos.z, pos.y) * scale) + uUvOffset;
+                vec2 uvY = (vec2(pos.x, pos.z) * scale) + uUvOffset;
+                vec2 uvZ = (vec2(pos.x, pos.y) * scale) + uUvOffset;
+                
+                // 수평 축(x)에만 스피드를 더해 오직 스크롤(가로) 흐름만 발동
+                uvX.x += speed;
+                uvY.x -= speed; // Y면 (윗면) 흐름 방향 조정
+                uvZ.x -= speed; 
+                
+                float tx = texture2D(uTextMap, uvX).r;
+                float ty = texture2D(uTextMap, uvY).r;
+                float tz = texture2D(uTextMap, uvZ).r;
+                
+                return tx*blend.x + ty*blend.y + tz*blend.z;
+            }
+
+            void main() {
+                // 모델이 빙빙 돌더라도 텍스트 껍데기가 완벽하게 기하학적 수평/수직을 유지하며 붙어있도록
+                // 현재 월드 공간 좌표를 "모형의 회전각도"만큼 반대로 돌려서 고정축을 도출.
+                float c = cos(-uModelAngle);
+                float s = sin(-uModelAngle);
+                mat3 invRot = mat3(
+                    c, 0.0, -s,
+                    0.0, 1.0, 0.0,
+                    s, 0.0, c
+                );
+                
+                vec3 fixedPos = invRot * vWorldPos;
+                vec3 fixedNorm = invRot * vWorldNormal;
+                
+                // 절대 빗나가지 않는 고정된 독립 수평/수직면 계산 추출
+                float textRaw = triplanarText(fixedPos, fixedNorm, uUvScale);
+                
+                // Spatial Depth effect: Sharp front faces vs Soft/Shadowed back faces
+                float text;
+                float occlusion = 1.0;
+                
+                if (gl_FrontFacing) {
+                    // 카메라 코앞의 앞면은 극초고선명 윤곽 유지
+                    text = smoothstep(0.35, 0.65, textRaw);
+                } else {
+                    // 카메라 먼쪽(내부/뒷면)은 블러(Smudge) 처리 후 그림자처럼 어둡게 감춤
+                    text = smoothstep(0.0, 1.0, textRaw); // 블러 반경 최대치 확장 (0.0~1.0)
+                    occlusion = 0.25; // 75% 가려진 그림자 효과 (더 어둡게)
+                }
+                
+                // (이전의 discard 구문 삭제: 스크롤링 시 화면 자글거림/프레임 드랍 원인 제거)
+
+                vec3 ld = normalize(vec3(0.5,1.0,0.7));
+                vec3 finalNormal = gl_FrontFacing ? vWorldNormal : -vWorldNormal; // 뒷면 조명을 위한 노멀 반전
+                
+                float diff = max(dot(finalNormal, ld), 0.0) * 0.7 + 0.3;
+                float fresnel = pow(1.0 - max(dot(finalNormal, vViewDir), 0.0), uFresnelPower);
+                
+                // Light mode vs Dark mode check (uBaseColor.r < 0.5 means near-black ink in light mode)
+                bool isLightMode = uBaseColor.r < 0.5;
+
+                vec3 finalSurf;
+                float finalAlpha;
+
+                if (isLightMode) {
+                    // LIGHT MODE: Brutalist black ink on white paper
+                    vec3 surf = uBaseColor * diff * text * occlusion;
+                    vec3 edge = uFresnelColor * fresnel;
+                    finalSurf = 1.0 - (1.0 - surf) * (1.0 - edge);
+                    finalAlpha = text * 0.98 + 0.02;
+                    if (text > 0.5 && gl_FrontFacing) finalAlpha = 1.0;
+                } else {
+                    // DARK MODE: High-contrast white typography on void
+                    // We use max() blending between the white text and red edge to prevent the "pink" tint.
+                    // Also boost text brightness to ensure it doesn't look grey in shadows.
+                    vec3 tCol = uBaseColor * (diff * 0.2 + 0.8); 
+                    vec3 eCol = uFresnelColor * fresnel * 0.6;   
+                    finalSurf = mix(eCol, max(tCol, eCol), text);
+                    finalAlpha = text * 0.95 + 0.05 + fresnel * 0.2;
+                }
+
+                // Global transparency adjustments (Back faces for ghost effect)
+                if (!gl_FrontFacing) finalAlpha *= 0.2;
+                
+                gl_FragColor = vec4(finalSurf, finalAlpha);
+            }
+        `
+    });
+}
 
 function openPhysicsSubpage(clickedCell) {
     const themeId = parseInt(clickedCell.dataset.themeId);
     if (themeId !== 1) return;
-
-    if (document.getElementById('physics-subpage')) return; // Already open
+    if (document.getElementById('physics-subpage')) return;
 
     // Create the container
     const container = document.createElement('div');
     container.id = 'physics-subpage';
 
-    // Canvas for wires
-    const canvas = document.createElement('canvas');
-    canvas.id = 'physics-canvas';
-    container.appendChild(canvas);
-
-    const ctx = canvas.getContext('2d');
-
-    // Content wrapper for 3D perspective
-    const wrapper = document.createElement('div');
-    wrapper.className = 'physics-content-wrapper';
-
-    // Text container
-    const textContainer = document.createElement('div');
-    textContainer.className = 'physics-text-container';
+    // Loading indicator
+    const loadingEl = document.createElement('div');
+    loadingEl.className = 'model-loading';
+    loadingEl.textContent = 'LOADING MODEL...';
+    container.appendChild(loadingEl);
 
     // Back button
     const backBtn = document.createElement('button');
     backBtn.className = 'physics-back-btn';
     backBtn.textContent = '← RETRACT';
-    backBtn.onclick = () => {
-        container.style.opacity = '0';
-        cancelAnimationFrame(physicsAnimationFrame);
-        setTimeout(() => container.remove(), 500);
-    };
     container.appendChild(backBtn);
 
-    // Build paragraphs with span anchors
-    PHYSICS_BODY.forEach(text => {
-        const p = document.createElement('p');
-        let html = text;
-        PHYSICS_KEYWORDS.forEach(kw => {
-            const regex = new RegExp(`\\b(${kw})(s)?\\b`, 'gi');
-            html = html.replace(regex, '<span class="tension-word">$1$2</span>');
-        });
-        p.innerHTML = html;
-        textContainer.appendChild(p);
-    });
+    // Theme toggle button
+    const themeBtn = document.createElement('button');
+    themeBtn.className = 'theme-toggle-btn';
+    themeBtn.textContent = 'MODE: DARK';
+    // Add inline styles to bypass any CSS caching issues and force visibility
+    themeBtn.style.position = 'fixed';
+    themeBtn.style.top = '2rem';
+    themeBtn.style.right = '2rem';
+    themeBtn.style.zIndex = '9999';
+    themeBtn.style.fontFamily = "'Noto Sans', sans-serif";
+    themeBtn.style.fontWeight = '700';
+    themeBtn.style.fontSize = '1.1rem';
+    themeBtn.style.color = '#cccccc';
+    themeBtn.style.background = 'transparent';
+    themeBtn.style.border = 'none';
+    themeBtn.style.cursor = 'pointer';
+    themeBtn.style.textTransform = 'uppercase';
+    themeBtn.style.letterSpacing = '0.1em';
+    themeBtn.style.opacity = '0.8';
 
-    wrapper.appendChild(textContainer);
-    container.appendChild(wrapper);
+    container.appendChild(themeBtn);
+
     document.body.appendChild(container);
 
-    // Initial show
     requestAnimationFrame(() => {
         container.classList.add('is-visible');
-        resizeCanvas();
     });
 
-    // Setup Physics
-    const words = Array.from(textContainer.querySelectorAll('.tension-word'));
-    let nodes = [];
-    let wires = [];
-    let signals = [];
+    // Initialize Three.js scene
+    let animFrameId;
+    let cleanupFns = [];
+    let isLightMode = false;
 
-    // Initialize the perspective wire system (2-point perspective style)
-    function initPhysicsNodes() {
-        nodes = words.map((span) => {
-            return {
-                el: span,
-                baseX: 0,
-                baseY: 0,
-                x: 0,
-                y: 0,
-                vx: 0,
-                vy: 0,
-                isDragging: false,
-                connectedWires: []
-            };
-        });
+    loadThreeModules().then(({ THREE, GLTFLoader, EffectComposer, RenderPass, UnrealBloomPass }) => {
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x0a0a0a);
+        // scene.fog removed to keep brightness strictly uniform regardless of camera distance
+        // scene.fog = new THREE.FogExp2(0x0a0a0a, 0.003); 
 
-        // Procedural Wire Generation: Wires go vertically to +/- large Y, with Z-depth.
-        wires = [];
-        nodes.forEach(node => {
-            // Generate 4-7 wires per word
-            const numWires = 4 + Math.floor(Math.random() * 3);
-            for (let i = 0; i < numWires; i++) {
-                const isCeiling = Math.random() > 0.5;
-                const endY = isCeiling ? -2000 : 2000;
-                
-                // Random depth and random horizontal spread
-                const endZ = (Math.random() - 0.5) * 1500;
-                // Since wires are strictly vertical in 3D perspective, x-variation should be small relative to depth
-                const endXOffset = (Math.random() - 0.5) * 700; 
+        const w = window.innerWidth, h = window.innerHeight;
+        const camera = new THREE.PerspectiveCamera(26, w / h, 0.1, 5000);
 
-                const wire = {
-                    node: node,
-                    endY: endY,
-                    endZ: endZ,
-                    endXOffset: endXOffset
-                };
-                wires.push(wire);
-                node.connectedWires.push(wire);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(w, h);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.0;
+        container.appendChild(renderer.domElement);
+
+        // Post-processing: Bloom
+        const composer = new EffectComposer(renderer);
+        composer.addPass(new RenderPass(scene, camera));
+        const bloomPass = new UnrealBloomPass(new THREE.Vector2(w, h), 0.65, 0.4, 0.85);
+        composer.addPass(bloomPass);
+
+        // Lighting
+        const ambL = new THREE.AmbientLight(0x333333, 0.3);
+        scene.add(ambL);
+        const dl1 = new THREE.DirectionalLight(0xffffff, 1.2);
+        dl1.position.set(3, 8, 5); scene.add(dl1);
+        const pl = new THREE.PointLight(0xdc143c, 0.4, 500);
+        pl.position.set(0, -50, 0); scene.add(pl);
+        const dl2 = new THREE.DirectionalLight(0x4466aa, 0.3);
+        dl2.position.set(-5, 2, -8); scene.add(dl2);
+
+        // Theme Toggling Logic
+        themeBtn.onclick = () => {
+            isLightMode = !isLightMode;
+            themeBtn.textContent = isLightMode ? 'MODE: LIGHT' : 'MODE: DARK';
+
+            // Toggle CSS classes to invert UI texts
+            themeBtn.classList.toggle('is-light', isLightMode);
+            backBtn.classList.toggle('is-light', isLightMode);
+
+            // Ensure inline styles update as well to bypass specificity
+            themeBtn.style.color = isLightMode ? '#111111' : '#cccccc';
+            backBtn.style.color = isLightMode ? '#111111' : '#cccccc';
+
+            // Update Scene environment
+            const bgColor = isLightMode ? 0xf4f4f4 : 0x0a0a0a;
+            scene.background.setHex(bgColor);
+            // scene.fog.color.setHex(bgColor);
+            // scene.fog.density = isLightMode ? 0.001 : 0.003; // Light fog is usually finer
+
+            // Update bloom and lighting
+            bloomPass.strength = isLightMode ? 0.4 : 0.65;
+            ambL.color.setHex(isLightMode ? 0xffffff : 0x333333);
+            ambL.intensity = isLightMode ? 0.9 : 0.4;
+            dl2.intensity = isLightMode ? 0.8 : 0.4;
+
+            // Re-configure part materials dynamically
+            parts.structural.forEach(child => {
+                if (child.material && child.material.uniforms) {
+                    // Update text color (uBaseColor) in the shader
+                    // In dark mode: white text. In light mode: almost black text.
+                    child.material.uniforms.uBaseColor.value.setHex(isLightMode ? 0x1a1a1a : 0xffffff);
+                }
+            });
+
+            // Cables remain generally same, but their base color can shift
+            const cableColor = isLightMode ? 0x991111 : 0xff1111;
+            parts.cables.forEach(c => {
+                c.mesh.material.color.setHex(cableColor);
+            });
+
+            // Particles contrast
+            if (typeof sigMat !== 'undefined') {
+                sigMat.color.setHex(isLightMode ? 0xff0000 : 0xff1111);
             }
-        });
-    }
-
-    setTimeout(initPhysicsNodes, 100);
-
-    // Resize handling
-    let cw = 0, ch = 0;
-    function resizeCanvas() {
-        canvas.width = window.innerWidth * window.devicePixelRatio;
-        canvas.height = window.innerHeight * window.devicePixelRatio;
-        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-        cw = window.innerWidth;
-        ch = window.innerHeight;
-        
-        if (nodes.length > 0) initPhysicsNodes();
-    }
-    window.addEventListener('resize', resizeCanvas);
-
-    // 3D Perspective Projection Matrix Helper
-    const focalLength = 1000;
-    function project3D(x, y, z) {
-        // Assume origin is center of screen
-        const scale = focalLength / (focalLength + z);
-        return {
-            x: (x * scale) + (cw / 2),
-            y: (y * scale) + (ch / 2),
-            scale: scale
         };
-    }
 
-    // Signal Class for the Red Pulses
-    class Signal {
-        constructor(wire, originNode) {
-            this.wire = wire;
-            this.progress = 0; // 0 to 1
-            this.speed = 0.015 + Math.random() * 0.02;
-            this.type = Math.random() > 0.5 ? 'inflow' : 'outflow';
-            this.node = originNode;
+        // Generate per-part textures (Optimize Memory: Create once, share everywhere)
+        const partTextures = {};
+        for (const [partName, cfg] of Object.entries(PART_CONFIG)) {
+            const chunks = cfg.textIdx.map(i => TEXT_CHUNKS[i]);
+            const canvas = generatePartTexture(chunks, cfg.fontSize, cfg.color, cfg.keyword);
+            const tex = new THREE.CanvasTexture(canvas);
+            tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
+            tex.minFilter = THREE.LinearMipmapLinearFilter;
+            tex.anisotropy = 16;
+            partTextures[partName] = tex;
         }
 
-        update() {
-            this.progress += this.speed;
+        // Camera orbit
+        let pivotPoint = new THREE.Vector3(), maxRadius = Infinity;
+        let spherical = { radius: 300, theta: 0, phi: Math.PI * 0.58 };
+        let isDragging = false, lastMouse = { x: 0, y: 0 };
+
+        function updateCam() {
+            const { radius: r, theta: t, phi: p } = spherical;
+            camera.position.set(pivotPoint.x + r * Math.sin(p) * Math.sin(t), pivotPoint.y + r * Math.cos(p), pivotPoint.z + r * Math.sin(p) * Math.cos(t));
+            camera.lookAt(pivotPoint);
         }
-    }
 
-    // Drag Interaction variables
-    let activeNode = null;
-    let dragOffsetX = 0;
-    let dragOffsetY = 0;
-    let mouseX = 0;
-    let mouseY = 0;
+        // Part registry
+        const parts = { cables: [], structural: [] };
+        const allInteractable = [];
+        let hoveredPart = null;
+        const raycaster = new THREE.Raycaster();
+        const mouseNDC = new THREE.Vector2(-999, -999);
 
-    window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        if (activeNode && activeNode.isDragging) {
-            activeNode.x = (mouseX - activeNode.dragStartX) * 1.5;
-            activeNode.y = (mouseY - activeNode.dragStartY) * 1.5;
-        }
-    });
-
-    window.addEventListener('mouseup', () => {
-        if (activeNode) {
-            activeNode.isDragging = false;
-            // Spawn an outflow signal upon resolving a drag
-            triggerSignal(activeNode, 'outflow');
-            activeNode = null;
-        }
-    });
-
-    function triggerSignal(node, forceType = null) {
-        if (!node || node.connectedWires.length === 0) return;
-        // spawn 2-3 signals for better visual
-        for(let j=0; j<3; j++) {
-            const wire = node.connectedWires[Math.floor(Math.random() * node.connectedWires.length)];
-            const sig = new Signal(wire, node);
-            if (forceType) sig.type = forceType;
-            // stagger them slightly
-            sig.progress = -Math.random() * 0.3; 
-            signals.push(sig);
-        }
-    }
-
-    words.forEach((span, idx) => {
-        span.addEventListener('mousedown', (e) => {
-            if (!nodes[idx]) return;
-            activeNode = nodes[idx];
-            activeNode.isDragging = true;
-            activeNode.dragStartX = e.clientX;
-            activeNode.dragStartY = e.clientY;
-            
-            // Interaction triggers inflow pulses
-            triggerSignal(activeNode, 'inflow');
+        // Cable material: RED GLOW
+        const cableMat = new THREE.MeshPhysicalMaterial({
+            color: 0xff1111,
+            emissive: 0xcc0000,
+            emissiveIntensity: 0.6,
+            transparent: true,
+            opacity: 0.7,
+            roughness: 0.3,
+            metalness: 0.0,
+            side: THREE.DoubleSide,
+            depthWrite: false
         });
-    });
 
-    // Physics Loop constants
-    const k = 0.08; // Spring stiffness
-    const damp = 0.85; // Damping (friction)
+        // Load model
+        const loader = new GLTFLoader();
+        loader.load('models/Pole.glb', (gltf) => {
+            const model = gltf.scene;
+            const box = new THREE.Box3().setFromObject(model);
+            const center = box.getCenter(new THREE.Vector3());
+            const size = box.getSize(new THREE.Vector3());
 
-    function updatePhysics() {
-        ctx.clearRect(0, 0, cw, ch);
-        
-        let totalKineticEnergy = 0;
+            // Classify each mesh and assign appropriate material
+            model.traverse((child) => {
+                if (!child.isMesh) return;
+                const n = child.name.toLowerCase();
 
-        nodes.forEach(node => {
-            if (!node.isDragging) {
-                const fx = (node.baseX - node.x) * k;
-                const fy = (node.baseY - node.y) * k;
+                if (n.includes('cable')) {
+                    child.material = cableMat.clone();
+                    const pa = child.geometry.getAttribute('position');
+                    const orig = new Float32Array(pa.array.length); orig.set(pa.array);
+                    parts.cables.push({ mesh: child, originalPositions: orig });
+                    allInteractable.push(child);
+                } else {
+                    // Determine part type broadly so things stop falling back to hardware inappropriately
+                    let partType = 'hardware'; // default
+                    if (n.includes('equipment') || n.includes('transformer') || n.includes('box')) partType = 'equipment';
+                    else if (n.includes('insulator')) partType = 'insulators';
+                    else if (n.includes('crossbar') || n.includes('arm')) partType = 'crossbar';
+                    else if (n.includes('pole') || n.includes('body') || n.includes('cylinder') || n.includes('base')) partType = 'pole_body';
+                    else if (n.includes('connector') || n.includes('joint') || n.includes('link')) partType = 'connectors';
 
-                node.vx += fx;
-                node.vy += fy;
-
-                node.vx *= damp;
-                node.vy *= damp;
-
-                node.x += node.vx;
-                node.y += node.vy;
-            }
-
-            totalKineticEnergy += Math.abs(node.vx) + Math.abs(node.vy);
-            
-            // Pulse glow: If an inflow signal is reaching the node (progress > 0.8)
-            let glowIntensity = 0;
-            signals.forEach(s => {
-                if (s.node === node && s.type === 'inflow' && s.progress > 0.7 && s.progress <= 1.0) {
-                    glowIntensity = Math.max(glowIntensity, (s.progress - 0.7) * 3.33); // 0 to 1
+                    const cfg = PART_CONFIG[partType] || PART_CONFIG.hardware;
+                    const canvas = partTextures[partType] || partTextures.hardware;
+                    const mat = createPartShaderMaterial(THREE, canvas, cfg.uvScale);
+                    child.material = mat;
+                    parts.structural.push(child);
+                    allInteractable.push(child);
                 }
             });
 
-            if (glowIntensity > 0) {
-                node.el.style.textShadow = `0 0 ${25 * glowIntensity}px rgba(255, 0, 0, ${0.9 * glowIntensity})`;
-                node.el.style.transform = `translate(${node.x}px, ${node.y}px) scale(${1 + 0.1 * glowIntensity})`;
-            } else {
-                node.el.style.textShadow = '0 0 5px rgba(255, 0, 0, 0.2)'; // Faint base glow
-                node.el.style.transform = `translate(${node.x}px, ${node.y}px)`;
-            }
-        });
+            // Init permanent glowing signals on cables
+            parts.cables.forEach(c => {
+                const numSigs = 4 + Math.floor(Math.random() * 4); // 4~7 signals per cable for high density
+                for (let i = 0; i < numSigs; i++) {
+                    spawnSig(c, Math.random());
+                }
+            });
 
-        // Manage Signals
-        for (let i = signals.length - 1; i >= 0; i--) {
-            signals[i].update();
-            if (signals[i].progress >= 1) {
-                // Remove finished signal
-                signals.splice(i, 1);
+            pivotPoint.set(center.x, box.min.y + size.y * 0.469, center.z);
+            pl.position.set(center.x, box.min.y - 20, center.z);
+            const maxDim = Math.max(size.x, size.y, size.z);
+            spherical.radius = maxDim * 0.445; maxRadius = spherical.radius;
+            spherical.phi = Math.PI * 0.697; spherical.theta = Math.PI * -0.741;
+            updateCam();
+
+            // Allow slow auto-rotation exactly around its own built-in origin axis
+            window._mainModel = model;
+            scene.add(model);
+            loadingEl.remove();
+        },
+            (prog) => { if (prog.total > 0) loadingEl.textContent = `LOADING MODEL... ${Math.round(prog.loaded / prog.total * 100)}%`; },
+            (err) => { console.error(err); loadingEl.textContent = 'ERROR LOADING MODEL'; });
+
+        // Cable hover wave
+        function updateCableWaves(time) {
+            parts.cables.forEach((cd, idx) => {
+                const isH = hoveredPart === cd.mesh;
+                if (!isH && !cd._wasH) return;
+                const pa = cd.mesh.geometry.getAttribute('position');
+                const orig = cd.originalPositions;
+                if (!pa || !orig) return;
+                if (isH) {
+                    cd._wasH = true;
+                    const a = 0.6, f = 0.02 + idx * 0.003, s = time * (1.5 + idx * 0.2), ph = idx * 1.7;
+                    for (let i = 0; i < pa.count; i++) {
+                        const ox = orig[i * 3], oy = orig[i * 3 + 1], oz = orig[i * 3 + 2];
+                        const w1 = Math.sin(ox * f + s + ph) * a, w2 = Math.cos(oz * f * 0.7 + s * 0.8 + ph) * a * 0.5;
+                        pa.array[i * 3] = ox + w2 * 0.3; pa.array[i * 3 + 1] = oy + w1; pa.array[i * 3 + 2] = oz + w2 * 0.3;
+                    }
+                    pa.needsUpdate = true;
+                } else if (cd._wasH) { pa.array.set(orig); pa.needsUpdate = true; cd._wasH = false; }
+            });
+        }
+
+        // Hover effects (highlight structural, pulse cables)
+        const CRIMSON = new THREE.Color(0xdc143c);
+        const WHITE_GLOW = new THREE.Color(0xffffff);
+        let hoverTrans = {};
+        function updateHover(time) {
+            raycaster.setFromCamera(mouseNDC, camera);
+            const hits = raycaster.intersectObjects(allInteractable, false);
+            const newH = hits.length > 0 ? hits[0].object : null;
+
+            if (hoveredPart && hoveredPart !== newH) { const u = hoveredPart.uuid; if (hoverTrans[u]) hoverTrans[u].target = 0; }
+            hoveredPart = newH;
+            if (hoveredPart) { const u = hoveredPart.uuid; if (!hoverTrans[u]) hoverTrans[u] = { current: 0, target: 1 }; hoverTrans[u].target = 1; }
+
+            allInteractable.forEach(mesh => {
+                const u = mesh.uuid;
+                const tr = hoverTrans[u];
+                let intensity = 0;
+                if (tr) {
+                    tr.current += (tr.target - tr.current) * 0.08;
+                    if (Math.abs(tr.current) < 0.001) tr.current = 0;
+                    intensity = tr.current;
+                }
+
+                const isCable = parts.cables.some(c => c.mesh === mesh);
+
+                if (isCable) {
+                    if (isLightMode) {
+                        // Light mode: High contrast solid Black base (Minimal transparency)
+                        mesh.material.color.setHex(0x111111);
+                        mesh.material.emissive.setHex(0xaa0000); // Hover glow color
+                        if (intensity > 0) {
+                            mesh.material.opacity = 0.85 + intensity * 0.15; // goes up to fully opaque
+                            mesh.material.emissiveIntensity = intensity * 0.6; // glows red
+                        } else {
+                            mesh.material.opacity = 0.85; // extremely visible, minimal transparency
+                            mesh.material.emissiveIntensity = 0; // no glow
+                        }
+                    } else {
+                        // Dark mode: Base red is 0.6 emissive, 0.7 opacity
+                        mesh.material.color.setHex(0xff1111);
+                        mesh.material.emissive.setHex(0xcc0000);
+                        if (intensity > 0) {
+                            const pulse = 0.5 + Math.sin(time * 3) * 0.5;
+                            mesh.material.emissiveIntensity = 0.6 + intensity * (0.4 + pulse * 0.4);
+                            mesh.material.opacity = 0.7 + intensity * 0.3;
+                        } else {
+                            mesh.material.emissiveIntensity = 0.6;
+                            mesh.material.opacity = 0.7;
+                        }
+                    }
+                } else {
+                    // Structural parts: amplify text brightness / add highlight
+                    if (intensity <= 0) {
+                        mesh.material.emissive = mesh.material.emissive || new THREE.Color(0);
+                        mesh.material.emissiveIntensity = 0;
+                    } else {
+                        // In light mode, glow creates a dark blood red burn. In dark mode, it creates a bright whitish-crimson glow.
+                        const targetGlow = isLightMode ? new THREE.Color(0x770000) : new THREE.Color().lerpColors(WHITE_GLOW, CRIMSON, 0.3);
+                        mesh.material.emissive = targetGlow;
+                        mesh.material.emissiveIntensity = intensity * (isLightMode ? 0.8 : 0.4);
+                    }
+                }
+            });
+        }
+
+        // Electric signals (Permanent loop across all cables)
+        const signals = [];
+        const sigGeo = new THREE.SphereGeometry(0.6, 8, 8); // Larger particle base size
+        const sigMat = new THREE.MeshBasicMaterial({ color: 0xff1111, transparent: false }); // High-intensity vibrant red
+
+        function spawnSig(cd, offsetProgress = 0) {
+            const pa = cd.mesh.geometry.getAttribute('position');
+            if (!pa || pa.count < 2) return;
+
+            const p = new THREE.Mesh(sigGeo, sigMat);
+            cd.mesh.parent.add(p);
+
+            const dir = Math.random() > 0.5 ? 1 : -1;
+            const startIdx = dir === 1 ? 0 : pa.count - 1;
+
+            // Speed: crosses entire cable in 40.0 to 90.0 seconds (Much slower, heavy signals)
+            const spd = (1.0 / (40.0 + Math.random() * 50.0)) * pa.count;
+
+            let vi = startIdx;
+            if (offsetProgress > 0) {
+                if (dir === 1) vi = offsetProgress * (pa.count - 1);
+                else vi = (1.0 - offsetProgress) * (pa.count - 1);
+            }
+
+            signals.push({ mesh: p, cable: cd, vi: vi, dir: dir, spd: spd });
+        }
+
+        function updateSig(dt) {
+            const time = performance.now() * 0.001;
+            for (let i = 0; i < signals.length; i++) {
+                const s = signals[i];
+                s.vi += s.dir * s.spd * dt;
+                const pa = s.cable.mesh.geometry.getAttribute('position');
+
+                let reachedEnd = false;
+                if (s.dir === 1 && s.vi >= pa.count - 1) reachedEnd = true;
+                if (s.dir === -1 && s.vi <= 0) reachedEnd = true;
+
+                if (reachedEnd) {
+                    // Loop back to a random end
+                    s.dir = Math.random() > 0.5 ? 1 : -1;
+                    s.vi = s.dir === 1 ? 0 : pa.count - 1;
+                    s.spd = (1.0 / (15.0 + Math.random() * 25.0)) * pa.count;
+                }
+
+                const idx = Math.floor(Math.max(0, Math.min(pa.count - 1, s.vi)));
+                const wp = new THREE.Vector3(pa.array[idx * 3], pa.array[idx * 3 + 1], pa.array[idx * 3 + 2]);
+                s.cable.mesh.localToWorld(wp);
+                s.mesh.parent.worldToLocal(wp);
+                s.mesh.position.copy(wp);
+
+                // Visual beating pulse
+                const pulse = 0.5 + Math.sin(time * 15.0 + i) * 0.5;
+                s.mesh.scale.setScalar(1.2 + pulse * 1.8); // Larger visual pulse scale
             }
         }
 
-        // Draw 3D Wires & Signals
-        wires.forEach(wire => {
-            const node = wire.node;
-            const rect = node.el.getBoundingClientRect();
-            // Start of wire is the physical 2D DOM projection of the word
-            const startX = rect.left + rect.width / 2;
-            const startY = rect.top + rect.height / 2;
-
-            // Project the 3D endpoint of the wire to 2D
-            // Convert screen center to 0,0 locally
-            const cxOffset = startX - (cw / 2);
-            // End point logic: wire ends far away with some depth
-            const end3D = project3D(cxOffset + wire.endXOffset, wire.endY, wire.endZ);
-
-            // Draw base wire
-            // Perspective translates depth to opacity/thickness
-            const baseAlpha = Math.max(0.05, Math.min(0.2, end3D.scale * 0.4));
-            ctx.lineWidth = Math.max(0.5, end3D.scale * 2.0);
-            ctx.strokeStyle = `rgba(0, 0, 0, ${baseAlpha})`; 
-            
-            ctx.beginPath();
-            ctx.moveTo(startX, startY);
-            ctx.lineTo(end3D.x, end3D.y);
-            ctx.stroke();
-
-            // Draw any signals on this wire
-            signals.forEach(sig => {
-                if (sig.wire === wire && sig.progress > 0) {
-                    const p = sig.type === 'inflow' ? (1 - sig.progress) : sig.progress;
-                    // Segment size
-                    const segLen = 0.25;
-                    const pStart = Math.max(0, p - segLen);
-                    const pEnd = Math.min(1, p + segLen);
-
-                    const rx1 = startX + (end3D.x - startX) * pStart;
-                    const ry1 = startY + (end3D.y - startY) * pStart;
-                    const rx2 = startX + (end3D.x - startX) * pEnd;
-                    const ry2 = startY + (end3D.y - startY) * pEnd;
-
-                    // Light pulse intensity
-                    ctx.lineWidth = Math.max(1.5, end3D.scale * 5.0);
-                    ctx.strokeStyle = `rgba(220, 20, 60, ${Math.sin(sig.progress * Math.PI) * 0.9})`; // Pulse opacity
-                    ctx.beginPath();
-                    ctx.moveTo(rx1, ry1);
-                    ctx.lineTo(rx2, ry2);
-                    ctx.stroke();
-                }
-            });
+        // Mouse controls
+        function onMM(e) {
+            if (isDragging) {
+                const dx = e.clientX - lastMouse.x, dy = e.clientY - lastMouse.y; lastMouse.x = e.clientX; lastMouse.y = e.clientY;
+                spherical.theta -= dx * 0.005; spherical.phi -= dy * 0.005; spherical.phi = Math.max(0.05, Math.min(Math.PI - 0.05, spherical.phi)); updateCam();
+            }
+            const r = renderer.domElement.getBoundingClientRect();
+            mouseNDC.x = ((e.clientX - r.left) / r.width) * 2 - 1; mouseNDC.y = -((e.clientY - r.top) / r.height) * 2 + 1;
+        }
+        function onMD(e) { if (e.button === 0) { isDragging = true; lastMouse.x = e.clientX; lastMouse.y = e.clientY; } }
+        function onMU() { isDragging = false; }
+        function onWH(e) {
+            e.preventDefault(); const dir = e.deltaY > 0 ? 1 : -1;
+            const r = renderer.domElement.getBoundingClientRect();
+            const n = new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+            const zr = new THREE.Raycaster(); zr.setFromCamera(n, camera); const rd = zr.ray.direction.clone();
+            if (dir > 0) spherical.radius *= 1.1; else { spherical.radius /= 1.1; pivotPoint.add(rd.multiplyScalar(spherical.radius * 0.02)); }
+            spherical.radius = Math.max(5, Math.min(maxRadius, spherical.radius)); updateCam();
+        }
+        renderer.domElement.addEventListener('mousedown', onMD);
+        window.addEventListener('mousemove', onMM);
+        window.addEventListener('mouseup', onMU);
+        renderer.domElement.addEventListener('wheel', onWH, { passive: false });
+        cleanupFns.push(() => {
+            renderer.domElement.removeEventListener('mousedown', onMD); window.removeEventListener('mousemove', onMM);
+            window.removeEventListener('mouseup', onMU); renderer.domElement.removeEventListener('wheel', onWH);
         });
 
-        // Kinetic Typography (Dynamic Skewing based on energy)
-        const energyCap = Math.min(totalKineticEnergy, 150); // Cap extreme shakes
-        const skewX = (Math.random() - 0.5) * energyCap * 0.08; 
-        const skewY = (Math.random() - 0.5) * energyCap * 0.08;
-        const shudderY = (Math.random() - 0.5) * energyCap * 0.15;
+        function onResize() {
+            camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight); composer.setSize(window.innerWidth, window.innerHeight);
+        }
+        window.addEventListener('resize', onResize);
+        cleanupFns.push(() => window.removeEventListener('resize', onResize));
 
-        // Apply skewed shudder to the whole container
-        textContainer.style.transform = `rotateX(25deg) translateY(-20px) skew(${skewX}deg, ${skewY}deg) translate3d(0, ${shudderY}px, 0)`;
+        // Render loop
+        let lastTime = performance.now();
+        function animate() {
+            animFrameId = requestAnimationFrame(animate);
+            const now = performance.now(), dt = Math.min((now - lastTime) / 1000, 0.05); lastTime = now;
+            const time = now * 0.001;
 
-        physicsAnimationFrame = requestAnimationFrame(updatePhysics);
-    }
+            // Update shader time on structural parts
+            parts.structural.forEach(m => {
+                if (m.material.uniforms) {
+                    m.material.uniforms.uTime.value = time;
+                    if (window._mainModel) m.material.uniforms.uModelAngle.value = window._mainModel.rotation.y;
+                }
+            });
+            pl.intensity = 0.3 + Math.sin(time * 0.5) * 0.15;
 
-    updatePhysics();
+            // Slow continuous rotation when user isn't holding mouse
+            if (window._mainModel && !isDragging) {
+                window._mainModel.rotation.y -= dt * 0.05; // 0.05 radians per second
+            }
+
+            updateCableWaves(time);
+            if (!isDragging) updateHover(time);
+            updateSig(dt);
+
+            renderer.domElement.style.cursor = hoveredPart && !isDragging ? 'pointer' : (isDragging ? 'grabbing' : 'grab');
+            composer.render(); // Render through bloom
+        }
+        animate();
+
+        backBtn.onclick = () => {
+            container.style.opacity = '0'; cancelAnimationFrame(animFrameId);
+            cleanupFns.forEach(fn => fn());
+            signals.forEach(s => { if (s.mesh.parent) s.mesh.parent.remove(s.mesh); s.mesh.geometry.dispose(); s.mesh.material.dispose(); });
+            renderer.dispose(); setTimeout(() => container.remove(), 500);
+        };
+    });
 }
+

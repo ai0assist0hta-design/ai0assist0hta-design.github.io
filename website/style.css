@@ -381,19 +381,85 @@ body.is-loading .grid-cell {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
-    color: #111111;
+    color: #cccccc;
     background: transparent;
     border: none;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     opacity: 0.5;
-    transition: opacity 0.3s, text-shadow 0.3s;
+    transition: opacity 0.3s, text-shadow 0.3s, color 0.3s;
 }
 
 .physics-back-btn:hover {
     opacity: 1;
+    text-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+}
+
+.theme-toggle-btn {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 3000;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #cccccc;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+    transition: opacity 0.3s, text-shadow 0.3s, color 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    opacity: 1;
+    text-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+}
+
+.physics-back-btn.is-light,
+.theme-toggle-btn.is-light {
+    color: #111111;
+}
+
+.physics-back-btn.is-light:hover,
+.theme-toggle-btn.is-light:hover {
     text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ─── MODEL LOADING ────────────────────────────────────── */
+.model-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #666;
+    letter-spacing: 0.15em;
+    z-index: 10;
+    animation: loading-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes loading-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+#physics-subpage canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+#physics-subpage canvas:active {
+    cursor: grabbing;
 }
 
 /* ─── RESPONSIVE ───────────────────────────────────────── */
