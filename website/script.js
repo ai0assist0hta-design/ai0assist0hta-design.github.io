@@ -12,112 +12,52 @@ const THEMES = [
     },
     {
         id: 2,
-        subject: "CENSORSHIP AND SILENCE",
-        from: "MINISTRY OF CULTURE",
-        to: "ALL PUBLISHERS",
-        cc: "CENTRAL CENSORSHIP BUREAU",
-        date: "██/██/19██",
-        ref: "DOC-████-02",
-        body: "CENSORSHIP IS NOT MERELY A VIOLATION OF FREEDOM OF PRINT. IT IS THE CLOSING DOWN OF A NATIONS HEART AND THE SHREDDING OF ITS MEMORY. ONCE THIS HAPPENS THE NATION CEASES TO BE MINDFUL OF ITSELF. CITIZENS WHO SHARE A COMMON LANGUAGE SUDDENLY STOP UNDERSTANDING ONE ANOTHER AND SILENT GENERATIONS GROW OLD AND DIE WITHOUT EVER HAVING TOLD THEIR OWN STORY. THE CONSEQUENCES ARE ABSOLUTE. AN ENTIRE NATIONAL LITERATURE CAN BE CAST INTO OBLIVION WITHOUT A GRAVE WITHOUT EVEN UNDERCLOTHES NAKED WITH A NUMBER TAGGED ON ITS TOE. WHERE A FOREST OF VOICES SHOULD HAVE GROWN ONLY TWO OR THREE TREES REMAIN STANDING. AND WHAT SURVIVES UNDER SUCH CONDITIONS CANNOT BE CALLED LITERATURE BECAUSE WITHOUT THE FULL TRUTH IT IS SOMETHING ELSE ENTIRELY. THE WHOLE COUNTRY BECOMES INFECTED BY THE POISONS OF SILENCE THE WAY A BODY IS INFECTED BY A TUMOR AND WHETHER IT WILL EVER RID ITSELF OF THOSE POISONS ONLY GOD KNOWS."
-    },
-    {
-        id: 3,
         subject: "IDEOLOGY AS JUSTIFICATION",
         from: "THE PARTY COMMITTEE",
         to: "FIELD OPERATIVES",
         cc: "BUREAU OF IDEOLOGY",
         date: "██/██/19██",
-        ref: "DOC-████-03",
+        ref: "DOC-████-02",
         body: "SHAKESPEARES VILLAINS STOPPED AT A DOZEN CORPSES BECAUSE THEY HAD NO IDEOLOGY. MACBETHS SELF-JUSTIFICATIONS WERE FEEBLE AND HIS CONSCIENCE DEVOURED HIM. BUT IDEOLOGY CHANGES EVERYTHING. IT PROVIDES THE SOCIAL THEORY THAT ALLOWS EVIL ACTS TO APPEAR GOOD IN ONES OWN EYES AND IN THE EYES OF OTHERS. THE INQUISITION INVOKED CHRISTIANITY. COLONIZERS INVOKED CIVILIZATION. NAZIS INVOKED RACE. JACOBINS INVOKED EQUALITY AND THE HAPPINESS OF FUTURE GENERATIONS. EACH BELIEVED THEY WERE DOING WHAT WAS RIGHT AND NECESSARY. THIS IS WHY THE TWENTIETH CENTURY EXPERIENCED EVIL ON A SCALE MEASURED NOT IN DOZENS BUT IN MILLIONS. THE IDEOLOGICAL EVILDOER CROSSES THE PRECISE LINE THAT SHAKESPEARES VILLAINS COULD NOT AND HIS EYES REMAIN DRY AND CLEAR. JUST AS A WEAK BLUE LIGHT CAN TRIGGER WHAT INTENSE YELLOW LIGHT CANNOT SO EVILDOING HAS A THRESHOLD MAGNITUDE. ONCE CROSSED THE PERSON LEAVES HUMANITY BEHIND PERHAPS WITHOUT THE POSSIBILITY OF RETURN."
     },
     {
-        id: 4,
-        subject: "SUPPRESSION OF INFORMATION",
-        from: "SIGNALS INTELLIGENCE",
-        to: "FOREIGN AFFAIRS OFFICE",
-        cc: "DEPARTMENT OF INTERNAL ORDER",
-        date: "██/██/19██",
-        ref: "DOC-████-04",
-        body: "WHEN THE WORLD IS NOT ALLOWED TO BLEND SPIRITUALLY WHEN MOLECULES OF KNOWLEDGE AND SYMPATHY CANNOT JUMP FROM ONE HALF OF HUMANITY TO ANOTHER THE DANGER BECOMES RAMPANT. SUPPRESSION OF INFORMATION RENDERS INTERNATIONAL AGREEMENTS ILLUSORY BECAUSE WITHIN A MUFFLED ZONE ANY TREATY CAN BE REINTERPRETED AT WILL OR SIMPLY FORGOTTEN. ORWELL UNDERSTOOD THIS SUPREMELY. SUCH A ZONE IS POPULATED NOT BY INHABITANTS OF EARTH BUT BY SOMETHING LIKE AN EXPEDITIONARY CORPS FROM MARS WHO KNOW NOTHING ABOUT THE REST OF THE WORLD YET STAND PREPARED TO TRAMPLE IT CONVINCED THEY COME AS LIBERATORS. INSIDE THIS ZONE THE FEATURES OF LIFE BECOME UNMISTAKABLE. CONSTANT FEAR BECAUSE ANY ADULT FROM A COLLECTIVE FARMER TO A POLITBURO MEMBER KNOWS THAT ONE CARELESS WORD MEANS THE ABYSS. SERVITUDE BECAUSE WORKERS CANNOT QUIT AND PASSPORTS FASTEN EVERYONE TO PARTICULAR PLACES. AND ABOVE ALL SECRECY AND MISTRUST WHICH REPLACE THE OPEN-HEARTED HOSPITALITY OF EARLIER TIMES UNTIL MORE THAN HALF THE POPULATION LIVES WITH A PERMANENT BAD CONSCIENCE."
-    },
-    {
-        id: 5,
+        id: 3,
         subject: "THE GULAG AND IMPRISONMENT",
         from: "CAMP ADMINISTRATION",
         to: "PRISONER NO. ██████",
         cc: "GULAG DIRECTORATE",
         date: "██/██/19██",
-        ref: "DOC-████-05",
+        ref: "DOC-████-03",
         body: "AT THE END OF THE DAY SHUKHOV FALLS ASLEEP FEELING PLEASED WITH LIFE. HE WASNT THROWN IN THE PUNISHMENT CELL. HE SWIPED EXTRA GRUEL AT DINNER. HE ENJOYED HIS WORK ON THE WALL. THE BLADE WASNT FOUND AT THE SEARCH POINT AND HE EARNED A BIT OF TOBACCO. THE END OF AN UNCLOUDED DAY. ALMOST A HAPPY ONE. THEN THE DEVASTATING ARITHMETIC. THIS WAS JUST ONE OF THREE THOUSAND SIX HUNDRED AND FIFTY-THREE DAYS OF HIS SENTENCE FROM BELL TO BELL. THE EXTRA THREE WERE FOR LEAP YEARS. NOW CONSIDER WHAT ONE YEAR CONTAINS. THREE HUNDRED AND SIXTY-FIVE DAYS MARCHING OUT TO ROLL-CALL IN DRIZZLE BLIZZARD AND BITTER COLD. THREE HUNDRED AND SIXTY-FIVE DAYS OF HATEFUL ALIEN WORK. SEVEN HUNDRED AND THIRTY BOWLS OF GRUEL AND SEVEN HUNDRED AND THIRTY PORTIONS OF GRITS. NO RADIO AND NO BOOKS AND THANK GOD FOR THAT. AND THIS IS ONLY ONE YEAR. THERE ARE TEN. THERE ARE TWENTY-FIVE. YET EVEN HERE THE PRISONERS BRAINS AND SOULS ARE NOT INACTIVE. A WEAK SPARK OF GOD WAS BREATHED INTO THEM ONCE AND THE QUESTION REMAINS WHAT HAS BECOME OF IT NOW."
     },
     {
-        id: 6,
-        subject: "ABUSE OF POWER",
-        from: "THE COMMANDER",
-        to: "ALL SUBORDINATES",
-        cc: "OFFICE OF SILENCE",
-        date: "██/██/19██",
-        ref: "DOC-████-06",
-        body: "UNLIMITED POWER IN THE HANDS OF LIMITED PEOPLE ALWAYS LEADS TO CRUELTY. THE VICES OF CAMP COMMANDERS MIRROR THOSE OF SERF OWNERS TWO HUNDRED YEARS EARLIER WITH EERIE PRECISION PROVING THAT HUMAN NATURE HAS NOT CHANGED. GIVE THE SAME AMOUNT OF UNCHECKED POWER AND THE SAME ABUSES EMERGE WITHOUT EXCEPTION BECAUSE THERE EXISTS NO CURB PRACTICAL OR MORAL CAPABLE OF RESTRAINING MALICE WHEN AUTHORITY IS ABSOLUTE. BUT THE DEEPER CRIME IS NOT THE CRUELTY ITSELF. IT IS THE SILENCE THAT SURROUNDS IT. BY KEEPING SILENT ABOUT EVIL AND BURYING IT SO DEEP THAT NO SIGN APPEARS ON THE SURFACE WE ARE NOT MERELY TOLERATING IT. WE ARE IMPLANTING IT. AND IT WILL RISE UP A THOUSANDFOLD IN THE FUTURE. WHEN WE NEITHER PUNISH NOR REPROACH EVILDOERS WE ARE NOT SIMPLY PROTECTING THEIR COMFORTABLE OLD AGE. WE ARE TEARING THE FOUNDATIONS OF JUSTICE FROM BENEATH NEW GENERATIONS AND TEACHING YOUNG PEOPLE THAT FOUL DEEDS ARE NEVER PUNISHED ON THIS EARTH."
-    },
-    {
-        id: 7,
+        id: 4,
         subject: "CONSCIENCE",
         from: "A HUMAN BEING",
         to: "HIS OWN CONSCIENCE",
         cc: "GOD",
         date: "██/██/19██",
-        ref: "DOC-████-07",
+        ref: "DOC-████-04",
         body: "THIS IS THE MAIN PROBLEM OF THE TWENTIETH CENTURY. IS IT PERMISSIBLE MERELY TO CARRY OUT ORDERS AND COMMIT ONES CONSCIENCE TO SOMEONE ELSES KEEPING. CAN A PERSON LIVE WITHOUT HIS OWN IDEAS ABOUT GOOD AND EVIL DERIVING THEM ONLY FROM PRINTED INSTRUCTIONS AND THE VERBAL COMMANDS OF SUPERIORS. THOSE SOLEMN OATHS PRONOUNCED WITH A TREMOR IN THE VOICE WERE MEANT TO DEFEND THE PEOPLE AGAINST EVILDOERS YET HOW EASILY THEY ARE REDIRECTED TO SERVE THE VERY EVIL THEY WERE SWORN TO OPPOSE. IF ONLY THE ANSWER WERE SIMPLE. IF ONLY EVIL PEOPLE EXISTED SOMEWHERE INSIDIOUSLY COMMITTING THEIR DEEDS AND IT WERE ONLY NECESSARY TO SEPARATE AND DESTROY THEM. BUT THE LINE DIVIDING GOOD AND EVIL CUTS THROUGH THE HEART OF EVERY HUMAN BEING WITHOUT EXCEPTION. DURING A LIFETIME THIS LINE SHIFTS. THE SAME PERSON STANDS AT VARIOUS AGES NEAR SAINTHOOD AND NEAR THE DEVIL. THE NAME DOES NOT CHANGE AND TO THAT NAME WE ASCRIBE EVERYTHING. SOCRATES COMMAND KNOW THYSELF HAS NEVER BEEN MORE URGENT THAN NOW."
     },
     {
-        id: 8,
-        subject: "THE WEIGHT OF TRUTH",
-        from: "ONE WORD OF TRUTH",
-        to: "THE WHOLE WORLD",
-        cc: "HISTORY",
-        date: "██/██/19██",
-        ref: "DOC-████-08",
-        body: "ONE WORD OF TRUTH SHALL OUTWEIGH THE WHOLE WORLD. THIS RUSSIAN PROVERB EXPRESSES THE BITTER EXPERIENCE OF AN ENTIRE PEOPLE WITH ASTONISHING FORCE. UPON THIS SEEMINGLY FANTASTIC VIOLATION OF THE LAW OF CONSERVATION OF MASS AND ENERGY AN ENTIRE LIFES WORK AND AN APPEAL TO ALL THE WRITERS OF THE WORLD ARE BUILT. THE REASON IS THIS. ONE CAN COMPOSE AN OUTWARDLY SMOOTH POLITICAL SPEECH OR AN ELEGANT PHILOSOPHICAL SYSTEM UPON A FOUNDATION OF ERROR AND LIES. AN EQUALLY POLISHED CONTRADICTION CAN RALLY IN OPPOSITION. BOTH WILL BE TRUSTED AND BOTH WILL BE MISTRUSTED BECAUSE NEITHER CARRIES ITS OWN PROOF. BUT A GENUINE WORK OF ART BEARS WITHIN ITSELF ITS OWN VERIFICATION. IT SCOOPS UP THE TRUTH AND PRESENTS IT AS A LIVING FORCE THAT TAKES HOLD OF US AND COMPELS US. NO ONE NOT EVEN IN AGES TO COME WILL APPEAR TO REFUTE IT. AND IF THE STEMS OF TRUTH AND GOODNESS ARE CRUSHED PERHAPS THE UNPREDICTABLE STEMS OF BEAUTY WILL RISE TO THAT SAME PLACE AND FULFILL THE WORK OF ALL THREE."
-    },
-    {
-        id: 9,
-        subject: "FREEDOM",
-        from: "THE IMPRISONED MIND",
-        to: "THE OPEN SKY",
-        cc: "NO ONE",
-        date: "██/██/19██",
-        ref: "DOC-████-09",
-        body: "THE PARADOX OF IMPRISONMENT REVEALS ITSELF SLOWLY. FOR TEN YEARS YOU ARE FREE OF ALL MEETINGS. NO ONE PRESSURES YOU TO JOIN THE PARTY. NO TRADE UNION PRETENDS TO PROTECT YOUR INTERESTS. YOU CANNOT BE ELECTED OR APPOINTED OR FORCED TO SERVE AS A PROPAGANDIST AND NO ONE DRAGS YOU TO A POLLING STATION TO VOTE FOR A SINGLE CANDIDATE. THE CAMP KEEPERS CLAIM YOUR LABOR AND YOUR BODY TO THE POINT OF DEATH BUT THEY DO NOT ENCROACH UPON YOUR THOUGHTS. THIS PRODUCES A SENSATION OF FREEDOM FAR GREATER THAN MERE PHYSICAL LIBERTY EVER COULD. AND FROM THIS SENSATION A DEEPER QUESTION EMERGES. IS IT POSSIBLE TO LIBERATE ANYONE WHO HAS NOT FIRST BECOME FREE WITHIN HIS OWN SOUL. AFTER ENOUGH YEARS EVEN THE IDEA OF FREEDOM BECOMES STRANGE AND FORCED. THE STONES ROLL DOWN FROM UNDER OUR FEET BECAUSE THEY ARE THE ASHES OF THE PAST. BUT WE ASCEND. NO ONE CAN DEPRIVE YOU OF WHAT YOU HAVE ALREADY LOST. WHAT DOES NOT EXIST NOT EVEN GOD CAN TAKE AWAY. AND THIS IS THE MOST BASIC FREEDOM OF ALL."
-    },
-    {
-        id: 10,
-        subject: "MEMORY",
-        from: "THE DEAD",
-        to: "THE LIVING",
-        cc: "THE UNBORN",
-        date: "██/██/19██",
-        ref: "DOC-████-10",
-        body: "THERE IS A RUSSIAN PROVERB. DWELL ON THE PAST AND YOU WILL LOSE AN EYE. BUT FORGET THE PAST AND YOU WILL LOSE BOTH EYES. THIS IS THE DILEMMA OF EVERY GENERATION THAT INHERITS SUFFERING. DECADES PASS AND SCARS HEAL AND SOME ISLANDS OF THE ARCHIPELAGO DISSOLVE AS THE POLAR SEA OF OBLIVION ROLLS OVER THEM. THOSE WHO DO NOT WISH TO RECALL HAVE HAD ENOUGH TIME TO DESTROY EVERY LAST DOCUMENT. YET SOMEDAY THIS ARCHIPELAGO WITH ITS AIR AND THE BONES OF ITS INHABITANTS FROZEN IN A LENS OF ICE WILL BE DISCOVERED BY OUR DESCENDANTS LIKE SOME IMPROBABLE SALAMANDER. THE DANGER IS NOT ONLY IN FORGETTING BUT IN WHAT REPLACES MEMORY. WHAT WE REMEMBER IS NOT WHAT ACTUALLY HAPPENED BUT MERELY THE HACKNEYED DOTTED LINE DRIVEN INTO OUR MINDS BY INCESSANT HAMMERING. ONLY WHAT THE RADIO REPEATS DAY AFTER DAY DRILLS A HOLE IN THE BRAIN. EVERYTHING ELSE IS QUIETLY ERASED. THIS IS WHY LITERATURE MATTERS. IT BECOMES THE LIVING MEMORY OF A NATION PRESERVING THE FLAME OF SPENT HISTORY IN A FORM SAFE FROM DEFORMATION AND SLANDER."
-    },
-    {
-        id: 11,
+        id: 5,
         subject: "RESISTANCE",
         from: "AN ORDINARY PERSON",
         to: "THE SYSTEM",
         cc: "EVERYONE WHO REMAINS SILENT",
         date: "██/██/19██",
-        ref: "DOC-████-11",
+        ref: "DOC-████-05",
         body: "WE HAVE NOT MATURED ENOUGH TO MARCH INTO THE SQUARES AND SHOUT THE TRUTH ALOUD. IT IS NOT YET NECESSARY AND IT IS CERTAINLY DANGEROUS. BUT THERE IS SOMETHING WE CAN DO RIGHT NOW. LET US REFUSE TO SAY WHAT WE DO NOT THINK. THIS IS THE EASIEST AND MOST ACCESSIBLE PATH AND IT ACCOUNTS FOR THE COWARDICE ALREADY WELL ROOTED WITHIN US. IF WE DID NOT PASTE TOGETHER THE DEAD BONES AND SCALES OF IDEOLOGY AND IF WE DID NOT SEW ITS ROTTING RAGS WE WOULD BE ASTONISHED AT HOW QUICKLY THE LIES BECOME HELPLESS AND FALL AWAY. THIS IS NOT THEORY. AT SAMARKA CAMP IN NINETEEN FORTY-SIX A GROUP OF INTELLECTUALS REACHED THE BRINK OF DEATH WORN DOWN BY HUNGER COLD AND LABOR BEYOND THEIR STRENGTH. DID THEY STEAL. DID THEY INFORM ON OTHERS. DID THEY WHIMPER ABOUT THEIR RUINED LIVES. NO. FORESEEING DEATH IN DAYS RATHER THAN WEEKS THEY SAT AGAINST THE WALL AND ORGANIZED A SEMINAR SHARING THEIR FINAL KNOWLEDGE WITH ONE ANOTHER. FROM ONE SESSION TO THE NEXT PARTICIPANTS WERE MISSING. THEY WERE ALREADY IN THE MORGUE."
     },
     {
-        id: 12,
+        id: 6,
         subject: "BUT NOT THROUGH ME",
         from: "THE LIE",
         to: "ME",
         cc: "[REDACTED]",
         date: "██/██/19██",
-        ref: "DOC-████-12",
+        ref: "DOC-████-06",
         body: "LET THE LIE COME INTO THE WORLD. LET IT EVEN TRIUMPH. BUT NOT THROUGH ME. THIS IS NOT THE BATTLE CRY OF A HERO BUT THE QUIET RESOLUTION OF AN ORDINARY PERSON WHO REFUSES TO PARTICIPATE IN FALSEHOOD. WRITERS AND ARTISTS CAN DO MORE BECAUSE THEY CAN DEFEAT THE LIE ENTIRELY. IN THE STRUGGLE AGAINST LIES ART HAS ALWAYS TRIUMPHED AND SHALL ALWAYS TRIUMPH BECAUSE LIES CAN PREVAIL AGAINST MUCH IN THIS WORLD BUT NEVER AGAINST ART. YET FOR EVERY PERSON REGARDLESS OF CALLING THERE COMES A GREAT FORK IN THE ROAD. IF YOU GO TO THE RIGHT YOU LOSE YOUR LIFE. IF YOU GO TO THE LEFT YOU LOSE YOUR CONSCIENCE. WHOEVER VOWS TO SURVIVE AT ANY PRICE HAS ALREADY DECIDED TO SURVIVE AT SOMEONE ELSES EXPENSE. IT WAS NOT THE MAJORITY WHO CHOSE THE HARDER PATH BUT NEITHER WAS IT ONLY A FEW. MANY MADE THAT CHOICE THOUGH THEY NEVER SHOUTED ABOUT IT. YOU HAD TO LOOK CLOSELY TO SEE THEM. AND IT WAS ONLY ON ROTTING PRISON STRAW THAT THE FIRST STIRRINGS OF GOOD COULD BE FELT. THE LINE SEPARATING GOOD AND EVIL PASSES NOT THROUGH STATES NOR BETWEEN PARTIES BUT RIGHT THROUGH EVERY HUMAN HEART."
     }
 ];
@@ -853,10 +793,14 @@ function setupCellInteractions(cells) {
             });
         });
 
-        // Click handler for physics sub page transition
+        // Click handler for sub page transitions
         cell.addEventListener('click', () => {
             if (document.body.classList.contains('is-loading')) return;
-            openPhysicsSubpage(cell);
+            const id = parseInt(cell.dataset.themeId);
+            if (id === 1) openPhysicsSubpage(cell);
+            else if (id === 2) openIdeologySubpage(cell);
+            else if (id === 3) openPrisonSubpage(cell);
+            else if (id === 4) openConscienceSubpage(cell);
         });
     });
 }
@@ -1065,8 +1009,8 @@ function createPartShaderMaterial(THREE, tex, uvScale) {
                 float occlusion = 1.0;
                 
                 if (gl_FrontFacing) {
-                    // 카메라 코앞의 앞면은 극초고선명 윤곽 유지
-                    text = smoothstep(0.35, 0.65, textRaw);
+                    // Optimized for extreme close-up: Narrow smoothstep for razor-sharp typography
+                    text = smoothstep(0.48, 0.52, textRaw);
                 } else {
                     // 카메라 먼쪽(내부/뒷면)은 블러(Smudge) 처리 후 그림자처럼 어둡게 감춤
                     text = smoothstep(0.0, 1.0, textRaw); // 블러 반경 최대치 확장 (0.0~1.0)
@@ -1114,10 +1058,6 @@ function createPartShaderMaterial(THREE, tex, uvScale) {
 }
 
 function openPhysicsSubpage(clickedCell) {
-    const themeId = parseInt(clickedCell.dataset.themeId);
-    if (themeId !== 1) return;
-    if (document.getElementById('physics-subpage')) return;
-
     // Create the container
     const container = document.createElement('div');
     container.id = 'physics-subpage';
@@ -1128,33 +1068,146 @@ function openPhysicsSubpage(clickedCell) {
     loadingEl.textContent = 'LOADING MODEL...';
     container.appendChild(loadingEl);
 
-    // Back button
+    // Create the containers for the 3-column grid
+    const sidebarLeft = document.createElement('div');
+    sidebarLeft.className = 'physics-sidebar left';
+    
+    const sidebarRight = document.createElement('div');
+    sidebarRight.className = 'physics-sidebar right';
+
+    // 1. LEFT SIDEBAR: Header Box (Restored - Top)
+    const headerBox = document.createElement('div');
+    headerBox.className = 'faint-text-box';
+    headerBox.innerHTML = `
+        <div class="doc-header">
+            <div class="doc-row"><span class="doc-label">FROM:</span><span class="doc-value">THE STATE</span></div>
+            <div class="doc-row"><span class="doc-label">TO:</span><span class="doc-value">THE PEOPLE</span></div>
+            <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">DEPARTMENT OF TRUTH</span></div>
+            <div class="doc-divider"></div>
+            <div class="doc-row"><span class="doc-label">SUBJECT:</span><span class="doc-value" style="color: #dc143c; font-weight: 700;">THE STRUCTURE OF LIES</span></div>
+            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">1984.10.27</span></div>
+            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC-00001-155</span></div>
+            <div class="doc-divider"></div>
+        </div>
+    `;
+    sidebarLeft.appendChild(headerBox);
+
+    // 2. LEFT SIDEBAR: Solzhenitsyn Thesis (Bottom - Highlights Applied)
+    const paraBox = document.createElement('div');
+    paraBox.className = 'faint-text-box paragraph-box';
+    paraBox.innerHTML = `
+        <div class="text-content" style="max-height: none; overflow: visible;">
+            <div style="margin-bottom: 24px;">
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">Live Not by Lies, 1974</span>
+                <span style="color: #dc143c; font-weight: 600;">"violence… summons falsehood as its ally"</span><br>
+                Violence quickly grows old and loses confidence in itself. To maintain a respectable face it summons falsehood as its ally. Violence cannot conceal itself without lies, and lies cannot be sustained without violence. The system does not demand daily physical force upon every shoulder — only obedience to lies and daily participation in them. All loyalty to the regime is contained in that single demand.
+            </div>
+
+            <div style="margin-bottom: 24px;">
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, The Law as a Child</span>
+                <span style="color: #dc143c; font-weight: 600;">"the lie has… led us so far away from a normal society"</span><br>
+                Lies have dragged society so far from normality that one can no longer see a single pillar through the dense, gray fog. Even if they offered us the chance to learn the truth, would our free people even want to know it? Only what the radio hammers in day after day drills into the brain; everything else is conveniently forgotten.
+            </div>
+
+            <div style="margin-bottom: 0;">
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">Live Not by Lies, 1974</span>
+                <span style="color: #dc143c; font-weight: 600;">"personal non-participation in lies"</span><br>
+                The simplest and most accessible key to self-neglected liberation lies in personal non-participation in lies. Though lies conceal everything, though they embrace everything — not with any help from me. When people renounce lies it simply cuts short their existence — like an infection, they can survive only in a living organism. This opens a breach in the imaginary encirclement caused by our inaction.
+            </div>
+        </div>
+    `;
+    sidebarLeft.appendChild(paraBox);
+
+    // 3. RIGHT SIDEBAR: Concept Narrative (Bottom - Single Box Remaining)
+    const infrastructureBox = document.createElement('div');
+    infrastructureBox.className = 'faint-text-box';
+    infrastructureBox.innerHTML = `
+        <div class="text-content">
+            The red signals on the wires are lies.
+            <br><br>
+            Each one is merely a small word. Violence. Obedience. Falsehood. Infection. Individually they appear harmless. A phrase in a speech, a line in the news. But connected through wires, they harden into a single object. A utility pole.
+            <br><br>
+            A utility pole does not generate electricity. It only carries it. Likewise, this structure does not generate lies. The lies are produced at the center of power, flow through the wires, and reach everywhere through the structure. Solzhenitsyn wrote: the system does not demand daily physical force upon every shoulder. It demands only obedience to lies and daily participation in them. Stay connected to the wire. Receive the signal. Pass it on. That is enough.
+            <br><br>
+            In this work, Solzhenitsyn's text leaves the flat plane of the official document and is rebuilt as a vertical structure. The red keywords become the skeleton of the pole. The remaining text wraps around and hangs from that frame. The sentences can no longer be read. They were never designed to be read. The language of the system was never meant for communication. It was meant for maintenance.
+            <br><br>
+            <span style="color: #dc143c; font-weight: 600;">Though lies conceal everything, though they embrace everything — not with any help from me.</span>
+        </div>
+    `;
+    sidebarRight.appendChild(infrastructureBox);
+
+    // 4. UI Controls (Back, Theme, Info, Zoom)
     const backBtn = document.createElement('button');
-    backBtn.className = 'physics-back-btn';
-    backBtn.textContent = '← RETRACT';
+    backBtn.className = 'physics-back-btn is-light';
     container.appendChild(backBtn);
 
-    // Theme toggle button
-    const themeBtn = document.createElement('button');
-    themeBtn.className = 'theme-toggle-btn';
-    themeBtn.textContent = 'MODE: DARK';
-    // Add inline styles to bypass any CSS caching issues and force visibility
-    themeBtn.style.position = 'fixed';
-    themeBtn.style.top = '2rem';
-    themeBtn.style.right = '2rem';
-    themeBtn.style.zIndex = '9999';
-    themeBtn.style.fontFamily = "'Noto Sans', sans-serif";
-    themeBtn.style.fontWeight = '700';
-    themeBtn.style.fontSize = '1.1rem';
-    themeBtn.style.color = '#cccccc';
-    themeBtn.style.background = 'transparent';
-    themeBtn.style.border = 'none';
-    themeBtn.style.cursor = 'pointer';
-    themeBtn.style.textTransform = 'uppercase';
-    themeBtn.style.letterSpacing = '0.1em';
-    themeBtn.style.opacity = '0.8';
-
+    const themeBtn = document.createElement('div');
+    themeBtn.className = 'theme-toggle-wrapper is-light';
+    themeBtn.innerHTML = '<div class="slider-knob"></div>';
     container.appendChild(themeBtn);
+
+    const infoBtn = document.createElement('div');
+    infoBtn.className = 'info-icon-btn is-light';
+    infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+    container.appendChild(infoBtn);
+
+    const zoomContainer = document.createElement('div');
+    zoomContainer.className = 'zoom-slider-container is-light';
+    zoomContainer.innerHTML = `
+        <button class="zoom-btn zoom-in">＋</button>
+        <div class="zoom-track"><div class="zoom-thumb"></div></div>
+        <button class="zoom-btn zoom-out">－</button>
+    `;
+    container.appendChild(zoomContainer);
+
+    // Navigation Guide (Relocated to Column 1 Bottom)
+    const guideText = document.createElement('div');
+    guideText.className = 'overlay-text-guide is-light';
+    guideText.innerHTML = 'SCROLL TO ZOOM<br>CLICK & MOVE TO ROTATE';
+    container.appendChild(guideText);
+
+    // Create the Layout Inspector (Visual Markers)
+    const inspector = document.createElement('div');
+    inspector.className = 'layout-inspector';
+    inspector.innerHTML = `
+        <div class="layout-marker marker-padding-top"></div><div class="layout-label label-padding-top">TOP: 3.5rem (56px)</div>
+        <div class="layout-marker marker-padding-bottom"></div><div class="layout-label label-padding-bottom">BOTTOM: 3.5rem (56px)</div>
+        <div class="layout-marker marker-sidebar-l"></div><div class="layout-label label-sidebar-l">SB_LEFT: 2 COL SPAN</div>
+        <div class="layout-marker marker-sidebar-r"></div><div class="layout-label label-sidebar-r">SB_RIGHT: 2 COL SPAN</div>
+        <div class="layout-marker marker-padding-l"></div><div class="layout-label label-padding-l">MAR_L: 3.5rem</div>
+        <div class="layout-marker marker-padding-r"></div><div class="layout-label label-padding-r">MAR_R: 3.5rem</div>
+    `;
+    container.appendChild(inspector);
+
+    // Create the Grid Debug Overlay (8 Columns)
+    const gridOverlay = document.createElement('div');
+    gridOverlay.className = 'grid-debug-overlay';
+    for (let i = 0; i < 8; i++) {
+        const col = document.createElement('div');
+        col.className = 'grid-debug-column';
+        gridOverlay.appendChild(col);
+    }
+    container.appendChild(gridOverlay);
+
+    // Create the Grid Toggle Button
+    const gridToggleBtn = document.createElement('button');
+    gridToggleBtn.className = 'grid-toggle-btn';
+    gridToggleBtn.textContent = 'TOGGLE_GRID_GUIDE';
+    // 5. Physics Subpage Interactive Logic
+    infoBtn.onclick = () => {
+        container.classList.toggle('info-active');
+        infoBtn.classList.toggle('active');
+    };
+    gridToggleBtn.onclick = () => {
+        gridOverlay.classList.toggle('is-hidden');
+        inspector.classList.toggle('is-hidden');
+    };
+    container.appendChild(gridToggleBtn);
+
+    // Assemble the grid
+    container.appendChild(sidebarLeft);
+    // The 3D canvas and model will live in the background/behind the grid
+    container.appendChild(sidebarRight);
 
     document.body.appendChild(container);
 
@@ -1165,52 +1218,56 @@ function openPhysicsSubpage(clickedCell) {
     // Initialize Three.js scene
     let animFrameId;
     let cleanupFns = [];
-    let isLightMode = false;
+    let isLightMode = true;
 
     loadThreeModules().then(({ THREE, GLTFLoader, EffectComposer, RenderPass, UnrealBloomPass }) => {
         const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x0a0a0a);
+        scene.background = new THREE.Color(0xf4f4f4);
         // scene.fog removed to keep brightness strictly uniform regardless of camera distance
         // scene.fog = new THREE.FogExp2(0x0a0a0a, 0.003); 
 
         const w = window.innerWidth, h = window.innerHeight;
         const camera = new THREE.PerspectiveCamera(26, w / h, 0.1, 5000);
 
+        // Finalized horizontal perspective shift
+        let 카메라_오프셋_비율 = 0.00;
+        camera.setViewOffset(w, h, w * 카메라_오프셋_비율, 0, w, h);
+
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(w, h);
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure = 1.0;
-        container.appendChild(renderer.domElement);
+        container.insertBefore(renderer.domElement, container.firstChild);
 
         // Post-processing: Bloom
         const composer = new EffectComposer(renderer);
         composer.addPass(new RenderPass(scene, camera));
-        const bloomPass = new UnrealBloomPass(new THREE.Vector2(w, h), 0.65, 0.4, 0.85);
+        const bloomPass = new UnrealBloomPass(new THREE.Vector2(w, h), 0.4, 0.4, 0.85);
         composer.addPass(bloomPass);
 
         // Lighting
-        const ambL = new THREE.AmbientLight(0x333333, 0.3);
+        const ambL = new THREE.AmbientLight(0xffffff, 0.9);
         scene.add(ambL);
         const dl1 = new THREE.DirectionalLight(0xffffff, 1.2);
         dl1.position.set(3, 8, 5); scene.add(dl1);
         const pl = new THREE.PointLight(0xdc143c, 0.4, 500);
         pl.position.set(0, -50, 0); scene.add(pl);
-        const dl2 = new THREE.DirectionalLight(0x4466aa, 0.3);
+        const dl2 = new THREE.DirectionalLight(0x4466aa, 0.8);
         dl2.position.set(-5, 2, -8); scene.add(dl2);
 
         // Theme Toggling Logic
         themeBtn.onclick = () => {
             isLightMode = !isLightMode;
-            themeBtn.textContent = isLightMode ? 'MODE: LIGHT' : 'MODE: DARK';
 
-            // Toggle CSS classes to invert UI texts
+            // Toggle CSS classes to invert UI parts
             themeBtn.classList.toggle('is-light', isLightMode);
             backBtn.classList.toggle('is-light', isLightMode);
+            infoBtn.classList.toggle('is-light', isLightMode);
+            zoomContainer.classList.toggle('is-light', isLightMode);
+            guideText.classList.toggle('is-light', isLightMode);
+            container.classList.toggle('is-dark', !isLightMode);
 
-            // Ensure inline styles update as well to bypass specificity
-            themeBtn.style.color = isLightMode ? '#111111' : '#cccccc';
-            backBtn.style.color = isLightMode ? '#111111' : '#cccccc';
 
             // Update Scene environment
             const bgColor = isLightMode ? 0xf4f4f4 : 0x0a0a0a;
@@ -1227,16 +1284,38 @@ function openPhysicsSubpage(clickedCell) {
             // Re-configure part materials dynamically
             parts.structural.forEach(child => {
                 if (child.material && child.material.uniforms) {
-                    // Update text color (uBaseColor) in the shader
-                    // In dark mode: white text. In light mode: almost black text.
-                    child.material.uniforms.uBaseColor.value.setHex(isLightMode ? 0x1a1a1a : 0xffffff);
+                    // Soften the black ink to a charcoal gray (0x333333) in light mode
+                    child.material.uniforms.uBaseColor.value.setHex(isLightMode ? 0x333333 : 0xffffff);
                 }
             });
 
-            // Cables remain generally same, but their base color can shift
-            const cableColor = isLightMode ? 0x991111 : 0xff1111;
             parts.cables.forEach(c => {
-                c.mesh.material.color.setHex(cableColor);
+                const mesh = c.mesh;
+                const ghost = c.ghost;
+                if (isLightMode) {
+                    mesh.material.color.setHex(0x111111);
+                    mesh.material.emissive.setHex(0x000000);
+                    mesh.material.opacity = 0.28; // Reduced from 0.4
+                    mesh.material.emissiveIntensity = 0;
+                    mesh.material.blending = THREE.MultiplyBlending;
+
+                    // Enable Ghost Blur in Light Mode
+                    if (ghost) {
+                        ghost.visible = true;
+                        ghost.material.uniforms.uColor.value.setHex(0x222222);
+                        ghost.material.uniforms.uOpacity.value = 0.08; // Reduced from 0.12
+                    }
+                } else {
+                    mesh.material.color.setHex(0xff1111);
+                    mesh.material.emissive.setHex(0xcc0000);
+                    mesh.material.opacity = 0.7;
+                    mesh.material.emissiveIntensity = 0.6;
+                    mesh.material.blending = THREE.NormalBlending;
+
+                    // Disable Ghost Blur in Dark Mode
+                    if (ghost) ghost.visible = false;
+                }
+                mesh.material.needsUpdate = true;
             });
 
             // Particles contrast
@@ -1253,7 +1332,8 @@ function openPhysicsSubpage(clickedCell) {
             const tex = new THREE.CanvasTexture(canvas);
             tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
             tex.minFilter = THREE.LinearMipmapLinearFilter;
-            tex.anisotropy = 16;
+            tex.magFilter = THREE.LinearFilter; // Smoothing for close-ups
+            tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
             partTextures[partName] = tex;
         }
 
@@ -1267,6 +1347,82 @@ function openPhysicsSubpage(clickedCell) {
             camera.position.set(pivotPoint.x + r * Math.sin(p) * Math.sin(t), pivotPoint.y + r * Math.cos(p), pivotPoint.z + r * Math.sin(p) * Math.cos(t));
             camera.lookAt(pivotPoint);
         }
+
+        // --- Zoom Slider Logic ---
+        function syncZoomSlider() {
+            if (maxRadius === Infinity || !zoomContainer) return;
+            const thumb = zoomContainer.querySelector('.zoom-thumb');
+            if (thumb) {
+                const currentMax = container.classList.contains('info-active') ? 1200 : 800;
+                const range = Math.max(0.1, currentMax - 5);
+                // Invert mapping so that thumb at top (0%) means zoomed in (radius 5)
+                const p = Math.max(0, Math.min(1, (spherical.radius - 5) / range));
+                thumb.style.top = `${p * 100}%`;
+            }
+        }
+
+        const zInBtn = zoomContainer.querySelector('.zoom-in');
+        const zOutBtn = zoomContainer.querySelector('.zoom-out');
+        const zTrack = zoomContainer.querySelector('.zoom-track');
+        const zThumb = zoomContainer.querySelector('.zoom-thumb');
+
+        let isDraggingZoom = false;
+        if (zInBtn) zInBtn.onclick = () => { spherical.radius = Math.max(5, spherical.radius / 1.3); updateCam(); syncZoomSlider(); };
+        if (zOutBtn) zOutBtn.onclick = () => { 
+            const currentMax = container.classList.contains('info-active') ? 1200 : 800;
+            spherical.radius = Math.min(currentMax, spherical.radius * 1.3); 
+            updateCam(); syncZoomSlider(); 
+        };
+
+        // --- Info Button Logic: Transition Back to Home Angle & Pivot ---
+        const HOME_THETA = Math.PI * -0.8;
+        const HOME_PHI = 1.12;
+        const HOME_PIVOT = new THREE.Vector3();
+        let targetTheta = HOME_THETA, targetPhi = HOME_PHI, targetRadius = 593;
+        let targetPivot = new THREE.Vector3();
+        let isTransitioning = false;
+
+        infoBtn.onclick = () => {
+            const isInfoActive = !container.classList.contains('info-active');
+            container.classList.toggle('info-active', isInfoActive);
+            infoBtn.classList.toggle('active', isInfoActive);
+            
+            isTransitioning = true;
+            targetTheta = HOME_THETA;
+            targetPhi = HOME_PHI;
+            targetPivot.copy(HOME_PIVOT); // Restore the panning center
+            
+            if (isInfoActive) {
+                targetRadius = 1200;
+                maxRadius = 1200;
+            } else {
+                targetRadius = 593;
+                maxRadius = 800;
+            }
+        };
+
+        if (zThumb) {
+            zThumb.onmousedown = (e) => { e.preventDefault(); e.stopPropagation(); isDraggingZoom = true; };
+        }
+
+        function onZoomMM(e) {
+            if (!isDraggingZoom || !zTrack || container.classList.contains('info-active')) return;
+            e.stopPropagation();
+            const rect = zTrack.getBoundingClientRect();
+            let p = (e.clientY - rect.top) / rect.height;
+            p = Math.max(0, Math.min(1, p));
+            spherical.radius = 5 + p * (maxRadius - 5);
+            updateCam();
+            syncZoomSlider();
+        }
+        function onZoomMU() { isDraggingZoom = false; }
+
+        window.addEventListener('mousemove', onZoomMM);
+        window.addEventListener('mouseup', onZoomMU);
+        cleanupFns.push(() => {
+            window.removeEventListener('mousemove', onZoomMM);
+            window.removeEventListener('mouseup', onZoomMU);
+        });
 
         // Part registry
         const parts = { cables: [], structural: [] };
@@ -1282,10 +1438,12 @@ function openPhysicsSubpage(clickedCell) {
             emissiveIntensity: 0.6,
             transparent: true,
             opacity: 0.7,
-            roughness: 0.3,
+            roughness: 1.0,
             metalness: 0.0,
             side: THREE.DoubleSide,
-            depthWrite: false
+            depthWrite: false,
+            depthTest: true,
+            transparent: true
         });
 
         // Load model
@@ -1305,7 +1463,37 @@ function openPhysicsSubpage(clickedCell) {
                     child.material = cableMat.clone();
                     const pa = child.geometry.getAttribute('position');
                     const orig = new Float32Array(pa.array.length); orig.set(pa.array);
-                    parts.cables.push({ mesh: child, originalPositions: orig });
+
+                    // --- CABLE OCCLUSION BLUR (Ghost Mesh) ---
+                    // This pass only renders when behind structural objects, creating a "smudge" effect
+                    const ghost = new THREE.Mesh(child.geometry, new THREE.ShaderMaterial({
+                        uniforms: {
+                            uColor: { value: new THREE.Color(0x333333) },
+                            uOpacity: { value: 0.12 }
+                        },
+                        vertexShader: `
+                            void main() {
+                                // Fatten the wire slightly to simulate a blurry/smudgy spatial depth
+                                vec3 pos = position + normal * 0.12; 
+                                gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+                            }
+                        `,
+                        fragmentShader: `
+                            uniform vec3 uColor;
+                            uniform float uOpacity;
+                            void main() {
+                                gl_FragColor = vec4(uColor, uOpacity);
+                            }
+                        `,
+                        transparent: true,
+                        depthTest: true,
+                        depthWrite: false,
+                        depthFunc: THREE.GreaterDepth, // RENDER ONLY IF BEHIND
+                        side: THREE.DoubleSide
+                    }));
+                    child.parent.add(ghost);
+
+                    parts.cables.push({ mesh: child, ghost: ghost, originalPositions: orig });
                     allInteractable.push(child);
                 } else {
                     // Determine part type broadly so things stop falling back to hardware inappropriately
@@ -1333,14 +1521,52 @@ function openPhysicsSubpage(clickedCell) {
                 }
             });
 
-            pivotPoint.set(center.x, box.min.y + size.y * 0.469, center.z);
-            pl.position.set(center.x, box.min.y - 20, center.z);
-            const maxDim = Math.max(size.x, size.y, size.z);
-            spherical.radius = maxDim * 0.445; maxRadius = spherical.radius;
-            spherical.phi = Math.PI * 0.697; spherical.theta = Math.PI * -0.741;
-            updateCam();
+            pivotPoint.set(0, box.min.y + size.y * 0.52, 0);
+            HOME_PIVOT.copy(pivotPoint);
+            targetPivot.copy(pivotPoint);
 
-            // Allow slow auto-rotation exactly around its own built-in origin axis
+            pl.position.set(0, box.min.y - 20, 0);
+            const maxDim = Math.max(size.x, size.y, size.z);
+            spherical.radius = 593; maxRadius = 800;
+            spherical.phi = 1.12; spherical.theta = Math.PI * -0.8;
+            updateCam();
+            syncZoomSlider();
+
+            // Finalized design setup
+            model.position.x = 8.0;
+            model.position.y = -64.0; 
+
+            parts.cables.forEach(c => {
+                const mesh = c.mesh;
+                const ghost = c.ghost;
+                if (isLightMode) {
+                    mesh.material.color.setHex(0x111111);
+                    mesh.material.emissive.setHex(0x000000);
+                    mesh.material.opacity = 0.28; // Slightly more transparent (previously 0.4)
+                    mesh.material.emissiveIntensity = 0;
+                    mesh.material.blending = THREE.MultiplyBlending;
+                    if (ghost) {
+                        ghost.visible = true;
+                        ghost.material.uniforms.uColor.value.setHex(0x222222);
+                        ghost.material.uniforms.uOpacity.value = 0.08;
+                    }
+                } else {
+                    mesh.material.color.setHex(0xff1111);
+                    mesh.material.emissive.setHex(0xcc0000);
+                    mesh.material.opacity = 0.7;
+                    mesh.material.emissiveIntensity = 0.6;
+                    mesh.material.blending = THREE.NormalBlending;
+                    if (ghost) ghost.visible = false;
+                }
+                mesh.material.needsUpdate = true;
+            });
+
+            parts.structural.forEach(mesh => {
+                if (mesh.material.uniforms) {
+                    mesh.material.uniforms.uBaseColor.value.setHex(isLightMode ? 0x333333 : 0xffffff);
+                }
+            });
+
             window._mainModel = model;
             scene.add(model);
             loadingEl.remove();
@@ -1369,69 +1595,9 @@ function openPhysicsSubpage(clickedCell) {
             });
         }
 
-        // Hover effects (highlight structural, pulse cables)
-        const CRIMSON = new THREE.Color(0xdc143c);
-        const WHITE_GLOW = new THREE.Color(0xffffff);
-        let hoverTrans = {};
+        // Hover effects disabled per user request
         function updateHover(time) {
-            raycaster.setFromCamera(mouseNDC, camera);
-            const hits = raycaster.intersectObjects(allInteractable, false);
-            const newH = hits.length > 0 ? hits[0].object : null;
-
-            if (hoveredPart && hoveredPart !== newH) { const u = hoveredPart.uuid; if (hoverTrans[u]) hoverTrans[u].target = 0; }
-            hoveredPart = newH;
-            if (hoveredPart) { const u = hoveredPart.uuid; if (!hoverTrans[u]) hoverTrans[u] = { current: 0, target: 1 }; hoverTrans[u].target = 1; }
-
-            allInteractable.forEach(mesh => {
-                const u = mesh.uuid;
-                const tr = hoverTrans[u];
-                let intensity = 0;
-                if (tr) {
-                    tr.current += (tr.target - tr.current) * 0.08;
-                    if (Math.abs(tr.current) < 0.001) tr.current = 0;
-                    intensity = tr.current;
-                }
-
-                const isCable = parts.cables.some(c => c.mesh === mesh);
-
-                if (isCable) {
-                    if (isLightMode) {
-                        // Light mode: High contrast solid Black base (Minimal transparency)
-                        mesh.material.color.setHex(0x111111);
-                        mesh.material.emissive.setHex(0xaa0000); // Hover glow color
-                        if (intensity > 0) {
-                            mesh.material.opacity = 0.85 + intensity * 0.15; // goes up to fully opaque
-                            mesh.material.emissiveIntensity = intensity * 0.6; // glows red
-                        } else {
-                            mesh.material.opacity = 0.85; // extremely visible, minimal transparency
-                            mesh.material.emissiveIntensity = 0; // no glow
-                        }
-                    } else {
-                        // Dark mode: Base red is 0.6 emissive, 0.7 opacity
-                        mesh.material.color.setHex(0xff1111);
-                        mesh.material.emissive.setHex(0xcc0000);
-                        if (intensity > 0) {
-                            const pulse = 0.5 + Math.sin(time * 3) * 0.5;
-                            mesh.material.emissiveIntensity = 0.6 + intensity * (0.4 + pulse * 0.4);
-                            mesh.material.opacity = 0.7 + intensity * 0.3;
-                        } else {
-                            mesh.material.emissiveIntensity = 0.6;
-                            mesh.material.opacity = 0.7;
-                        }
-                    }
-                } else {
-                    // Structural parts: amplify text brightness / add highlight
-                    if (intensity <= 0) {
-                        mesh.material.emissive = mesh.material.emissive || new THREE.Color(0);
-                        mesh.material.emissiveIntensity = 0;
-                    } else {
-                        // In light mode, glow creates a dark blood red burn. In dark mode, it creates a bright whitish-crimson glow.
-                        const targetGlow = isLightMode ? new THREE.Color(0x770000) : new THREE.Color().lerpColors(WHITE_GLOW, CRIMSON, 0.3);
-                        mesh.material.emissive = targetGlow;
-                        mesh.material.emissiveIntensity = intensity * (isLightMode ? 0.8 : 0.4);
-                    }
-                }
-            });
+            // No operation - selection effects removed
         }
 
         // Electric signals (Permanent loop across all cables)
@@ -1493,22 +1659,31 @@ function openPhysicsSubpage(clickedCell) {
 
         // Mouse controls
         function onMM(e) {
-            if (isDragging) {
+            if (isDragging && !container.classList.contains('info-active')) {
                 const dx = e.clientX - lastMouse.x, dy = e.clientY - lastMouse.y; lastMouse.x = e.clientX; lastMouse.y = e.clientY;
                 spherical.theta -= dx * 0.005; spherical.phi -= dy * 0.005; spherical.phi = Math.max(0.05, Math.min(Math.PI - 0.05, spherical.phi)); updateCam();
             }
             const r = renderer.domElement.getBoundingClientRect();
             mouseNDC.x = ((e.clientX - r.left) / r.width) * 2 - 1; mouseNDC.y = -((e.clientY - r.top) / r.height) * 2 + 1;
         }
-        function onMD(e) { if (e.button === 0) { isDragging = true; lastMouse.x = e.clientX; lastMouse.y = e.clientY; } }
+        function onMD(e) { 
+            if (e.button === 0 && !container.classList.contains('info-active')) { 
+                isDragging = true; 
+                isTransitioning = false; // User takes manual control
+                lastMouse.x = e.clientX; 
+                lastMouse.y = e.clientY; 
+            } 
+        }
         function onMU() { isDragging = false; }
         function onWH(e) {
+            if (container.classList.contains('info-active')) return;
+            isTransitioning = false; // User takes manual control
             e.preventDefault(); const dir = e.deltaY > 0 ? 1 : -1;
             const r = renderer.domElement.getBoundingClientRect();
             const n = new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
             const zr = new THREE.Raycaster(); zr.setFromCamera(n, camera); const rd = zr.ray.direction.clone();
             if (dir > 0) spherical.radius *= 1.1; else { spherical.radius /= 1.1; pivotPoint.add(rd.multiplyScalar(spherical.radius * 0.02)); }
-            spherical.radius = Math.max(5, Math.min(maxRadius, spherical.radius)); updateCam();
+            spherical.radius = Math.max(5, Math.min(maxRadius, spherical.radius)); updateCam(); syncZoomSlider();
         }
         renderer.domElement.addEventListener('mousedown', onMD);
         window.addEventListener('mousemove', onMM);
@@ -1520,8 +1695,11 @@ function openPhysicsSubpage(clickedCell) {
         });
 
         function onResize() {
-            camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight); composer.setSize(window.innerWidth, window.innerHeight);
+            const w = window.innerWidth, h = window.innerHeight;
+            camera.aspect = w / h;
+            camera.setViewOffset(w, h, w * 카메라_오프셋_비율, 0, w, h);
+            camera.updateProjectionMatrix();
+            renderer.setSize(w, h); composer.setSize(w, h);
         }
         window.addEventListener('resize', onResize);
         cleanupFns.push(() => window.removeEventListener('resize', onResize));
@@ -1532,6 +1710,27 @@ function openPhysicsSubpage(clickedCell) {
             animFrameId = requestAnimationFrame(animate);
             const now = performance.now(), dt = Math.min((now - lastTime) / 1000, 0.05); lastTime = now;
             const time = now * 0.001;
+
+            if (isTransitioning) {
+                // Smoothly glide camera back to home/landing values (Lerp factor 0.1 for high fidelity)
+                spherical.theta += (targetTheta - spherical.theta) * 0.1;
+                spherical.phi += (targetPhi - spherical.phi) * 0.1;
+                spherical.radius += (targetRadius - spherical.radius) * 0.1;
+                
+                // Also restore the panning center (Pivot Point)
+                pivotPoint.x += (targetPivot.x - pivotPoint.x) * 0.1;
+                pivotPoint.y += (targetPivot.y - pivotPoint.y) * 0.1;
+                pivotPoint.z += (targetPivot.z - pivotPoint.z) * 0.1;
+
+                if (Math.abs(targetTheta - spherical.theta) < 0.01 &&
+                    Math.abs(targetPhi - spherical.phi) < 0.01 &&
+                    Math.abs(targetRadius - spherical.radius) < 0.5 &&
+                    pivotPoint.distanceTo(targetPivot) < 0.1) {
+                    isTransitioning = false;
+                }
+                updateCam();
+                syncZoomSlider();
+            }
 
             // Update shader time on structural parts
             parts.structural.forEach(m => {
@@ -1544,14 +1743,22 @@ function openPhysicsSubpage(clickedCell) {
 
             // Slow continuous rotation when user isn't holding mouse
             if (window._mainModel && !isDragging) {
-                window._mainModel.rotation.y -= dt * 0.05; // 0.05 radians per second
+                window._mainModel.rotation.y -= dt * 0.062; 
+                
+                // Dynamic Perspective Shift:
+                // Periodically oscillate between default view (phi=1.12) and low-angle view (phi=2.20)
+                // Tilt speed is set slightly faster than object rotation (1.12x)
+                const tiltIntensity = 0.54; // (2.20 - 1.12) / 2
+                const midPhi = 1.66;        // (1.12 + 2.20) / 2
+                spherical.phi = midPhi - Math.cos(window._mainModel.rotation.y * 1.12) * tiltIntensity;
+                updateCam();
             }
 
             updateCableWaves(time);
             if (!isDragging) updateHover(time);
             updateSig(dt);
 
-            renderer.domElement.style.cursor = hoveredPart && !isDragging ? 'pointer' : (isDragging ? 'grabbing' : 'grab');
+            renderer.domElement.style.cursor = isDragging ? 'grabbing' : 'grab';
             composer.render(); // Render through bloom
         }
         animate();
@@ -1565,3 +1772,1828 @@ function openPhysicsSubpage(clickedCell) {
     });
 }
 
+/* ─── CRT TV WALL SUBPAGE: THEME 02 — IDEOLOGY AS JUSTIFICATION ─── */
+
+function openIdeologySubpage(clickedCell) {
+    const container = document.createElement('div');
+    container.id = 'ideology-subpage';
+    container.className = 'is-dark'; // default to dark
+    container.style.cssText = `
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        z-index: 2000; opacity: 0; transition: opacity 0.6s ease; overflow: hidden;
+        display: grid; grid-template-columns: repeat(8, 1fr); gap: 2.5rem; padding: 0 3.5rem;
+    `;
+
+    // 4. UI Controls (Back, Theme, Info, Zoom)
+    const backBtn = document.createElement('button');
+    backBtn.className = 'physics-back-btn';
+    container.appendChild(backBtn);
+
+    const themeBtn = document.createElement('div');
+    themeBtn.className = 'theme-toggle-wrapper';
+    themeBtn.innerHTML = '<div class="slider-knob"></div>';
+    container.appendChild(themeBtn);
+
+    const infoBtn = document.createElement('div');
+    infoBtn.className = 'info-icon-btn';
+    infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+    container.appendChild(infoBtn);
+
+    const zoomContainer = document.createElement('div');
+    zoomContainer.className = 'zoom-slider-container';
+    zoomContainer.innerHTML = `
+        <button class="zoom-btn zoom-in">＋</button>
+        <div class="zoom-track"><div class="zoom-thumb"></div></div>
+        <button class="zoom-btn zoom-out">－</button>
+    `;
+    container.appendChild(zoomContainer);
+
+    // Navigation Guide
+    const guideText = document.createElement('div');
+    guideText.className = 'overlay-text-guide';
+    guideText.innerHTML = 'SCROLL TO ZOOM<br>CLICK & MOVE TO ROTATE';
+    container.appendChild(guideText);
+
+    // Create the containers for the 3-column grid
+    const sidebarLeft = document.createElement('div');
+    sidebarLeft.className = 'physics-sidebar left';
+    
+    const sidebarRight = document.createElement('div');
+    sidebarRight.className = 'physics-sidebar right';
+
+    // 1. LEFT SIDEBAR: Header Box (Top)
+    const headerBox = document.createElement('div');
+    headerBox.className = 'faint-text-box';
+    headerBox.innerHTML = `
+        <div class="doc-header">
+            <div class="doc-row"><span class="doc-label">FROM:</span><span class="doc-value">THE STATE</span></div>
+            <div class="doc-row"><span class="doc-label">TO:</span><span class="doc-value">DEPARTMENT OF TRUTH</span></div>
+            <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">CITIZENS</span></div>
+            <div class="doc-divider"></div>
+            <div class="doc-row"><span class="doc-label">SUBJECT:</span><span class="doc-value" style="color: #dc143c; font-weight: 700;">JUSTIFICATION PROTOCOLS</span></div>
+            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">1973.12.28</span></div>
+            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC-00002-198</span></div>
+            <div class="doc-divider"></div>
+        </div>
+    `;
+    sidebarLeft.appendChild(headerBox);
+
+    // 2. LEFT SIDEBAR: Quote
+    const paraBox = document.createElement('div');
+    paraBox.className = 'faint-text-box paragraph-box';
+    paraBox.innerHTML = `
+        <div class="text-content" style="max-height: none; overflow: visible;">
+            <div style="margin-bottom: 24px;">
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, A. Solzhenitsyn</span>
+                <span style="color: #dc143c; font-weight: 600;">"At what exact point, then, is the line crossed?"</span><br>
+                To do evil a human being must first of all believe that what he's doing is good, or else that it's a well-considered act in conformity with natural law. Fortunately, it is in the nature of the human being to seek a justification for his actions.
+            </div>
+            
+            <div style="margin-bottom: 24px;">
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, A. Solzhenitsyn</span>
+                <span style="color: #dc143c; font-weight: 600;">"Macbeth's self-justifications were feeble"</span><br>
+                Ideology—that is what gives evildoing its long-sought justification and gives the evildoer the necessary steadfastness and determination. That is the social theory which helps to make his acts seem good instead of bad in his own and others' eyes.
+            </div>
+
+            <div style="margin-bottom: 0;">
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, A. Solzhenitsyn</span>
+                <span style="color: #dc143c; font-weight: 600;">"scale measured not in dozens, but in millions"</span><br>
+                Thanks to ideology, the twentieth century was fated to experience evildoing on a scale calculated in the millions. This cannot be denied, nor passed over, nor suppressed. How, then, do we dare insist that evildoers do not exist? And who was it that destroyed these millions? Without evildoers there would have been no Archipelago.
+            </div>
+        </div>
+    `;
+    sidebarLeft.appendChild(paraBox);
+
+    // 3. RIGHT SIDEBAR: Narrative
+    const narrativeBox = document.createElement('div');
+    narrativeBox.className = 'faint-text-box';
+    narrativeBox.innerHTML = `
+        <div class="text-content">
+            A villain stops at a dozen corpses. Their individual conscience is strong enough to limit the damage. 
+            <br><br>
+            But ideology changes everything. It scales violence. When an individual adopts an ideology that justifies atrocities, the natural human limits to cruelty are bypassed.
+            <br><br>
+            This wall of surveillance screens represents this systematic justification. The flow of data is constant. The red keywords highlight the core concepts: IDEOLOGY, EVIL, CORPSES. The text bleeds and stretches into holographic trails because the justification never stops. It is a continuous loop that defends its own existence. 
+            <br><br>
+            <span style="color: #dc143c; font-weight: 600;">"This is why the twentieth century experienced evil on a scale measured not in dozens, but in millions."</span>
+        </div>
+    `;
+    sidebarRight.appendChild(narrativeBox);
+
+    container.appendChild(sidebarLeft);
+    container.appendChild(sidebarRight);
+
+    document.body.appendChild(container);
+    requestAnimationFrame(() => { container.style.opacity = '1'; });
+
+    // ── Text lines for CRT screens ──
+    const LINES = [
+        "SHAKESPEARES VILLAINS STOPPED",
+        "AT A DOZEN CORPSES BECAUSE",
+        "THEY HAD NO IDEOLOGY.",
+        "",
+        "MACBETHS SELF-JUSTIFICATIONS",
+        "WERE FEEBLE AND HIS CONSCIENCE",
+        "DEVOURED HIM.",
+        "",
+        "BUT IDEOLOGY CHANGES EVERYTHING.",
+        "",
+        "IT PROVIDES THE SOCIAL THEORY",
+        "THAT ALLOWS EVIL ACTS TO APPEAR",
+        "GOOD IN ONES OWN EYES AND IN",
+        "THE EYES OF OTHERS.",
+        "",
+        "THE INQUISITION INVOKED CHRISTIANITY.",
+        "COLONIZERS INVOKED CIVILIZATION.",
+        "NAZIS INVOKED RACE.",
+        "JACOBINS INVOKED EQUALITY.",
+        "",
+        "EACH BELIEVED THEY WERE DOING",
+        "WHAT WAS RIGHT AND NECESSARY.",
+        "",
+        "THIS IS WHY THE TWENTIETH CENTURY",
+        "EXPERIENCED EVIL ON A SCALE",
+        "MEASURED NOT IN DOZENS",
+        "BUT IN MILLIONS.",
+        "",
+        "THE IDEOLOGICAL EVILDOER CROSSES",
+        "THE PRECISE LINE THAT SHAKESPEARES",
+        "VILLAINS COULD NOT",
+        "",
+        "AND HIS EYES REMAIN",
+        "DRY AND CLEAR.",
+        "",
+        "ONCE CROSSED THE PERSON LEAVES",
+        "HUMANITY BEHIND PERHAPS WITHOUT",
+        "THE POSSIBILITY OF RETURN.",
+        "",
+        "",
+    ];
+
+    const KEYWORDS = new Set([
+        'IDEOLOGY', 'EVIL', 'CORPSES', 'CONSCIENCE', 'DEVOURED',
+        'INQUISITION', 'NAZIS', 'COLONIZERS', 'JACOBINS',
+        'MILLIONS', 'EVILDOER', 'HUMANITY', 'VILLAINS'
+    ]);
+
+    (async () => {
+        const THREE = await import('three');
+
+        const w = window.innerWidth, h = window.innerHeight;
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+        renderer.setSize(w, h);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setClearColor(0x050505);
+        container.appendChild(renderer.domElement);
+        renderer.domElement.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;';
+
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x050505, 0.018);
+
+        const camera = new THREE.PerspectiveCamera(65, w / h, 0.1, 100);
+        camera.position.set(0, 0, 4.0);
+
+        // ── Generate shared text textures (tall, tiled, multiple fonts) ──
+        const texW = 1024, texH = 2048;
+        const fontSize = 42;
+        const lineHeight = fontSize * 1.6;
+
+        const FONTS = [
+            "'JetBrains Mono', 'Courier New', monospace",
+            "'Impact', sans-serif",
+            "'Georgia', serif",
+            "'Arial Black', sans-serif",
+            "'Courier New', monospace"
+        ];
+        
+        const textures = [];
+
+        FONTS.forEach(fontFamily => {
+            const cvs = document.createElement('canvas');
+            cvs.width = texW; cvs.height = texH;
+            const ctx = cvs.getContext('2d');
+
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, texW, texH);
+            ctx.font = '500 ' + fontSize + 'px ' + fontFamily;
+            ctx.textBaseline = 'top';
+
+            let y = 10;
+            let lineIdx = 0;
+            while (y < texH) {
+                const line = LINES[lineIdx % LINES.length];
+                const words = line.split(' ');
+                let x = 12;
+                words.forEach(word => {
+                    const clean = word.replace(/[^A-Z]/g, '');
+                    if (KEYWORDS.has(clean)) {
+                        ctx.fillStyle = '#dc143c';
+                        ctx.shadowColor = '#dc143c';
+                        ctx.shadowBlur = 6;
+                    } else {
+                        ctx.fillStyle = '#d0d0d0';
+                        ctx.shadowColor = 'transparent';
+                        ctx.shadowBlur = 0;
+                    }
+                    ctx.fillText(word, x, y);
+                    // Explicitly calculate word width + space width + layout safety buffer (prevents thick fonts from overlapping)
+                    const spaceWidth = ctx.measureText(' ').width;
+                    x += ctx.measureText(word).width + spaceWidth + 4;
+                });
+                y += lineHeight;
+                lineIdx++;
+            }
+
+            const tex = new THREE.CanvasTexture(cvs);
+            tex.wrapS = THREE.RepeatWrapping;
+            tex.wrapT = THREE.RepeatWrapping;
+            tex.minFilter = THREE.LinearFilter;
+            tex.magFilter = THREE.LinearFilter;
+            textures.push(tex);
+        });
+
+        // ── CRT Screen Geometry (small, curved) ──
+        const scrW = 0.78, scrH = 0.56;
+        const scrGeo = new THREE.PlaneGeometry(scrW, scrH, 24, 24);
+        // Barrel bulge
+        const pos = scrGeo.attributes.position;
+        for (let i = 0; i < pos.count; i++) {
+            const x = pos.getX(i), y = pos.getY(i);
+            const nx = x / (scrW / 2), ny = y / (scrH / 2);
+            const r2 = nx * nx + ny * ny;
+            pos.setZ(i, 0.035 * (1.0 - r2));
+        }
+        scrGeo.computeVertexNormals();
+
+        const allMats = []; // Track all materials for mass-updates
+
+        // ── CRT Shader (per-screen scroll offset) ──
+        function makeCRTMaterial(timeOffset, speed, scale, textTexParam, isTrail, layerIdx) {
+            return new THREE.ShaderMaterial({
+                transparent: true,
+                depthWrite: false,
+                uniforms: {
+                    uTime: { value: 0 },
+                    uTimeOffset: { value: timeOffset },
+                    uSpeed: { value: speed },
+                    uScale: { value: scale },
+                    uTextMap: { value: textTexParam },
+                    uResolution: { value: new THREE.Vector2(w, h) },
+                    uIsLightMode: { value: 0.0 },
+                    uIsTrail: { value: isTrail ? 1.0 : 0.0 },
+                    uLayerIndex: { value: layerIdx || 0.0 },
+                    uCamZ: { value: 4.0 }
+                },
+                vertexShader: `
+                    varying vec2 vUv;
+                    varying vec3 vNormal, vViewDir;
+                    void main() {
+                        vUv = uv;
+                        vNormal = normalize(normalMatrix * normal);
+                        vec4 mv = modelViewMatrix * vec4(position, 1.0);
+                        vViewDir = -normalize(mv.xyz);
+                        gl_Position = projectionMatrix * mv;
+                    }
+                `,
+                fragmentShader: `
+                    uniform float uTime, uTimeOffset, uIsLightMode, uSpeed, uScale, uIsTrail, uLayerIndex, uCamZ;
+                    uniform sampler2D uTextMap;
+                    uniform vec2 uResolution;
+                    varying vec2 vUv;
+                    varying vec3 vNormal, vViewDir;
+
+                    vec2 barrel(vec2 uv, float k) {
+                        vec2 c = uv - 0.5;
+                        return uv + c * dot(c, c) * k;
+                    }
+
+                    void main() {
+                        vec2 duv = barrel(vUv, 0.2);
+
+                        // Discard out-of-bounds (no bezel)
+                        if (duv.x < 0.02 || duv.x > 0.98 || duv.y < 0.02 || duv.y > 0.98) {
+                            discard;
+                        }
+
+                        // Apply random scale and speed
+                        vec2 texUV = duv * uScale;
+                        
+                        // Center the scaled UVs horizontally
+                        texUV.x += (1.0 - uScale) * 0.5;
+
+                        // Scroll the text vertically at different speeds
+                        float scroll = (uTime + uTimeOffset) * uSpeed;
+                        texUV.y += scroll;
+
+                        // Subtle chromatic aberration (reduced noise)
+                        float ab = 0.0008;
+                        vec3 col = vec3(
+                            texture2D(uTextMap, texUV + vec2(ab, 0.0)).r,
+                            texture2D(uTextMap, texUV).g,
+                            texture2D(uTextMap, texUV - vec2(ab, 0.0)).b
+                        );
+
+                        // Calculate text mask
+                        float textMask = max(col.r, max(col.g, col.b));
+                        if(textMask < 0.1) {
+                            discard;
+                        }
+
+                        // Verify redness based on the source col
+                        float redness = smoothstep(0.1, 0.5, col.r - col.g);
+
+                        // Trail exclusive logic
+                        if (uIsTrail > 0.5 && (redness < 0.2 || textMask < 0.1)) {
+                            // Holographic trails ONLY render the red text
+                            discard;
+                        }
+
+                        // Clean scanlines
+                        float sy = duv.y * 300.0;
+                        float scan = sin(sy * 3.14159) * 0.5 + 0.5;
+                        scan = pow(scan, 1.5) * 0.2 + 0.8;
+
+                        // Vignette
+                        vec2 vig = duv - 0.5;
+                        float v = smoothstep(0.0, 0.8, 1.0 - dot(vig, vig) * 1.2);
+
+                        // Very subtle flicker
+                        float flick = 1.0 - sin((uTime + uTimeOffset * 3.7) * 4.0) * 0.008;
+
+                        // Compose base dark CRT
+                        vec3 c = col * scan * v * flick;
+                        
+                        if (uIsLightMode > 0.5) {
+                            // Light mode: Smooth mix for red text to eliminate dark grey shadow edges
+                            c = mix(vec3(0.05), vec3(0.85, 0.0, 0.1), redness) * scan * v * flick;
+                        } else {
+                            // Dark mode specific enhancements
+                            float lum = dot(c, vec3(0.299, 0.587, 0.114));
+                            c += c * lum * 0.3;
+                            // Slight green/blue CRT tint
+                            c *= vec3(0.92, 1.0, 0.95);
+
+                            // Fresnel edge glow
+                            float f = pow(1.0 - max(dot(vNormal, vViewDir), 0.0), 3.0);
+                            c += vec3(0.04, 0.05, 0.06) * f;
+                            
+                            // Screen glow emission
+                            c += col * 0.2;
+                        }
+
+                        // In Light mode, tighten alpha cutoff to remove the shadow blur entirely
+                        float alpha = uIsLightMode > 0.5 ? smoothstep(0.4, 0.7, textMask) : smoothstep(0.1, 0.5, textMask);
+
+                        // Apply volumetric holographic trail
+                        if (uIsTrail > 0.5) {
+                            // Enforce distinct red glow for trail
+                            c = vec3(1.0, 0.0, 0.1) * scan * flick; 
+                            if (uIsLightMode > 0.5) {
+                                // Slightly darker in light mode so it doesn't wash out
+                                c = vec3(0.85, 0.0, 0.1) * scan * flick; 
+                            }
+                            
+                            // Fade opacity based on depth (layer index)
+                            float layerFade = 1.0 - (uLayerIndex / 35.0);
+                            
+                            // Increase opacity as camera zooms OUT (camZ goes to 8.0)
+                            float zoomVis = smoothstep(2.5, 7.5, uCamZ);
+                            
+                            alpha = textMask * layerFade * zoomVis * 0.45;
+                        }
+
+                        gl_FragColor = vec4(c, alpha);
+                    }
+                `
+            });
+        }
+
+        // ── Create Dense Curved Wall of Screens (zero-gap) ──
+        const COLS = 14, ROWS = 7;
+        const wallRadius = 5;
+        // Arc span calculated so screens touch edge-to-edge
+        const screenAngle = scrW / wallRadius; // angular width of one screen
+        const arcSpan = (COLS - 1) * screenAngle;
+        const gapY = 0; // vertical: flush
+        const totalH = ROWS * (scrH + gapY) - gapY;
+
+        for (let r = 0; r < ROWS; r++) {
+            for (let c = 0; c < COLS; c++) {
+                const timeOffset = Math.random() * 1000 + (r * COLS + c) * 7;
+                const speed = 0.015 + Math.random() * 0.035; // Random speed (0.015 ~ 0.05)
+                const scale = 0.4 + Math.random() * 0.6; // Random scale (0.4 ~ 1.0)
+                const randomTex = textures[Math.floor(Math.random() * textures.length)];
+                
+                const group = new THREE.Group();
+
+                // Main front mesh
+                const mainMat = makeCRTMaterial(timeOffset, speed, scale, randomTex, false, 0);
+                const mainMesh = new THREE.Mesh(scrGeo, mainMat);
+                group.add(mainMesh);
+                allMats.push(mainMat);
+
+                // Holographic trails pushing backwards along local -Z
+                const NUM_TRAILS = 32;
+                const TRAIL_Z_GAP = 0.08;
+                for(let l = 1; l <= NUM_TRAILS; l++) {
+                    const trailMat = makeCRTMaterial(timeOffset, speed, scale, randomTex, true, l);
+                    const trailMesh = new THREE.Mesh(scrGeo, trailMat);
+                    trailMesh.position.z -= l * TRAIL_Z_GAP;
+                    group.add(trailMesh);
+                    allMats.push(trailMat);
+                }
+
+                // Angle along the arc (centered on -Z)
+                const t = c / (COLS - 1);
+                const angle = (t - 0.5) * arcSpan;
+
+                // Concave wall position (curves toward viewer)
+                const px = Math.sin(angle) * wallRadius;
+                const pz = -(Math.cos(angle) * wallRadius - wallRadius + 1.5);
+                const py = (ROWS - 1 - r) * (scrH + gapY) - totalH / 2 + scrH / 2;
+
+                group.position.set(px, py, pz);
+                // Face outward (toward viewer)
+                group.rotation.y = -angle;
+
+                scene.add(group);
+            }
+        }
+
+        // ── Ambient light ──
+        scene.add(new THREE.AmbientLight(0x222222, 1));
+
+        // ── Mouse parallax ──
+        let mx = 0, my = 0;
+        function onMM(e) {
+            mx = (e.clientX / window.innerWidth - 0.5) * 2;
+            my = (e.clientY / window.innerHeight - 0.5) * 2;
+        }
+        window.addEventListener('mousemove', onMM);
+
+        // ── Mouse wheel zoom ──
+        let camZ = 4.0;
+        function onWheel(e) {
+            e.preventDefault();
+            if (container.classList.contains('info-active')) return; // Disable zoom while reading info
+            camZ += e.deltaY * 0.003;
+            camZ = Math.max(0.5, Math.min(8.0, camZ));
+        }
+        container.addEventListener('wheel', onWheel, { passive: false });
+
+        // ── Resize ──
+        function onRS() {
+            const nw = window.innerWidth, nh = window.innerHeight;
+            camera.aspect = nw / nh;
+            camera.updateProjectionMatrix();
+            renderer.setSize(nw, nh);
+            allMats.forEach(m => m.uniforms.uResolution.value.set(nw, nh));
+        }
+        window.addEventListener('resize', onRS);
+
+        // ── UI Interactive Logic ──
+        let isLightMode = false;
+
+        themeBtn.onclick = () => {
+            isLightMode = !isLightMode;
+
+            // Update UI classes
+            themeBtn.classList.toggle('is-light', isLightMode);
+            backBtn.classList.toggle('is-light', isLightMode);
+            infoBtn.classList.toggle('is-light', isLightMode);
+            zoomContainer.classList.toggle('is-light', isLightMode);
+            guideText.classList.toggle('is-light', isLightMode);
+            container.classList.toggle('is-dark', !isLightMode);
+            container.classList.toggle('is-light', isLightMode);
+
+            // Update Scene environment
+            renderer.setClearColor(isLightMode ? 0xf4f4f4 : 0x050505);
+            scene.fog.color.setHex(isLightMode ? 0xf4f4f4 : 0x050505);
+
+            // Update CRT Shaders
+            allMats.forEach(m => {
+                m.uniforms.uIsLightMode.value = isLightMode ? 1.0 : 0.0;
+            });
+        };
+
+        infoBtn.onclick = () => {
+            const isInfoActive = !container.classList.contains('info-active');
+            infoBtn.classList.toggle('active', isInfoActive);
+            container.classList.toggle('info-active', isInfoActive);
+            
+            if (isInfoActive) {
+                // Shrink object: Zoom out aggressively to reveal long holograms and make room for text
+                camZ = 12.0; 
+            } else {
+                camZ = 4.0;
+            }
+            syncZoomSlider();
+        };
+
+        // UI Zoom Logic
+        function syncZoomSlider() {
+            const thumb = zoomContainer.querySelector('.zoom-thumb');
+            if (thumb) {
+                // Map camZ 0.5 (top) to 8.0 (bottom)
+                const range = 8.0 - 0.5;
+                const p = Math.max(0, Math.min(1, (camZ - 0.5) / range));
+                thumb.style.top = `${p * 100}%`;
+            }
+        }
+        
+        container.addEventListener('wheel', (e) => {
+            syncZoomSlider();
+        }, { passive: true });
+
+        const zInBtn = zoomContainer.querySelector('.zoom-in');
+        const zOutBtn = zoomContainer.querySelector('.zoom-out');
+        if (zInBtn) zInBtn.onclick = () => { camZ = Math.max(0.5, camZ - 1.5); syncZoomSlider(); };
+        if (zOutBtn) zOutBtn.onclick = () => { camZ = Math.min(8.0, camZ + 1.5); syncZoomSlider(); };
+
+        // ── Animation ──
+        let animId;
+        let camRotX = 0, camRotY = 0;
+
+        function animate() {
+            animId = requestAnimationFrame(animate);
+            const now = performance.now();
+            const t = now * 0.001;
+
+            allMats.forEach(m => {
+                m.uniforms.uTime.value = t;
+                m.uniforms.uCamZ.value = camera.position.z;
+            });
+
+            // Smooth camera parallax (subtle orbit)
+            const targetRotY = mx * 0.3;
+            const targetRotX = -my * 0.15;
+            camRotY += (targetRotY - camRotY) * 0.04;
+            camRotX += (targetRotX - camRotX) * 0.04;
+
+            camera.position.x = camRotY * 1.5;
+            camera.position.y = camRotX * 0.8;
+            camera.position.z += (camZ - camera.position.z) * 0.08; // smooth zoom
+            camera.lookAt(0, 0, -1);
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // ── Cleanup ──
+        backBtn.onclick = () => {
+            container.style.opacity = '0';
+            cancelAnimationFrame(animId);
+            window.removeEventListener('mousemove', onMM);
+            window.removeEventListener('resize', onRS);
+            container.removeEventListener('wheel', onWheel);
+            allMats.forEach(m => m.dispose());
+            scrGeo.dispose();
+            textures.forEach(t => t.dispose());
+            renderer.dispose();
+            setTimeout(() => container.remove(), 600);
+        };
+    })();
+}
+
+/* ─── 2D PHYSICS SUBPAGE: THEME 03 — THE GULAG AND IMPRISONMENT ─── */
+
+function openPrisonSubpage(clickedCell) {
+    const container = document.createElement('div');
+    container.id = 'prison-subpage';
+    container.className = 'is-dark'; // default to dark
+    container.style.cssText = `
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        z-index: 2000; opacity: 0; transition: opacity 0.6s ease; overflow: hidden;
+        display: grid; grid-template-columns: repeat(8, 1fr); gap: 2.5rem; padding: 0 3.5rem;
+    `;
+
+    // UI Controls
+    const backBtn = document.createElement('button');
+    backBtn.className = 'physics-back-btn';
+    container.appendChild(backBtn);
+
+    const themeBtn = document.createElement('div');
+    themeBtn.className = 'theme-toggle-wrapper';
+    themeBtn.innerHTML = '<div class="slider-knob"></div>';
+    container.appendChild(themeBtn);
+
+    const infoBtn = document.createElement('div');
+    infoBtn.className = 'info-icon-btn';
+    infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+    container.appendChild(infoBtn);
+
+    const guideText = document.createElement('div');
+    guideText.className = 'overlay-text-guide';
+    guideText.innerHTML = 'DRAG MOUSE OUTWARD<br>TO EXTRACT CORE DATA';
+    container.appendChild(guideText);
+
+    // Zoom Slider UI
+    const zoomContainer = document.createElement('div');
+    zoomContainer.className = 'zoom-slider-container';
+    zoomContainer.innerHTML = `
+        <button class="zoom-btn zoom-in">＋</button>
+        <div class="zoom-track"><div class="zoom-thumb"></div></div>
+        <button class="zoom-btn zoom-out">－</button>
+    `;
+    container.appendChild(zoomContainer);
+
+    // Grid System: Left and Right Sidebars
+    const sidebarLeft = document.createElement('div');
+    sidebarLeft.className = 'physics-sidebar left';
+    
+    const sidebarRight = document.createElement('div');
+    sidebarRight.className = 'physics-sidebar right';
+
+    // LEFT SIDEBAR: Header Box
+    const headerBox = document.createElement('div');
+    headerBox.className = 'faint-text-box';
+    headerBox.innerHTML = `
+        <div class="doc-header">
+            <div class="doc-row"><span class="doc-label">FROM:</span><span class="doc-value">CAMP ADMINISTRATION</span></div>
+            <div class="doc-row"><span class="doc-label">TO:</span><span class="doc-value">PRISONER NO. ██████</span></div>
+            <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">GULAG DIRECTORATE</span></div>
+            <div class="doc-divider"></div>
+            <div class="doc-row"><span class="doc-label">SUBJECT:</span><span class="doc-value" style="color: #dc143c; font-weight: 700;">THE GULAG AND IMPRISONMENT</span></div>
+            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">1962.11.01</span></div>
+            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC-00003-365</span></div>
+            <div class="doc-divider"></div>
+        </div>
+    `;
+    sidebarLeft.appendChild(headerBox);
+
+    // LEFT SIDEBAR: Quote
+    const paraBox = document.createElement('div');
+    paraBox.className = 'faint-text-box paragraph-box';
+    paraBox.innerHTML = `
+        <div class="text-content" style="max-height: none; overflow: visible;">
+            <div style="margin-bottom: 24px;">
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">One Day in the Life of Ivan Denisovich</span>
+                <span style="color: #dc143c; font-weight: 600;">"The end of an unclouded day. Almost a happy one."</span><br>
+                At the end of the day Shukhov falls asleep feeling pleased with life. He wasn't thrown in the punishment cell. He swiped extra gruel at dinner. He enjoyed his work on the wall. The blade wasn't found at the search point, and he earned a bit of tobacco.
+            </div>
+            
+            <div style="margin-bottom: 24px;">
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">One Day in the Life of Ivan Denisovich</span>
+                <span style="color: #dc143c; font-weight: 600;">"just one of three thousand six hundred and fifty-three days"</span><br>
+                Then the devastating arithmetic. Now consider what one year contains. Three hundred and sixty-five days marching out to roll-call in drizzle, blizzard, and bitter cold. Three hundred and sixty-five days of hateful alien work. Seven hundred and thirty bowls of gruel. There are ten years. There are twenty-five.
+            </div>
+
+            <div style="margin-bottom: 0;">
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, A. Solzhenitsyn</span>
+                <span style="color: #dc143c; font-weight: 600;">"What has become of it now"</span><br>
+                Yet even here the prisoners' brains and souls are not inactive. A weak spark of God was breathed into them once, and the question remains: what has become of it now?
+            </div>
+        </div>
+    `;
+    sidebarLeft.appendChild(paraBox);
+
+    // RIGHT SIDEBAR: Narrative
+    const narrativeBox = document.createElement('div');
+    narrativeBox.className = 'faint-text-box';
+    narrativeBox.innerHTML = `
+        <div class="text-content">
+            The Gulag reduced human beings to numerical units. A body in a cell. A digit in a ledger. The system's architecture turned living complexity into manageable data. Zeroes and ones.
+            <br><br>
+            This sphere is that containment made visible. Binary digits orbit a dense crimson core. Each one a prisoner stripped to their simplest designation. Convergence rays map the invisible threads binding every individual to the center of power.
+            <br><br>
+            The sphere breathes. A slow heartbeat pulses through the structure. Even reduced to numbers, they refuse to be static. When you drag outward, you extract data from the core. Release it, and the elastic tension snaps everything back. The system reclaims what was taken.
+            <br><br>
+            <span style="color: #dc143c; font-weight: 600;">"A weak spark of God was breathed into them once. What has become of it now?"</span>
+        </div>
+    `;
+    sidebarRight.appendChild(narrativeBox);
+
+    container.appendChild(sidebarLeft);
+    container.appendChild(sidebarRight);
+    document.body.appendChild(container);
+    
+    requestAnimationFrame(() => { container.style.opacity = '1'; });
+
+    // ── Inject the CSS from the CodePen ──
+    const styleTag = document.createElement('style');
+    styleTag.innerHTML = `
+        /* Info UI System logic */
+        #prison-subpage.info-active .physics-sidebar { opacity: 1; pointer-events: auto; }
+        #prison-subpage .physics-sidebar { pointer-events: none; opacity: 0; padding: 3.5rem 0; height: 100vh; display: flex; flex-direction: column; z-index: 5; transition: opacity 0.5s ease; }
+        #prison-subpage.info-active .faint-text-box { pointer-events: auto; opacity: 1; }
+        #prison-subpage .physics-sidebar.left { grid-column: 1 / 3; justify-content: flex-start; align-items: flex-start; padding-left: 150px; }
+        #prison-subpage .physics-sidebar.right { grid-column: 7 / 9; justify-content: flex-start; align-items: flex-end; padding-right: 150px; }
+        
+        /* ── CodePen Reproduction Styles ── */
+        @keyframes ambientBlink {
+            0%, 100% { opacity: 0.05; }
+            50% { opacity: 0.45; }
+        }
+        #prison-subpage .stage-wrapper {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            perspective: 800px; /* Base perspective */
+            transition: all 0.6s ease;
+            transform: scale(1);
+            z-index: 0; /* Ensures it stays behind the text UI */
+        }
+
+        #prison-subpage.info-active .stage-wrapper {
+            transform: scale(0.7); /* gentler zoom out when Info is toggled */
+        }
+
+        #prison-subpage .egg-mover {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 0; height: 0;
+            transform-style: preserve-3d;
+            z-index: 1;
+        }
+
+        #prison-subpage .egg {
+            position: absolute;
+            width: 0; height: 0;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+
+        #prison-subpage .stage {
+            position: absolute;
+            transform-style: preserve-3d;
+        }
+
+        #prison-subpage .circle {
+            position: absolute;
+            transform-style: preserve-3d;
+        }
+
+        #prison-subpage .x {
+            transform-style: preserve-3d;
+            /* Animation dynamically injected */
+        }
+
+        #prison-subpage .y {
+            transform-style: preserve-3d;
+            /* Animation dynamically injected */
+        }
+
+        #prison-subpage .inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 300;
+            transform-style: preserve-3d;
+            text-shadow: 0 0 10px rgba(255,255,255,0.2);
+            /* Font size and color injected dynamically per particle */
+        }
+        
+        /* The Light Mode specific overrides will be toggled by a container class */
+        #prison-subpage.is-light {
+            background-color: #f4f4f4;
+        }
+        
+        #prison-subpage.is-dark {
+            background-color: #050505;
+        }
+
+        #prison-subpage.is-light .inner {
+            text-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        @keyframes rotateX {
+            0% { transform: rotateX(0deg); }
+            100% { transform: rotateX(360deg); }
+        }
+
+        @keyframes rotateY {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        @keyframes hologramFlow {
+            0% { transform: translateZ(0px) scale(1); opacity: 0.9; filter: blur(0px); }
+            60% { transform: translateZ(-120px) scale(0.4); opacity: 0.6; filter: blur(1.5px); }
+            100% { transform: translateZ(-200px) scale(0.05); opacity: 0; filter: blur(4px); }
+        }
+    `;
+    container.appendChild(styleTag);
+
+    // ── Build the DOM Structure per CodePen (3 Stages x 100 Particles) ──
+    const stageWrapper = document.createElement('div');
+    stageWrapper.className = 'stage-wrapper';
+    
+    const egg = document.createElement('div');
+    egg.className = 'egg';
+    stageWrapper.appendChild(egg);
+
+    // Reproduce the SCSS Loops in JS
+    // Start at -2, -1, 0, 1, 2, 3 to create a highly dense, extremely tight data core
+    for (let i = -2; i <= 3; i++) {
+        const stage = document.createElement('div');
+        stage.className = 'stage';
+        egg.appendChild(stage);
+
+        for (let j = 1; j <= 65; j++) {
+            const circle = document.createElement('div');
+            circle.className = 'circle';
+            
+            const xNode = document.createElement('div');
+            xNode.className = 'x';
+            
+            const yNode = document.createElement('div');
+            yNode.className = 'y';
+            
+            const innerNode = document.createElement('div');
+            innerNode.className = 'inner';
+            
+            // Optimized particle count per shell while preserving deep dense layers
+            const size = Math.floor(Math.pow(Math.random(), 3) * 20) + 6;
+            
+            // Inner base transform tied to CSS variables for ultra-performant sync throbbing
+            const originalRadius = i * 60 + 140;
+            const randomizedBeatScaleAmp = (Math.random() * 15 + 5).toFixed(2); // unique pulse amplitudes
+            innerNode.style.setProperty('--beatAmp', randomizedBeatScaleAmp);
+            // Default load state includes the calc() CSS function relying on Javascript provided --beat variable
+            innerNode.style.transform = `translate(-50%, -50%) translateZ(${originalRadius}px) scale(calc(1 + var(--beat, 0) * var(--beatAmp)))`;
+            innerNode.style.fontSize = `${size}px`; 
+            innerNode.dataset.origZ = originalRadius;
+            innerNode.dataset.pullMult = 0.5 + Math.random() * 0.5;
+            
+            // X and Y Animations
+            const durX = Math.floor(Math.random() * 20000) + 10000;
+            const delX = -(Math.floor(Math.random() * 3000));
+            xNode.style.animation = `rotateX ${durX}ms ${delX}ms linear infinite`;
+
+            const durY = Math.floor(Math.random() * 20000) + 10000;
+            const delY = -(Math.floor(Math.random() * 3000));
+            yNode.style.animation = `rotateY ${durY}ms ${delY}ms linear infinite`;
+
+            // "0" and "1" logic
+            const particleValue = Math.random() > 0.5 ? "0" : "1";
+            innerNode.textContent = particleValue;
+
+            const isCore = (i <= 0);
+            const isAmbient = (j > 45); // Everything after 45 is extra faint noise layer
+            const isRed = !isAmbient && (isCore ? (Math.random() > 0.3) : (Math.random() > 0.8));
+            
+            if (isRed) {
+                innerNode.classList.add('red-particle'); // For elastic tension tracking
+                if (isCore) {
+                    innerNode.style.color = `rgba(220, 20, 60, 0.45)`;
+                    innerNode.style.textShadow = `0 0 3px rgba(220, 20, 60, 0.2)`;
+                } else {
+                    innerNode.style.color = `rgba(220, 20, 60, 0.9)`;
+                    innerNode.style.textShadow = `0 0 5px rgba(220, 20, 60, 0.4)`;
+                }
+                
+                // --- CORE CONVERGENCE LASER BEAM ---
+                const ray = document.createElement('div');
+                ray.className = 'center-ray';
+                ray.style.position = 'absolute';
+                ray.style.width = '1px';
+                ray.style.height = `${Math.min(120, originalRadius)}px`; 
+                ray.style.bottom = '50%';
+                ray.style.left = '50%';
+                ray.style.transformOrigin = 'bottom center';
+                ray.style.transform = `translate(-50%, 0) rotateX(90deg)`;
+                ray.style.background = isCore ?
+                    'linear-gradient(to top, rgba(220, 20, 60, 0.2), rgba(220, 20, 60, 0) 60%)' :
+                    'linear-gradient(to top, rgba(220, 20, 60, 0.4), rgba(220, 20, 60, 0) 60%)';
+                innerNode.appendChild(ray);
+                
+                // Only generate trailing holograms on outer shells to hold 60fps
+                if (!isCore) {
+                    // --- DYNAMIC HOLOGRAM FLOW ---
+                    for (let t = 1; t <= 4; t++) {
+                        const trail = document.createElement('div');
+                        trail.textContent = particleValue;
+                        trail.style.position = 'absolute';
+                        trail.style.color = `rgba(220, 20, 60, 0.8)`;
+                        trail.style.animation = `hologramFlow 2.5s infinite ease-in`;
+                        trail.style.animationDelay = `-${Math.random() * 2.5}s`;
+                        innerNode.appendChild(trail);
+                    }
+                }
+            } else if (isAmbient) {
+                innerNode.classList.add('ambient-particle');
+                innerNode.style.fontSize = `${Math.floor(Math.random() * 4) + 6}px`; // Extremely small (6-9px)
+                innerNode.style.color = `rgba(255, 255, 255, 0.2)`;
+                innerNode.style.textShadow = 'none';
+                innerNode.style.animation = `ambientBlink ${Math.random() * 3 + 1.5}s infinite alternate ease-in-out`;
+            } else {
+                innerNode.style.color = `rgba(255, 255, 255, 0.9)`; // Default white for dark UI
+                innerNode.style.textShadow = `0 0 4px rgba(255, 255, 255, 0.3)`; // Subtle baseline glow
+            }
+
+            // (Particle mitosis removed in favor of global sphere split)
+
+            yNode.appendChild(innerNode);
+            xNode.appendChild(yNode);
+            circle.appendChild(xNode);
+            stage.appendChild(circle);
+        }
+    }
+    
+    // Insert behind everything
+    container.insertBefore(stageWrapper, container.firstChild);
+    
+    // Prevent disruptive native text selection and native ghost dragging
+    container.style.userSelect = 'none';
+    container.style.webkitUserSelect = 'none';
+
+    // Variables for interaction tracking
+    let isLightMode = false;
+    let isInfoActive = false;
+    
+    let targetRotX = 0;
+    let targetRotY = 0;
+    let curRotX = 0;
+    let curRotY = 0;
+
+    // Mouse Parallax & Elastic Tension Logic
+    let isDragging = false;
+    let dragStartX = 0, dragStartY = 0;
+    let targetPull = 0;
+    let curPull = 0;
+
+    container.addEventListener('mousedown', (e) => {
+        if (isInfoActive) return;
+        isDragging = true;
+        dragStartX = e.clientX;
+        dragStartY = e.clientY;
+        e.preventDefault(); // Nullify any rogue browser dragging behaviors
+    });
+
+    container.addEventListener('mousemove', (e) => {
+        if (isInfoActive) return;
+        const x = (e.clientX / window.innerWidth) - 0.5;
+        const y = (e.clientY / window.innerHeight) - 0.5;
+        // Soft parallax effect restored
+        targetRotX = -y * 30; 
+        targetRotY = x * 30;  
+        
+        if (isDragging) {
+            let dx = e.clientX - dragStartX;
+            let dy = e.clientY - dragStartY;
+            let dist = Math.sqrt(dx*dx + dy*dy);
+            targetPull = Math.min(dist * 2.0, 600); // Exaggerated outward pulling limit
+        }
+    });
+
+    container.addEventListener('mouseup', () => {
+        isDragging = false;
+        targetPull = 0; // Snap back due to tension
+    });
+    
+    container.addEventListener('mouseleave', () => {
+        isDragging = false;
+        targetPull = 0;
+    });
+
+    // Theme & Info Toggles
+    themeBtn.onclick = () => {
+        isLightMode = !isLightMode;
+        themeBtn.classList.toggle('is-light', isLightMode);
+        backBtn.classList.toggle('is-light', isLightMode);
+        infoBtn.classList.toggle('is-light', isLightMode);
+        guideText.classList.toggle('is-light', isLightMode);
+        zoomContainer.classList.toggle('is-light', isLightMode);
+        container.classList.toggle('is-dark', !isLightMode);
+        container.classList.toggle('is-light', isLightMode);
+        
+        // When clicking Theme toggle, change the color brightness of the data text
+        const inners = document.querySelectorAll('#prison-subpage .inner');
+        inners.forEach(el => {
+            if(el.style.color.includes('220')) return; // skip red ones
+            
+            if (el.classList.contains('ambient-particle')) {
+                el.style.color = isLightMode ? `rgba(17, 17, 17, 0.25)` : `rgba(255, 255, 255, 0.2)`;
+                return;
+            }
+
+            if (isLightMode) {
+                el.style.color = `rgba(17, 17, 17, 0.9)`; // Black for light theme backdrops
+                el.style.textShadow = `none`; 
+            } else {
+                el.style.color = `rgba(255, 255, 255, 0.9)`; // White for dark theme backdrops
+                el.style.textShadow = `0 0 4px rgba(255, 255, 255, 0.3)`; 
+            }
+        });
+    };
+
+    infoBtn.onclick = () => {
+        isInfoActive = !isInfoActive;
+        infoBtn.classList.toggle('active', isInfoActive);
+        container.classList.toggle('info-active', isInfoActive);
+        guideText.style.opacity = isInfoActive ? '0' : '0.4';
+        zoomContainer.style.opacity = isInfoActive ? '0' : '1';
+        zoomContainer.style.pointerEvents = isInfoActive ? 'none' : 'auto';
+
+        if (isInfoActive) {
+            targetRotX = 0;
+            targetRotY = 0;
+        }
+    };
+
+    // Zoom logic
+    let targetZoom = 1.0;
+    let baseZoom = 1.0;
+
+    container.addEventListener('wheel', (e) => {
+        if (isInfoActive) return;
+        targetZoom -= e.deltaY * 0.001;
+        targetZoom = Math.max(0.3, Math.min(targetZoom, 2.5));
+        updateZoomUI();
+    });
+
+    function updateZoomUI() {
+        if (!zoomContainer) return;
+        const thumb = zoomContainer.querySelector('.zoom-thumb');
+        if (thumb) {
+            const percent = 100 - ((targetZoom - 0.3) / (2.5 - 0.3) * 100);
+            thumb.style.top = `${percent}%`;
+        }
+    }
+    
+    // Zoom Buttons event listeners
+    const zInBtn = zoomContainer.querySelector('.zoom-in');
+    const zOutBtn = zoomContainer.querySelector('.zoom-out');
+    const zTrack = zoomContainer.querySelector('.zoom-track');
+    
+    if (zInBtn && zOutBtn && zTrack) {
+        zInBtn.onclick = () => { targetZoom = Math.min(2.5, targetZoom + 0.3); updateZoomUI(); };
+        zOutBtn.onclick = () => { targetZoom = Math.max(0.3, targetZoom - 0.3); updateZoomUI(); };
+        zTrack.onclick = (e) => {
+            const rect = zTrack.getBoundingClientRect();
+            const pct = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+            targetZoom = 0.3 + (1 - pct) * (2.5 - 0.3);
+            updateZoomUI();
+        };
+    }
+    updateZoomUI();
+    
+    // Auto-bootstrap into Light Mode Default AFTER ALL PARTICLES EXIST
+    themeBtn.click();
+
+    let animFrame;
+    function animate() {
+        animFrame = requestAnimationFrame(animate);
+        
+        // Smooth parallax easing
+        curRotX += (targetRotX - curRotX) * 0.05;
+        curRotY += (targetRotY - curRotY) * 0.05;
+        const time = Date.now();
+        
+        // Elastic drag tension easing
+        curPull += (targetPull - curPull) * 0.1;
+        
+        // Target the single egg layer
+        if (egg) {
+            // Heartbeat pulse calculation - heavily reduced amplitude (0.06) and speed (0.0008)
+            const beat = Math.pow(Math.sin(time * 0.0008), 32) * 0.06;
+            baseZoom += (targetZoom - baseZoom) * 0.1;
+            const pulseScale = (1.45 + beat) * baseZoom; // 45% mass + interactive zoom footprint
+            
+            // Feed the heartbeat value directly to a CSS Variable on the container!
+            // All 240+ inner data particles will automatically recalculate their scale using GPU offloading (`calc(1 + var(--beat) * var(--beatAmp))`)
+            egg.style.setProperty('--beat', beat);
+            egg.style.transform = `scale(${pulseScale}) rotateX(${curRotX}deg) rotateY(${curRotY}deg)`;
+            
+            // Only update DOM if there's an actual interactive string pull happening
+            if (curPull > 0.5 || targetPull > 0) {
+                document.querySelectorAll('#prison-subpage .red-particle').forEach(rp => {
+                    const origZ = parseFloat(rp.dataset.origZ);
+                    const mult = parseFloat(rp.dataset.pullMult);
+                    const stretch = curPull * mult;
+                    
+                    const dynamicScaleBoost = 1 + (stretch / 180);
+                    
+                    rp.style.transform = `translate(-50%, -50%) translateZ(${origZ + stretch}px) scale(calc((1 + var(--beat) * var(--beatAmp)) * ${dynamicScaleBoost}))`;
+                    
+                    // Dynamically stretch the ray back to the core
+                    const ray = rp.querySelector('.center-ray');
+                    if (ray) {
+                        const baseH = Math.min(120, origZ);
+                        ray.style.height = `${baseH + stretch}px`;
+                    }
+                });
+            } else if (Math.abs(curPull) <= 0.5 && curPull !== 0) {
+                curPull = 0;
+                document.querySelectorAll('#prison-subpage .red-particle').forEach(rp => {
+                    const origZ = parseFloat(rp.dataset.origZ);
+                    rp.style.transform = `translate(-50%, -50%) translateZ(${origZ}px) scale(calc(1 + var(--beat) * var(--beatAmp)))`;
+                    
+                    const ray = rp.querySelector('.center-ray');
+                    if (ray) {
+                        const baseH = Math.min(120, origZ);
+                        ray.style.height = `${baseH}px`;
+                    }
+                });
+            }
+        }
+    }
+    animate();
+
+    backBtn.onclick = () => {
+        container.style.opacity = '0';
+        cancelAnimationFrame(animFrame);
+        setTimeout(() => {
+            container.remove();
+        }, 600);
+    };
+}
+
+
+/* ─── 3D PHYSICS SUBPAGE: THEME 04 — CONSCIENCE (Magnetic Field) ─── */
+
+async function openConscienceSubpage(clickedCell) {
+    const mods = await loadThreeModules();
+    const THREE = mods.THREE;
+
+    const container = document.createElement('div');
+    container.id = 'conscience-subpage';
+    container.className = 'is-dark';
+    container.style.cssText = `
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        z-index: 2000; opacity: 0; transition: opacity 0.6s ease; overflow: hidden;
+        display: grid; grid-template-columns: repeat(8, 1fr); gap: 2.5rem; padding: 0 3.5rem;
+    `;
+
+    // UI Controls
+    const backBtn = document.createElement('button');
+    backBtn.className = 'physics-back-btn';
+    container.appendChild(backBtn);
+
+    const themeBtn = document.createElement('div');
+    themeBtn.className = 'theme-toggle-wrapper';
+    themeBtn.innerHTML = '<div class="slider-knob"></div>';
+    container.appendChild(themeBtn);
+
+    const infoBtn = document.createElement('div');
+    infoBtn.className = 'info-icon-btn';
+    infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+    container.appendChild(infoBtn);
+
+    const guideText = document.createElement('div');
+    guideText.className = 'overlay-text-guide';
+    guideText.innerHTML = 'συν + εἰδος<br>KNOWING-WITH';
+    container.appendChild(guideText);
+
+    // Grid System: Left and Right Sidebars
+    const sidebarLeft = document.createElement('div');
+    sidebarLeft.className = 'physics-sidebar left';
+    const sidebarRight = document.createElement('div');
+    sidebarRight.className = 'physics-sidebar right';
+
+    const headerBox = document.createElement('div');
+    headerBox.className = 'faint-text-box';
+    headerBox.innerHTML = `
+        <div class="doc-header">
+            <div class="doc-row"><span class="doc-label">FROM:</span><span class="doc-value">A HUMAN BEING</span></div>
+            <div class="doc-row"><span class="doc-label">TO:</span><span class="doc-value">HIS OWN CONSCIENCE</span></div>
+            <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">GOD</span></div>
+            <div class="doc-divider"></div>
+            <div class="doc-row"><span class="doc-label">SUBJECT:</span><span class="doc-value" style="color: #dc143c; font-weight: 700;">CONSCIENCE</span></div>
+            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">1974.02.12</span></div>
+            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC-00004-411</span></div>
+            <div class="doc-divider"></div>
+        </div>
+    `;
+    sidebarLeft.appendChild(headerBox);
+
+    const paraBox = document.createElement('div');
+    paraBox.className = 'faint-text-box paragraph-box';
+    paraBox.innerHTML = `
+        <div class="text-content" style="max-height: none; overflow: visible;">
+            <div style="margin-bottom: 24px;">
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago</span>
+                <span style="color: #dc143c; font-weight: 600;">"The line dividing good and evil"</span><br>
+                The line dividing good and evil cuts through the heart of every human being.
+            </div>
+            <div style="margin-bottom: 0;">
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago</span>
+                <span style="color: #dc143c; font-weight: 600;">"During a lifetime this line shifts"</span><br>
+                The same person stands at various ages near sainthood and near the devil.
+            </div>
+        </div>
+    `;
+    sidebarLeft.appendChild(paraBox);
+
+    const narrativeBox = document.createElement('div');
+    narrativeBox.className = 'faint-text-box';
+    narrativeBox.innerHTML = `
+        <div class="text-content">
+            <span style="color: #dc143c; font-weight: 600;">CONSCIENCE</span> &middot; from Greek συνείδησις (syneídēsis): συν "with" + εἰδος "to see / to know". Latin con-scientia. A knowledge held with another — the self watching the self.
+            <br><br>
+            Concentric layers of awareness rotate together. Each ring sees the rings below; each particle is shared across them. The vortex never stops turning.
+            <br><br>
+            <span style="color: #dc143c; font-weight: 600;">"Know thyself has never been more urgent than now."</span>
+        </div>
+    `;
+    sidebarRight.appendChild(narrativeBox);
+
+    container.appendChild(sidebarLeft);
+    container.appendChild(sidebarRight);
+    document.body.appendChild(container);
+
+    // ─── Three.js Scene: συν-εἰδος vortex ───────────────────────────────
+    // A 3D stack of concentric rings made of small chalk-like dashes.
+    // Each ring slowly co-rotates around the vertical axis — "knowing together".
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(58, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 1.4, 4.6);
+    camera.lookAt(0, 0.0, 0);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x050505, 1);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    container.appendChild(renderer.domElement);
+    renderer.domElement.style.cssText = 'position:absolute; inset:0; width:100%; height:100%; z-index:1;';
+
+    // Distance fog: faraway words fade into the background → "blur/optimisation" feel
+    scene.fog = new THREE.Fog(0x050505, 5.0, 11.0);
+
+    // ─── Build the word field ──────────────────────────────────────────
+    // Each "particle" is a Sprite displaying a word in a varied font/size.
+    // Words are sourced from the etymological + Solzhenitsyn vocabulary of
+    // CONSCIENCE — "knowing-with".
+    const vortex = new THREE.Group();
+    scene.add(vortex);
+
+    const VOCAB = [
+        // Greek
+        'συν', 'εἰδος', 'οἶδα', 'γνῶθι', 'σεαυτόν', 'συνείδησις', 'εἰδέναι',
+        'γιγνώσκω', 'γνῶσις', 'ψυχή', 'νοῦς', 'σύν-εἰδος', 'γνῶθι σαυτόν',
+        // Latin & Romance roots
+        'conscientia', 'con-scientia', 'scire', 'cum', 'co-scire',
+        'cognoscere', 'cognoscere se', 'sciens', 'noscere',
+        // English cognates
+        'conscience', 'knowing', 'witness', 'awareness', 'co-witness',
+        'self-knowing', 'shared knowing', 'co-knowing', 'knowing-with',
+        'inward', 'inner', 'other', 'watcher', 'mirror', 'remember',
+        'reckoning', 'attest', 'recall', 'observe', 'reflect',
+        'recognize', 'introspect', 'noësis', 'noetic',
+        // Solzhenitsyn-leaning vocabulary
+        'silent', 'voice', 'tremor', 'oath', 'name', 'soul', 'spirit',
+        'truth', 'falsehood', 'shadow', 'thought', 'light',
+        'guard', 'dignity', 'duty', 'shame', 'choice', 'judge',
+        'urgent', 'urgent than now', 'know thyself',
+        'this line shifts', 'cuts through', 'every heart',
+        'a name we ascribe', 'what becomes of it',
+        // Multilingual
+        '함께앎', '양심', '의식', '자기인식',
+        'mit-wissen', 'wissen-mit', 'savoir-avec',
+        // Composite concepts
+        'self', 'inner voice', 'shared sight',
+        'private knowing', 'know-within',
+        'remember within', 'self-attest', 'fellow-knowledge', 'co-presence',
+        'knowing together',
+    ];
+
+    const FONTS = [
+        { family: "'JetBrains Mono', monospace", weight: 400 },
+        { family: "'JetBrains Mono', monospace", weight: 700 },
+        { family: "'Inter', sans-serif", weight: 400 },
+        { family: "'Inter', sans-serif", weight: 600 },
+        { family: "'Inter', sans-serif", weight: 700 },
+        { family: "'Noto Sans', sans-serif", weight: 400 },
+        { family: "'Noto Sans', sans-serif", weight: 900 },
+        { family: "Georgia, serif", weight: 400 },
+    ];
+    const SIZE_BUCKETS = [7, 10, 14, 20, 28];    // canvas px (small → big)
+
+    // Texture cache: key = word|family|weight|size
+    const texCache = new Map();
+    function makeWordTexture(word, font, sizePx) {
+        const key = `${word}|${font.family}|${font.weight}|${sizePx}`;
+        if (texCache.has(key)) return texCache.get(key);
+        const padX = Math.max(8, sizePx * 0.25);
+        const padY = Math.max(6, sizePx * 0.30);
+        const tmp = document.createElement('canvas');
+        const tctx = tmp.getContext('2d');
+        const fontStr = `${font.weight} ${sizePx}px ${font.family}`;
+        tctx.font = fontStr;
+        const m = tctx.measureText(word);
+        const w = Math.max(8, Math.ceil(m.width) + padX * 2);
+        const h = Math.ceil(sizePx * 1.4) + padY;
+        tmp.width = w; tmp.height = h;
+        const ctx = tmp.getContext('2d');
+        ctx.font = fontStr;
+        ctx.fillStyle = '#ffffff';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(word, w / 2, h / 2);
+        const tex = new THREE.CanvasTexture(tmp);
+        tex.minFilter = THREE.LinearFilter;
+        tex.magFilter = THREE.LinearFilter;
+        tex.generateMipmaps = false;
+        const result = { tex, w, h };
+        texCache.set(key, result);
+        return result;
+    }
+
+    // ─── Spiral parameters (same hourglass shape as before) ───────────
+    const yMax = 2.3;
+    const rMax = 2.70;
+    const rMin = 0.08;          // very tight pinch
+    const turns = 26;
+    const radialPow = 2.8;      // strong bell curve — words clamp hard toward centre
+
+    function coilStrength(absU) {
+        const lo = 0.18, hi = 0.55;
+        const t = Math.max(0, Math.min(1, (absU - lo) / (hi - lo)));
+        return t * t * (3 - 2 * t);
+    }
+
+    // ─── Word particles ────────────────────────────────────────────────
+    const particleCount = 2200;
+    const particles = [];
+    const px2world = 0.0022;
+    const flatPlaneGeo = new THREE.PlaneGeometry(1, 1);
+
+    // Hologram shader (chromatic aberration + scanline + red ghost on glow)
+    const HOLO_VERT = `
+        varying vec2 vUv;
+        void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+    `;
+    const HOLO_FRAG = `
+        uniform sampler2D uMap;
+        uniform vec3 uColor;
+        uniform float uOpacity;
+        uniform float uGlow;
+        varying vec2 vUv;
+        void main() {
+            float ab = 0.0035 + uGlow * 0.020;
+            float ar = texture2D(uMap, vUv + vec2(ab, 0.0)).a;
+            float ag = texture2D(uMap, vUv).a;
+            float ab2 = texture2D(uMap, vUv - vec2(ab, 0.0)).a;
+            // Base text + chromatic edge split
+            vec3 col = uColor * ag;
+            col.r += (ar - ag) * 0.6;
+            col.b += (ab2 - ag) * 0.6;
+            // Scanline
+            float scan = sin(vUv.y * 60.0) * 0.06 + 0.94;
+            col *= scan;
+            // Red ghost trail (vertical offset, only on glow)
+            if (uGlow > 0.01) {
+                float ghostA = texture2D(uMap, vUv - vec2(0.0, 0.025 * uGlow)).a;
+                col += vec3(1.0, 0.08, 0.18) * ghostA * uGlow * 0.7;
+            }
+            float alpha = max(ar, max(ag, ab2));
+            if (alpha < 0.04) discard;
+            gl_FragColor = vec4(col, alpha * uOpacity);
+        }
+    `;
+
+    // Scratch math
+    const _T = new THREE.Vector3();
+    const _N = new THREE.Vector3();
+    const _B = new THREE.Vector3();
+    const _basisMat = new THREE.Matrix4();
+
+    for (let i = 0; i < particleCount; i++) {
+        const tBase = i / (particleCount - 1);
+        const tJit  = (Math.random() - 0.5) * (1 / particleCount) * 1.4;
+        const t = Math.min(1, Math.max(0, tBase + tJit));
+        const u = 1 - 2 * t;
+        const absU = Math.abs(u);
+
+        const bell = rMax * Math.pow(absU, radialPow);
+        const r    = Math.sqrt(bell * bell + rMin * rMin);
+        const y    = yMax * u;
+        const thetaSpring = t * turns * Math.PI * 2;
+        const onCoil = Math.random() < coilStrength(absU);
+        const rJ  = (Math.random() - 0.5) * (0.02 + r * 0.04);
+        const yJ  = (Math.random() - 0.5) * 0.025;
+        const thJ = (Math.random() - 0.5) * 0.018;
+        const th  = onCoil ? (thetaSpring + thJ) : (Math.random() * Math.PI * 2);
+        const rr  = r + rJ;
+
+        const px = rr * Math.cos(th);
+        const pz = rr * Math.sin(th);
+        const py = y + yJ;
+
+        // Tangent direction (helix or rotational tangent)
+        let Tx, Ty, Tz;
+        if (onCoil) {
+            const dbell = -2 * rMax * radialPow * Math.pow(absU + 1e-6, radialPow - 1) * Math.sign(u);
+            const dr  = (bell * dbell) / r;
+            const dy  = -2 * yMax;
+            const dth = turns * Math.PI * 2;
+            Tx = dr * Math.cos(th) - rr * dth * Math.sin(th);
+            Ty = dy;
+            Tz = dr * Math.sin(th) + rr * dth * Math.cos(th);
+        } else {
+            Tx = -Math.sin(th); Ty = 0; Tz = Math.cos(th);
+        }
+        const tmag = Math.sqrt(Tx*Tx + Ty*Ty + Tz*Tz) || 1;
+        Tx /= tmag; Ty /= tmag; Tz /= tmag;
+
+        // Radial outward normal (from helix axis to particle, in XZ plane)
+        const axisR = Math.sqrt(px*px + pz*pz) || 1;
+        const Nx = px / axisR, Ny = 0, Nz = pz / axisR;
+
+        // Binormal B = T × N (perpendicular to both, gives plane "up")
+        const Bx = Ty * Nz - Tz * Ny;
+        const By = Tz * Nx - Tx * Nz;
+        const Bz = Tx * Ny - Ty * Nx;
+        const bmag = Math.sqrt(Bx*Bx + By*By + Bz*Bz) || 1;
+        const bx = Bx / bmag, by = By / bmag, bz = Bz / bmag;
+
+        // Pick word, font, size — strongly bias toward smaller text near the pinch
+        const word = VOCAB[Math.floor(Math.random() * VOCAB.length)];
+        const font = FONTS[Math.floor(Math.random() * FONTS.length)];
+        const sizeFactor = Math.pow(absU, 0.7) * (0.65 + Math.random() * 0.55);
+        const sizeIdx = Math.min(SIZE_BUCKETS.length - 1, Math.floor(sizeFactor * SIZE_BUCKETS.length));
+        const sizePx = SIZE_BUCKETS[sizeIdx];
+        const tex = makeWordTexture(word, font, sizePx);
+
+        const widthWorld  = tex.w * px2world;
+        const heightWorld = tex.h * px2world;
+
+        const baseOpacity = 0.32 + absU * 0.55 + Math.random() * 0.2;
+        const mat = new THREE.ShaderMaterial({
+            transparent: true,
+            depthWrite: false,
+            side: THREE.DoubleSide,
+            uniforms: {
+                uMap: { value: tex.tex },
+                uColor: { value: new THREE.Color(0xffffff) },
+                uOpacity: { value: baseOpacity },
+                uGlow: { value: 0 },
+            },
+            vertexShader: HOLO_VERT,
+            fragmentShader: HOLO_FRAG,
+        });
+        const mesh = new THREE.Mesh(flatPlaneGeo, mat);
+        // Larger z-jitter + small radial jitter so overlapping words feel
+        // dispersed in depth rather than stacking on the same plane.
+        const layerJitter = (Math.random() - 0.5) * 0.18;
+        const radialNudge = (Math.random() - 0.5) * 0.08;
+        mesh.position.set(
+            px + (-Nx) * radialNudge,
+            py + (Math.random() - 0.5) * 0.04,
+            pz + (-Nz) * radialNudge + layerJitter,
+        );
+
+        // Orient: word's reading direction (local +X) points INWARD (toward axis)
+        // so the END of the text faces the central axis. Local +Y stays world up.
+        // Local +Z = +X × +Y, the in-plane normal direction.
+        const inwardX = -Nx, inwardY = 0, inwardZ = -Nz;     // text reading direction
+        const upX = 0, upY = 1, upZ = 0;
+        // Z = X × Y
+        const zX = inwardY * upZ - inwardZ * upY;
+        const zY = inwardZ * upX - inwardX * upZ;
+        const zZ = inwardX * upY - inwardY * upX;
+        _T.set(inwardX, inwardY, inwardZ);
+        _B.set(upX, upY, upZ);
+        _N.set(zX, zY, zZ).normalize();
+        _basisMat.makeBasis(_T, _B, _N);
+        mesh.quaternion.setFromRotationMatrix(_basisMat);
+        mesh.scale.set(widthWorld, heightWorld, 1);
+        vortex.add(mesh);
+
+        particles.push({
+            sprite: mesh,
+            basePos: mesh.position.clone(),
+            baseScale: new THREE.Vector3(widthWorld, heightWorld, 1),
+            baseOpacity: baseOpacity,
+            glow: 0,
+            targetGlow: 0,
+        });
+    }
+
+    // ─── Cascade: a few slow sparks spawn from the two ends of the spiral
+    // and creep toward the centre. Connection threads sprout from the corners
+    // of glowing letters, like mycelial filaments.
+    const SPARK_TRAIL_LEN = 5;
+    const MAX_SPARKS = 8;
+    const SPAWN_INTERVAL_MIN = 0.7;
+    const SPAWN_INTERVAL_MAX = 2.6;
+    const FILAMENT_SETTLE_TIME = 0.55;   // seconds to fully extend (inertia / viscosity)
+    let sparks = [];
+    let nextSpawnIn = 0.4;
+
+    function spawnSpark() {
+        const fromTop = Math.random() < 0.5;
+        const center = Math.floor(particleCount / 2);
+        const targetJitter = Math.floor((Math.random() - 0.5) * particleCount * 0.08);
+        sparks.push({
+            position: fromTop ? 0 : particleCount - 1,
+            direction: fromTop ? +1 : -1,
+            target: center + targetJitter,
+            timer: 0,
+            trail: [],
+            stepSize: 1 + Math.floor(Math.random() * 2),     // 1..2
+            // Wide random range so different sparks crawl at very different speeds
+            stepInterval: 0.22 + Math.random() * 0.85,       // 0.22..1.07s
+            dead: false,
+        });
+    }
+
+    function pickTwoCorners() {
+        const a = Math.floor(Math.random() * 4);
+        let b = Math.floor(Math.random() * 4);
+        while (b === a) b = Math.floor(Math.random() * 4);
+        return [a, b];
+    }
+
+    // ─── Pre-compute each particle's 4 corners in vortex-local space ──
+    // Corners never move (mesh fixed in vortex local frame), so we cache them
+    // and just read per frame. Order: TL, TR, BR, BL (signs +/− on x,y).
+    const cornerScratch = new THREE.Vector3();
+    function precomputeCorners(particle) {
+        const halfW = particle.baseScale.x / 2;
+        const halfH = particle.baseScale.y / 2;
+        const signs = [[-1, +1], [+1, +1], [+1, -1], [-1, -1]];
+        const out = [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()];
+        for (let c = 0; c < 4; c++) {
+            out[c].set(signs[c][0] * halfW, signs[c][1] * halfH, 0);
+            out[c].applyQuaternion(particle.sprite.quaternion);
+            out[c].add(particle.basePos);
+        }
+        return out;
+    }
+    for (const p of particles) p.corners = precomputeCorners(p);
+
+    // ─── Connection-thread capacity ──
+    // 2 threads per connection (top corners + bottom corners), 8 segs each.
+    const CURVE_SEGS = 8;
+    const THREADS_PER_CONN = 2;
+    const MAX_CONNS = MAX_SPARKS * (SPARK_TRAIL_LEN - 1);
+    const MAX_LINE_SEGMENTS = MAX_CONNS * THREADS_PER_CONN * CURVE_SEGS;
+    const linePosArr = new Float32Array(MAX_LINE_SEGMENTS * 2 * 3);
+    const lineColArr = new Float32Array(MAX_LINE_SEGMENTS * 2 * 3);
+    const lineGeo = new THREE.BufferGeometry();
+    lineGeo.setAttribute('position', new THREE.BufferAttribute(linePosArr, 3).setUsage(THREE.DynamicDrawUsage));
+    lineGeo.setAttribute('color',    new THREE.BufferAttribute(lineColArr, 3).setUsage(THREE.DynamicDrawUsage));
+    lineGeo.setDrawRange(0, 0);
+    const lineMat = new THREE.LineBasicMaterial({
+        vertexColors: true,
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+    });
+    const trailLine = new THREE.LineSegments(lineGeo, lineMat);
+    vortex.add(trailLine);
+
+    // Reusable scratch
+    const _curveA = new THREE.Vector3();
+    const _curveB = new THREE.Vector3();
+    const _curveMid = new THREE.Vector3();
+    const _curveAB = new THREE.Vector3();
+    const _curvePerp = new THREE.Vector3();
+    const _curveUp = new THREE.Vector3(0, 1, 0);
+    const _curvePrev = new THREE.Vector3();
+    const _curveCur = new THREE.Vector3();
+
+    // Draw a thin curved thread from corner A → corner B.
+    // `bowFactor` is a stable per-filament value (no per-frame flicker), and
+    // `seed` deterministically jitters vertices (so the curve doesn't wiggle).
+    function drawThread(ax, ay, az, bx, by, bz, vIdxStart, alpha, bowFactor, seed) {
+        _curveA.set(ax, ay, az);
+        _curveB.set(bx, by, bz);
+        _curveAB.subVectors(_curveB, _curveA);
+        _curvePerp.crossVectors(_curveAB, _curveUp);
+        if (_curvePerp.lengthSq() < 1e-6) _curvePerp.set(1, 0, 0);
+        else _curvePerp.normalize();
+        const len = _curveAB.length();
+        const offset = bowFactor * len;
+        _curveMid.addVectors(_curveA, _curveB).multiplyScalar(0.5).addScaledVector(_curvePerp, offset);
+
+        // Deterministic noise from seed → stable jitter pattern
+        const hash = (n) => {
+            const x = Math.sin(n * 12.9898 + seed * 78.233) * 43758.5453;
+            return (x - Math.floor(x)) - 0.5;
+        };
+
+        let vIdx = vIdxStart;
+        _curvePrev.copy(_curveA);
+        const segs = CURVE_SEGS;
+        const rC = alpha * 1.0, gC = alpha * 0.16, bC = alpha * 0.24;
+        for (let s = 1; s <= segs; s++) {
+            const u = s / segs;
+            const om = 1 - u;
+            _curveCur.set(0, 0, 0)
+                .addScaledVector(_curveA, om * om)
+                .addScaledVector(_curveMid, 2 * om * u)
+                .addScaledVector(_curveB, u * u);
+            // Tiny stable mycelial jitter — biggest near middle, tiny at ends
+            const jw = Math.sin(u * Math.PI) * 0.012;
+            _curveCur.x += hash(s * 1.0) * jw;
+            _curveCur.y += hash(s * 2.7) * jw;
+            _curveCur.z += hash(s * 5.1) * jw;
+            linePosArr[vIdx * 3]         = _curvePrev.x;
+            linePosArr[vIdx * 3 + 1]     = _curvePrev.y;
+            linePosArr[vIdx * 3 + 2]     = _curvePrev.z;
+            linePosArr[(vIdx + 1) * 3]     = _curveCur.x;
+            linePosArr[(vIdx + 1) * 3 + 1] = _curveCur.y;
+            linePosArr[(vIdx + 1) * 3 + 2] = _curveCur.z;
+            lineColArr[vIdx * 3]         = rC;
+            lineColArr[vIdx * 3 + 1]     = gC;
+            lineColArr[vIdx * 3 + 2]     = bC;
+            lineColArr[(vIdx + 1) * 3]     = rC;
+            lineColArr[(vIdx + 1) * 3 + 1] = gC;
+            lineColArr[(vIdx + 1) * 3 + 2] = bC;
+            vIdx += 2;
+            _curvePrev.copy(_curveCur);
+        }
+        return vIdx;
+    }
+
+    const _stickyA = new THREE.Vector3();
+
+    // Find the corner of `bCorners` closest to point `aPt` — gives the "filament jumps to nearest edge" feel.
+    function nearestCornerIdx(aPt, bCorners) {
+        let best = 0, bestD = Infinity;
+        for (let i = 0; i < 4; i++) {
+            const d = aPt.distanceToSquared(bCorners[i]);
+            if (d < bestD) { bestD = d; best = i; }
+        }
+        return best;
+    }
+
+    // Faint outer haze (chalk dust in the void)
+    const haloCount = 350;
+    const haloPos = new Float32Array(haloCount * 3);
+    for (let i = 0; i < haloCount; i++) {
+        haloPos[i*3]     = (Math.random() - 0.5) * 22;
+        haloPos[i*3 + 1] = (Math.random() - 0.5) * 12;
+        haloPos[i*3 + 2] = (Math.random() - 0.5) * 14 - 4;
+    }
+    const haloGeo = new THREE.BufferGeometry();
+    haloGeo.setAttribute('position', new THREE.BufferAttribute(haloPos, 3));
+    const haloMat = new THREE.PointsMaterial({ size: 0.012, color: 0xffffff, transparent: true, opacity: 0.25, sizeAttenuation: true });
+    const halo = new THREE.Points(haloGeo, haloMat);
+    scene.add(halo);
+
+    let isLightMode = false;
+    const _baseColor = new THREE.Color(0xffffff);
+    const _redColor  = new THREE.Color(0xdc143c);
+    const _tmpColor  = new THREE.Color();
+
+    function applyTheme() {
+        const bgHex = isLightMode ? 0xf4f4f4 : 0x050505;
+        renderer.setClearColor(bgHex, 1);
+        scene.fog.color.setHex(bgHex);
+        _baseColor.setHex(isLightMode ? 0x141416 : 0xffffff);
+        haloMat.color.setHex(isLightMode ? 0x222222 : 0xffffff);
+        haloMat.opacity   = isLightMode ? 0.20 : 0.25;
+        haloMat.blending  = isLightMode ? THREE.NormalBlending : THREE.AdditiveBlending;
+        haloMat.needsUpdate = true;
+        lineMat.blending  = isLightMode ? THREE.NormalBlending : THREE.AdditiveBlending;
+        lineMat.needsUpdate = true;
+    }
+
+    themeBtn.onclick = () => {
+        isLightMode = !isLightMode;
+        container.classList.toggle('is-light', isLightMode);
+        container.classList.toggle('is-dark', !isLightMode);
+        applyTheme();
+    };
+
+    infoBtn.onclick = () => {
+        container.classList.toggle('info-active');
+    };
+
+    let rafId;
+    let lastTime = performance.now();
+    function animate(now) {
+        rafId = requestAnimationFrame(animate);
+        const dt = Math.min((now - lastTime) / 1000, 0.05);
+        lastTime = now;
+        // Co-rotate the entire vortex slowly around Y
+        vortex.rotation.y += dt * 0.16;
+
+        // Reset all targets
+        for (let i = 0; i < particles.length; i++) particles[i].targetGlow = 0;
+        const trailGlows = [1.0, 0.6, 0.3, 0.1];
+
+        // Random spawns: every nextSpawnIn seconds add a new spark from a random end
+        nextSpawnIn -= dt;
+        while (nextSpawnIn <= 0 && sparks.length < MAX_SPARKS) {
+            spawnSpark();
+            nextSpawnIn += SPAWN_INTERVAL_MIN + Math.random() * (SPAWN_INTERVAL_MAX - SPAWN_INTERVAL_MIN);
+        }
+
+        // Advance every spark toward its target (the spiral centre); assign trail glows.
+        for (const spark of sparks) {
+            spark.timer += dt;
+            while (spark.timer >= spark.stepInterval) {
+                spark.timer -= spark.stepInterval;
+                spark.position += spark.direction * spark.stepSize;
+                if ((spark.direction > 0 && spark.position >= spark.target) ||
+                    (spark.direction < 0 && spark.position <= spark.target)) {
+                    spark.position = spark.target;
+                    spark.dead = true;
+                }
+                spark.trail.unshift({
+                    idx: spark.position,
+                    picks: pickTwoCorners(),
+                    bow: (Math.random() - 0.5) * 0.55,   // stable per item — no per-frame flicker
+                    age: 0,                                // grows from 0 → settle (line stretches in)
+                });
+                while (spark.trail.length > SPARK_TRAIL_LEN) spark.trail.pop();
+                if (spark.dead) break;
+            }
+            // Age all trail items
+            for (const item of spark.trail) item.age += dt;
+            for (let k = 0; k < spark.trail.length; k++) {
+                const item = spark.trail[k];
+                if (item.idx >= 0 && item.idx < particleCount) {
+                    const g = trailGlows[k] || 0;
+                    if (g > particles[item.idx].targetGlow) particles[item.idx].targetGlow = g;
+                }
+            }
+        }
+        // Reap dead sparks (their trail glows linger via the per-particle lerp)
+        sparks = sparks.filter(s => !s.dead);
+
+        // Per-particle update: lerp glow, derive color & scale & opacity
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            p.glow += (p.targetGlow - p.glow) * Math.min(1, dt * 6.5);
+            const g = p.glow;
+            // Color: lerp white (or dark in light mode) → crimson
+            _tmpColor.copy(_baseColor).lerp(_redColor, g);
+            p.sprite.material.uniforms.uColor.value.copy(_tmpColor);
+            // Opacity: stronger when glowing; bump for light mode legibility
+            const opBoost = isLightMode ? 1.45 : 1.0;
+            p.sprite.material.uniforms.uOpacity.value =
+                Math.min(1, opBoost * (p.baseOpacity * (1 - g * 0.2) + g * 0.7));
+            p.sprite.material.uniforms.uGlow.value = g;
+            // Scale: subtle pulse on glow
+            const sc = 1 + g * 0.6;
+            p.sprite.scale.set(p.baseScale.x * sc, p.baseScale.y * sc, 1);
+        }
+
+        // ── Connection threads: from corners of A (newer) to corners of B (older).
+        // The newer endpoint stretches in over `FILAMENT_SETTLE_TIME` seconds,
+        // creating a viscous/sticky pull-out from the older corner — inertia.
+        let vIdx = 0;
+        const segAlphas = [0.95, 0.6, 0.32, 0.12];
+        for (const spark of sparks) {
+            for (let k = 0; k + 1 < spark.trail.length; k++) {
+                const itemA = spark.trail[k];     // newer
+                const itemB = spark.trail[k+1];   // older
+                const pa = particles[itemA.idx];
+                const pb = particles[itemB.idx];
+                if (!pa || !pb) continue;
+                const alpha = segAlphas[k] || 0;
+                if (alpha <= 0) continue;
+                // Smooth ease-out for the stretch; older filaments are fully extended (lerp=1)
+                const settleProgress = Math.min(1, itemA.age / FILAMENT_SETTLE_TIME);
+                const lerpT = 1 - Math.pow(1 - settleProgress, 2.4);
+                const bow1 = (itemA.bow + itemB.bow) * 0.5;
+                const bow2 = bow1 * -0.85;        // second filament bows opposite
+
+                // Filament 1
+                const a1Real = pa.corners[itemA.picks[0]];
+                const b1Real = pb.corners[itemB.picks[0]];
+                _stickyA.copy(b1Real).lerp(a1Real, lerpT);
+                vIdx = drawThread(_stickyA.x, _stickyA.y, _stickyA.z, b1Real.x, b1Real.y, b1Real.z, vIdx, alpha, bow1, itemA.idx + 0.13);
+
+                // Filament 2
+                const a2Real = pa.corners[itemA.picks[1]];
+                const b2Real = pb.corners[itemB.picks[1]];
+                _stickyA.copy(b2Real).lerp(a2Real, lerpT);
+                vIdx = drawThread(_stickyA.x, _stickyA.y, _stickyA.z, b2Real.x, b2Real.y, b2Real.z, vIdx, alpha * 0.85, bow2, itemA.idx + 0.71);
+            }
+        }
+        lineGeo.attributes.position.needsUpdate = true;
+        lineGeo.attributes.color.needsUpdate = true;
+        lineGeo.setDrawRange(0, vIdx);
+
+        renderer.render(scene, camera);
+    }
+    rafId = requestAnimationFrame(animate);
+
+    function onResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+    window.addEventListener('resize', onResize);
+
+    backBtn.onclick = () => {
+        container.style.opacity = '0';
+        cancelAnimationFrame(rafId);
+        window.removeEventListener('resize', onResize);
+        setTimeout(() => {
+            container.remove();
+            renderer.dispose();
+            for (const p of particles) p.sprite.material.dispose();
+            for (const v of texCache.values()) v.tex.dispose();
+            flatPlaneGeo.dispose();
+            lineGeo.dispose(); lineMat.dispose();
+            haloGeo.dispose(); haloMat.dispose();
+        }, 600);
+    };
+
+    requestAnimationFrame(() => container.style.opacity = '1');
+}

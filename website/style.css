@@ -41,12 +41,12 @@ body.is-loading .grid-cell {
     pointer-events: none;
 }
 
-/* ─── GRID: 4×3 ───────────────────────────────────────── */
+/* ─── GRID: 3×2 ───────────────────────────────────────── */
 .grid-system {
     display: grid;
-    grid-template-columns: repeat(4, 335px);
-    grid-template-rows: repeat(3, 340px);
-    gap: 2rem 2.5rem;
+    grid-template-columns: repeat(3, 380px);
+    grid-template-rows: repeat(2, 420px);
+    gap: 2.5rem 3rem;
     width: 100%;
     justify-content: center;
 }
@@ -58,7 +58,7 @@ body.is-loading .grid-cell {
     overflow: hidden;
     cursor: zoom-in;
     background: transparent;
-    max-height: 340px;
+    max-height: 420px;
     will-change: transform, font-size, filter, opacity;
     transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
 }
@@ -308,13 +308,15 @@ body.is-loading .grid-cell {
     height: 100vh;
     background-color: #ffffff; /* White brutalist bg */
     z-index: 2000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8 Column Material Grid Reference */
+    grid-template-rows: 100%;
+    gap: 2.5rem; /* Wider gaps for architectural clarity */
     overflow: hidden;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
+    padding: 0 3.5rem; /* Horizontal margins only. Vertical is moved to content to avoid clipping */
 }
 
 #physics-subpage.is-visible {
@@ -332,12 +334,274 @@ body.is-loading .grid-cell {
     pointer-events: none;
 }
 
+.physics-sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    pointer-events: none; /* Let clicks pass through to the 3D model background */
+    padding: 3.5rem 0; /* Restoring vertical content safe-area */
+    opacity: 0; /* Hidden by default per latest request */
+    transition: opacity 0.5s ease;
+}
+
+#physics-subpage.info-active .physics-sidebar,
+#ideology-subpage.info-active .physics-sidebar {
+    opacity: 1; /* Visible when eye icon is clicked */
+}
+
+.physics-sidebar.left {
+    grid-column: 1 / 3; /* Spans Columns 1 and 2 */
+    justify-content: flex-start; 
+    align-items: flex-start;
+    padding-left: 150px; /* Aligns box start with Back Button's right edge */
+}
+
+.physics-sidebar.right {
+    grid-column: 7 / 9; /* Spans Columns 7 and 8 */
+    justify-content: flex-start; 
+    align-items: flex-end;
+    padding-right: 150px; /* Symmetrical offset from the right edge controls */
+}
+
+/* Faint Box System from photo */
+.faint-text-box {
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Ensures both L/R sidebars end at the same baseline */
+}
+
+/* Asymmetrical Sidebar Layouts: Left (2 boxes) vs Right (1 box) */
+#physics-subpage.info-active .faint-text-box,
+#ideology-subpage.info-active .faint-text-box {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Hide Zoom controls when Info Mode is active to prevent noise */
+#physics-subpage.info-active .zoom-slider-container,
+#ideology-subpage.info-active .zoom-slider-container,
+#prison-subpage.info-active .zoom-slider-container,
+#conscience-subpage.info-active .zoom-slider-container {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* ─── CONSCIENCE: Spirit Level Overlay ─── */
+#conscience-subpage .level-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    max-width: 880px;
+    pointer-events: none;
+    z-index: 10;
+    font-family: 'JetBrains Mono', monospace;
+    color: rgba(255,255,255,0.85);
+}
+#conscience-subpage.is-light .level-overlay { color: #111; }
+
+#conscience-subpage .level-overlay .level-rule {
+    position: absolute;
+    top: -210px;
+    left: 0; right: 0;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.18;
+}
+#conscience-subpage .level-overlay .level-label {
+    position: absolute;
+    top: -240px;
+    font-size: 0.72rem;
+    letter-spacing: 0.4em;
+    font-weight: 600;
+    opacity: 0.85;
+}
+#conscience-subpage .level-overlay .level-label-left  { left: 0; }
+#conscience-subpage .level-overlay .level-label-right { right: 0; }
+#conscience-subpage .level-overlay .level-tick {
+    position: absolute;
+    top: -222px;
+    width: 1px;
+    height: 22px;
+    background: #dc143c;
+    opacity: 0.95;
+}
+#conscience-subpage .level-overlay .level-tick-left  { left: calc(50% - 78px); }
+#conscience-subpage .level-overlay .level-tick-right { left: calc(50% + 78px); }
+#conscience-subpage .level-overlay .level-center-label {
+    position: absolute;
+    top: 168px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.72rem;
+    letter-spacing: 0.45em;
+    font-weight: 700;
+    color: #dc143c;
+}
+#conscience-subpage .level-overlay .level-readout {
+    position: absolute;
+    top: 198px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.6rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+#conscience-subpage .level-overlay .level-readout-unit {
+    opacity: 0.45;
+    margin-left: 4px;
+    font-size: 1.6rem;
+    vertical-align: top;
+}
+#conscience-subpage .level-overlay .level-meta {
+    position: absolute;
+    top: 258px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    font-weight: 500;
+    opacity: 0.5;
+    white-space: nowrap;
+}
+
+/* DARK MODE INVERSION for Conscience Subpage */
+#conscience-subpage.is-dark .faint-text-box .doc-label { color: rgba(255, 255, 255, 0.5); }
+#conscience-subpage.is-dark .faint-text-box .doc-value { color: rgba(255, 255, 255, 0.95); }
+#conscience-subpage.is-dark .faint-text-box .doc-divider { border-bottom-color: rgba(255, 255, 255, 0.2); }
+#conscience-subpage.is-dark .faint-text-box .text-content { color: rgba(255, 255, 255, 0.85); }
+
+#conscience-subpage.is-light { background-color: #f4f4f4; }
+#conscience-subpage.is-dark { background-color: #050505; }
+
+#conscience-subpage.info-active .physics-sidebar {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#conscience-subpage .physics-sidebar {
+    pointer-events: none;
+    opacity: 0;
+    padding: 3.5rem 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    transition: opacity 0.5s ease;
+}
+
+/* LEFT SIDEBAR Positioning */
+.physics-sidebar.left .faint-text-box:nth-child(1) {
+    height: 18vh;
+    margin-top: 10vh; /* Restored header position */
+}
+
+.physics-sidebar.left .faint-text-box:nth-child(2) {
+    height: 52vh;
+    margin-top: 5vh; /* Gap below header */
+}
+
+/* RIGHT SIDEBAR Positioning (Single Box at Bottom) */
+.physics-sidebar.right .faint-text-box:nth-child(1) {
+    height: 52vh;
+    margin-top: 33vh; /* Aligned with Left Bottom Box (10+18+5) */
+}
+
+/* Aesthetic Overrides to match Landing Page Specimen */
+.faint-text-box .doc-header {
+    margin-bottom: 24px; /* More breathing room for larger text */
+    letter-spacing: 0.05em;
+}
+
+.faint-text-box .doc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.faint-text-box .doc-label {
+    color: rgba(17, 17, 17, 0.6); /* Shifted toward Black for clarity */
+    font-size: 11px; /* Increased size */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.faint-text-box .doc-value {
+    color: rgba(17, 17, 17, 0.95); /* Solid Black authority */
+    font-size: 13px; /* Increased size for legibility */
+    letter-spacing: 0.02em;
+    text-align: right;
+}
+
+.faint-text-box .doc-divider {
+    border-bottom: 0.5px solid rgba(17, 17, 17, 0.2); /* Slightly firmer divider */
+    margin: 12px 0;
+    width: 100%;
+}
+
+.faint-text-box .text-content {
+    font-size: 14px; /* Increased paragraph size */
+    color: rgba(17, 17, 17, 0.85); /* Solid Black body text */
+    line-height: 1.85;
+    letter-spacing: 0.03em;
+    word-spacing: 0.05em; 
+    text-align: justify;
+}
+
+/* Dark Mode Inversions for Ideology Page */
+#ideology-subpage.is-dark .faint-text-box .doc-label { color: rgba(255, 255, 255, 0.6); }
+#ideology-subpage.is-dark .faint-text-box .doc-value { color: rgba(255, 255, 255, 0.95); }
+#ideology-subpage.is-dark .faint-text-box .doc-divider { border-bottom-color: rgba(255, 255, 255, 0.2); }
+#ideology-subpage.is-dark .faint-text-box .text-content { color: rgba(255, 255, 255, 0.85); }
+
+/* DARK MODE INVERSION for Sidebar Content */
+#physics-subpage.is-dark .faint-text-box .doc-label {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#physics-subpage.is-dark .faint-text-box .doc-value {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+#physics-subpage.is-dark .faint-text-box .doc-divider {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+
+#physics-subpage.is-dark .faint-text-box .text-content {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* DARK MODE INVERSION for Prison Subpage */
+#prison-subpage.is-dark .faint-text-box .doc-label { color: rgba(255, 255, 255, 0.5); }
+#prison-subpage.is-dark .faint-text-box .doc-value { color: rgba(255, 255, 255, 0.95); }
+#prison-subpage.is-dark .faint-text-box .doc-divider { border-bottom-color: rgba(255, 255, 255, 0.2); }
+#prison-subpage.is-dark .faint-text-box .text-content { color: rgba(255, 255, 255, 0.85); }
+
 .physics-content-wrapper {
+    grid-column: span 4; /* Centered in the middle 4 columns */
     position: relative;
     z-index: 2;
-    width: 80%;
-    max-width: 1000px;
-    perspective: 1500px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Let 3D canvas handle clicks */
+    padding: 3.5rem 0; /* Safe area for any internal text overlays */
 }
 
 .physics-text-container {
@@ -361,7 +625,7 @@ body.is-loading .grid-cell {
 .tension-word {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 900;
-    color: #FF0000;
+    color: #dc143c;
     cursor: grab;
     display: inline-block;
     position: relative;
@@ -375,58 +639,210 @@ body.is-loading .grid-cell {
 
 .physics-back-btn {
     position: fixed;
-    top: 2rem;
-    left: 2rem;
+    top: 3.5rem;
+    left: calc(3.5rem + ( (100% - 24.55rem) / 8 ) / 2); /* Normalized center of Column 1 */
+    transform: translate(-50%, 0);
     z-index: 3000;
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #cccccc;
-    background: transparent;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
     border: none;
     cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    opacity: 0.5;
-    transition: opacity 0.3s, text-shadow 0.3s, color 0.3s;
+    border-radius: 2px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .physics-back-btn:hover {
-    opacity: 1;
-    text-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
 }
 
-.theme-toggle-btn {
+.physics-back-btn.is-light {
+    background-color: #111111;
+}
+
+/* Theme Toggle Slider */
+.theme-toggle-wrapper {
     position: fixed;
-    top: 2rem;
-    right: 2rem;
+    top: 3.5rem;
+    right: calc(3.5rem + ( (100% - 24.55rem) / 8 ) / 2); /* Normalized center of Column 8 */
+    transform: translate(50%, 0);
     z-index: 3000;
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #cccccc;
+    width: 50px;
+    height: 24px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    transition: border-color 0.3s;
+}
+
+.theme-toggle-wrapper .slider-knob {
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), background-color 0.3s;
+}
+
+.theme-toggle-wrapper.is-light {
+    border-color: #111111;
+}
+
+.theme-toggle-wrapper.is-light .slider-knob {
+    background-color: #111111;
+    transform: translateX(26px);
+}
+
+/* Info Icon - Synchronized with Theme Toggle pill shape */
+.info-icon-btn {
+    position: fixed;
+    top: 6.5rem; /* Precise vertical placement below theme toggle - Raised margin for correlation */
+    right: calc(3.5rem + ( (100% - 24.55rem) / 8 ) / 2);
+    transform: translate(50%, 0);
+    z-index: 3000;
+    width: 50px;
+    height: 24px;
+    cursor: pointer;
+    opacity: 0.8;
+    border: 1px solid #ffffff; /* White border in dark mode (default container) */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info-icon-btn.is-light {
+    border-color: #111111;
+}
+
+.info-icon-btn svg {
+    width: 18px; /* Slightly refined eye logo */
+    height: 18px;
+    stroke: #ffffff;
+    fill: none;
+    stroke-width: 2.5;
+    transition: stroke 0.3s, filter 0.3s;
+}
+
+.info-icon-btn.is-light svg {
+    stroke: #111111;
+}
+
+/* Active State Color Shift: Crimson Branding */
+.info-icon-btn.active {
+    border-color: #dc143c;
+    opacity: 1;
+}
+
+.info-icon-btn.active svg {
+    stroke: #dc143c;
+    filter: drop-shadow(0 0 5px rgba(220, 20, 60, 0.4));
+}
+
+/* Zoom Slider Positioning matching photo */
+.zoom-slider-container {
+    position: fixed;
+    right: calc(3.5rem + ( (100% - 24.55rem) / 8 ) / 2);
+    top: 50%; /* Precise vertical center of the entire page */
+    transform: translate(50%, -50%); 
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.zoom-btn {
     background: transparent;
     border: none;
+    color: #ffffff;
+    font-size: 1.4rem;
     cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    opacity: 0.5;
-    transition: opacity 0.3s, text-shadow 0.3s, color 0.3s;
+    transition: color 0.3s;
+    font-weight: 300;
+    padding: 0;
 }
 
-.theme-toggle-btn:hover {
-    opacity: 1;
-    text-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+.zoom-track {
+    width: 1px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    border-radius: 1px;
 }
 
-.physics-back-btn.is-light,
-.theme-toggle-btn.is-light {
+.zoom-thumb {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    left: -4.5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: grab;
+    transition: background-color 0.3s;
+}
+
+.zoom-thumb:active {
+    cursor: grabbing;
+}
+
+.zoom-slider-container.is-light .zoom-btn { color: #111111; }
+.zoom-slider-container.is-light .zoom-track { background-color: rgba(17, 17, 17, 0.4); }
+.zoom-slider-container.is-light .zoom-thumb { background-color: #111111; }
+
+/* Navigation Guide overlay: Centered in Column 8 (Right End) */
+.overlay-text-guide {
+    position: fixed;
+    bottom: 4.5rem; /* Raised for grid spacing alignment */
+    right: calc(3.5rem + ( (100% - 7rem - 17.5rem) / 8 ) / 2); /* Exact center of Column 8 */
+    transform: translateX(50%);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 0.15em;
+    color: #ffffff;
+    opacity: 0.6;
+    z-index: 50;
+    pointer-events: none;
+    text-align: center;
+    transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.overlay-text-guide.is-light {
     color: #111111;
 }
 
-.physics-back-btn.is-light:hover,
-.theme-toggle-btn.is-light:hover {
-    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+/* Hide navigation guide during data-disclosure mode (Info Mode) */
+#physics-subpage.info-active .overlay-text-guide,
+#ideology-subpage.info-active .overlay-text-guide,
+#prison-subpage.info-active .overlay-text-guide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.overlay-text-bottom-left {
+    position: fixed;
+    bottom: 3.5rem;
+    left: 3rem;
+    z-index: 3000;
+    color: #f24273; /* Pinkish-crimson matching the screenshot */
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1.35;
+    pointer-events: none;
+    letter-spacing: -0.01em;
+    opacity: 0.85;
+}
+
+.overlay-text-bottom-left span {
+    display: block;
 }
 
 /* ─── MODEL LOADING ────────────────────────────────────── */
@@ -440,7 +856,7 @@ body.is-loading .grid-cell {
     font-size: 0.9rem;
     color: #666;
     letter-spacing: 0.15em;
-    z-index: 10;
+    z-index: 1000; /* Ensure loading text is on top of everything */
     animation: loading-pulse 1.5s ease-in-out infinite;
 }
 
@@ -449,21 +865,116 @@ body.is-loading .grid-cell {
     50% { opacity: 1; }
 }
 
+/* ─── GRID DEBUG OVERLAY ───────────────────────────────── */
+.grid-debug-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8 Column System Reference */
+    gap: 2.5rem; 
+    padding: 0 3.5rem; /* Perfectly synchronized with #physics-subpage margins */
+    opacity: 0.15;
+}
+
+.grid-debug-column {
+    background-color: #f24273; /* Pink from Material Design example */
+    height: 100%;
+}
+
+/* ─── LAYOUT INSPECTOR ───────────────────────────────── */
+.layout-inspector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: none;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.layout-marker {
+    position: absolute;
+    background-color: #00e5ff; /* Cyan for inspectors */
+    opacity: 0.6;
+}
+
+.layout-label {
+    position: absolute;
+    background-color: #00e5ff;
+    color: #000;
+    font-size: 10px;
+    padding: 2px 4px;
+    white-space: nowrap;
+    z-index: 101;
+    font-weight: 700;
+}
+
+/* Vertical Padding Line */
+.marker-padding-top { top: 0; left: 50%; width: 1px; height: 3.5rem; transform: translateX(-50%); }
+.label-padding-top { top: 1.25rem; left: 50%; transform: translateX(-50%); }
+
+.marker-padding-bottom { bottom: 0; left: 50%; width: 1px; height: 3.5rem; transform: translateX(-50%); }
+.label-padding-bottom { bottom: 1.25rem; left: 50%; transform: translateX(-50%); }
+
+/* Sidebar Width Indicators (Now spanning 2 columns) */
+.marker-sidebar-l { top: 50%; left: 3.5rem; width: calc(25% - 1.25rem); height: 1px; }
+.label-sidebar-l { top: calc(50% + 5px); left: calc(3.5rem + 12.5%); transform: translateX(-50%); }
+
+.marker-sidebar-r { top: 50%; right: 3.5rem; width: calc(25% - 1.25rem); height: 1px; }
+.label-sidebar-r { top: calc(50% + 5px); right: calc(3.5rem + 12.5%); transform: translateX(50%); }
+
+/* Padding Left/Right */
+.marker-padding-l { top: 50%; left: 0; width: 3.5rem; height: 1px; }
+.label-padding-l { top: calc(50% - 20px); left: 0.5rem; }
+
+/* Grid Toggle Utility */
+.is-hidden {
+    display: none !important;
+}
+
+.grid-toggle-btn {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 4000;
+    padding: 2px 6px;
+    background: #dc143c; /* Pink following grid debug color */
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.grid-toggle-btn:hover {
+    opacity: 1;
+}
+
+.grid-toggle-btn.is-light-mode {
+    background: #111111;
+    color: white;
+}
+
 #physics-subpage canvas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    cursor: grab;
-}
-
-#physics-subpage canvas:active {
-    cursor: grabbing;
+    z-index: 0; /* Base layer behind everything */
+    pointer-events: auto; /* Allow interactions for orbit controls */
 }
 
 /* ─── RESPONSIVE ───────────────────────────────────────── */
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
     .grid-system {
         grid-template-columns: repeat(2, 1fr);
     }
