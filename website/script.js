@@ -801,6 +801,8 @@ function setupCellInteractions(cells) {
             else if (id === 2) openIdeologySubpage(cell);
             else if (id === 3) openPrisonSubpage(cell);
             else if (id === 4) openConscienceSubpage(cell);
+            else if (id === 5) openResistanceSubpage(cell);
+            else if (id === 6) openNotThroughMeSubpage(cell);
         });
     });
 }
@@ -1777,7 +1779,7 @@ function openPhysicsSubpage(clickedCell) {
 function openIdeologySubpage(clickedCell) {
     const container = document.createElement('div');
     container.id = 'ideology-subpage';
-    container.className = 'is-dark'; // default to dark
+    container.className = 'is-light'; // default to light
     container.style.cssText = `
         position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
         z-index: 2000; opacity: 0; transition: opacity 0.6s ease; overflow: hidden;
@@ -1786,21 +1788,21 @@ function openIdeologySubpage(clickedCell) {
 
     // 4. UI Controls (Back, Theme, Info, Zoom)
     const backBtn = document.createElement('button');
-    backBtn.className = 'physics-back-btn';
+    backBtn.className = 'physics-back-btn is-light';
     container.appendChild(backBtn);
 
     const themeBtn = document.createElement('div');
-    themeBtn.className = 'theme-toggle-wrapper';
+    themeBtn.className = 'theme-toggle-wrapper is-light';
     themeBtn.innerHTML = '<div class="slider-knob"></div>';
     container.appendChild(themeBtn);
 
     const infoBtn = document.createElement('div');
-    infoBtn.className = 'info-icon-btn';
+    infoBtn.className = 'info-icon-btn is-light';
     infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
     container.appendChild(infoBtn);
 
     const zoomContainer = document.createElement('div');
-    zoomContainer.className = 'zoom-slider-container';
+    zoomContainer.className = 'zoom-slider-container is-light';
     zoomContainer.innerHTML = `
         <button class="zoom-btn zoom-in">＋</button>
         <div class="zoom-track"><div class="zoom-thumb"></div></div>
@@ -1810,7 +1812,7 @@ function openIdeologySubpage(clickedCell) {
 
     // Navigation Guide
     const guideText = document.createElement('div');
-    guideText.className = 'overlay-text-guide';
+    guideText.className = 'overlay-text-guide is-light';
     guideText.innerHTML = 'SCROLL TO ZOOM<br>CLICK & MOVE TO ROTATE';
     container.appendChild(guideText);
 
@@ -2252,7 +2254,7 @@ function openIdeologySubpage(clickedCell) {
         window.addEventListener('resize', onRS);
 
         // ── UI Interactive Logic ──
-        let isLightMode = false;
+        let isLightMode = true;
 
         themeBtn.onclick = () => {
             isLightMode = !isLightMode;
@@ -2360,7 +2362,7 @@ function openIdeologySubpage(clickedCell) {
 function openPrisonSubpage(clickedCell) {
     const container = document.createElement('div');
     container.id = 'prison-subpage';
-    container.className = 'is-dark'; // default to dark
+    container.className = 'is-light'; // default to light
     container.style.cssText = `
         position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
         z-index: 2000; opacity: 0; transition: opacity 0.6s ease; overflow: hidden;
@@ -2369,27 +2371,27 @@ function openPrisonSubpage(clickedCell) {
 
     // UI Controls
     const backBtn = document.createElement('button');
-    backBtn.className = 'physics-back-btn';
+    backBtn.className = 'physics-back-btn is-light';
     container.appendChild(backBtn);
 
     const themeBtn = document.createElement('div');
-    themeBtn.className = 'theme-toggle-wrapper';
+    themeBtn.className = 'theme-toggle-wrapper is-light';
     themeBtn.innerHTML = '<div class="slider-knob"></div>';
     container.appendChild(themeBtn);
 
     const infoBtn = document.createElement('div');
-    infoBtn.className = 'info-icon-btn';
+    infoBtn.className = 'info-icon-btn is-light';
     infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
     container.appendChild(infoBtn);
 
     const guideText = document.createElement('div');
-    guideText.className = 'overlay-text-guide';
+    guideText.className = 'overlay-text-guide is-light';
     guideText.innerHTML = 'DRAG MOUSE OUTWARD<br>TO EXTRACT CORE DATA';
     container.appendChild(guideText);
 
     // Zoom Slider UI
     const zoomContainer = document.createElement('div');
-    zoomContainer.className = 'zoom-slider-container';
+    zoomContainer.className = 'zoom-slider-container is-light';
     zoomContainer.innerHTML = `
         <button class="zoom-btn zoom-in">＋</button>
         <div class="zoom-track"><div class="zoom-thumb"></div></div>
@@ -2838,7 +2840,7 @@ function openPrisonSubpage(clickedCell) {
     let animFrame;
     function animate() {
         animFrame = requestAnimationFrame(animate);
-        
+
         // Smooth parallax easing
         curRotX += (targetRotX - curRotX) * 0.05;
         curRotY += (targetRotY - curRotY) * 0.05;
@@ -2912,32 +2914,47 @@ async function openConscienceSubpage(clickedCell) {
 
     const container = document.createElement('div');
     container.id = 'conscience-subpage';
-    container.className = 'is-dark';
+    container.className = 'is-light';
+    // Match the layout rules of #physics-subpage exactly (theme 1, 2, 3 grid)
     container.style.cssText = `
         position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-        z-index: 2000; opacity: 0; transition: opacity 0.6s ease; overflow: hidden;
-        display: grid; grid-template-columns: repeat(8, 1fr); gap: 2.5rem; padding: 0 3.5rem;
+        z-index: 2000; opacity: 0; transition: opacity 0.5s ease; overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 100%;
+        gap: 2.5rem;
+        padding: 0 3.5rem;
     `;
 
     // UI Controls
     const backBtn = document.createElement('button');
-    backBtn.className = 'physics-back-btn';
+    backBtn.className = 'physics-back-btn is-light';
     container.appendChild(backBtn);
 
     const themeBtn = document.createElement('div');
-    themeBtn.className = 'theme-toggle-wrapper';
+    themeBtn.className = 'theme-toggle-wrapper is-light';
     themeBtn.innerHTML = '<div class="slider-knob"></div>';
     container.appendChild(themeBtn);
 
     const infoBtn = document.createElement('div');
-    infoBtn.className = 'info-icon-btn';
+    infoBtn.className = 'info-icon-btn is-light';
     infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
     container.appendChild(infoBtn);
 
     const guideText = document.createElement('div');
-    guideText.className = 'overlay-text-guide';
-    guideText.innerHTML = 'συν + εἰδος<br>KNOWING-WITH';
+    guideText.className = 'overlay-text-guide is-light';
+    guideText.innerHTML = 'SCROLL TO ZOOM<br>DRAG TO ROTATE';
     container.appendChild(guideText);
+
+    // Zoom slider UI (matches the pattern from other physics subpages)
+    const zoomContainer = document.createElement('div');
+    zoomContainer.className = 'zoom-slider-container is-light';
+    zoomContainer.innerHTML = `
+        <button class="zoom-btn zoom-in">＋</button>
+        <div class="zoom-track"><div class="zoom-thumb"></div></div>
+        <button class="zoom-btn zoom-out">－</button>
+    `;
+    container.appendChild(zoomContainer);
 
     // Grid System: Left and Right Sidebars
     const sidebarLeft = document.createElement('div');
@@ -2966,14 +2983,21 @@ async function openConscienceSubpage(clickedCell) {
     paraBox.innerHTML = `
         <div class="text-content" style="max-height: none; overflow: visible;">
             <div style="margin-bottom: 24px;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago</span>
-                <span style="color: #dc143c; font-weight: 600;">"The line dividing good and evil"</span><br>
-                The line dividing good and evil cuts through the heart of every human being.
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, Part I, Ch. 4</span>
+                <span style="color: #dc143c; font-weight: 600;">"the line dividing good and evil cuts through the heart"</span><br>
+                If only the answer were simple. If only evil people existed somewhere insidiously committing their deeds, and it were only necessary to separate and destroy them. But the line dividing good and evil cuts through the heart of every human being without exception. And who is willing to destroy a piece of his own heart?
             </div>
+
+            <div style="margin-bottom: 24px;">
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, Part I, Ch. 4</span>
+                <span style="color: #dc143c; font-weight: 600;">"during a lifetime this line shifts"</span><br>
+                During a lifetime this line shifts. The same person stands at various ages near sainthood and near the devil. The name does not change, and to that name we ascribe everything.
+            </div>
+
             <div style="margin-bottom: 0;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago</span>
-                <span style="color: #dc143c; font-weight: 600;">"During a lifetime this line shifts"</span><br>
-                The same person stands at various ages near sainthood and near the devil.
+                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, Part I, Ch. 4</span>
+                <span style="color: #dc143c; font-weight: 600;">"know thyself has never been more urgent"</span><br>
+                Is it permissible merely to carry out orders and commit one's conscience to someone else's keeping? Can a person live without his own ideas about good and evil — deriving them only from printed instructions and the verbal commands of superiors? Socrates' command "know thyself" has never been more urgent than now.
             </div>
         </div>
     `;
@@ -2983,9 +3007,13 @@ async function openConscienceSubpage(clickedCell) {
     narrativeBox.className = 'faint-text-box';
     narrativeBox.innerHTML = `
         <div class="text-content">
-            <span style="color: #dc143c; font-weight: 600;">CONSCIENCE</span> &middot; from Greek συνείδησις (syneídēsis): συν "with" + εἰδος "to see / to know". Latin con-scientia. A knowledge held with another — the self watching the self.
+            The hourglass is not a single object. It is a co-knowing.
             <br><br>
-            Concentric layers of awareness rotate together. Each ring sees the rings below; each particle is shared across them. The vortex never stops turning.
+            Each word in the vortex is a small recognition. Conscience. Witness. Mirror. Inner. Other. Together. A particle, alone, is barely a thought. But the rings — the layers of awareness — co-rotate. Each layer sees the rings below; each particle is shared across them. From the Greek <span style="color:#dc143c; font-weight:600;">συν + εἶδος</span> ("knowing-with"), and Latin <span style="color:#dc143c; font-weight:600;">con-scientia</span> ("knowing-together"): consciousness is never solitary. The self watches the self.
+            <br><br>
+            Solzhenitsyn writes that the line dividing good and evil cuts through the heart of every human being. Conscience is the daily redrawing of that line. It is not a fixed point but a continuous correction; not a static rule but the constant traffic between layers — small judgements that move from one ring to another and converge at the centre of the self.
+            <br><br>
+            The vortex never stops turning. Each layer at its own speed, in its own direction. They do not align. They only move together.
             <br><br>
             <span style="color: #dc143c; font-weight: 600;">"Know thyself has never been more urgent than now."</span>
         </div>
@@ -2996,9 +3024,9 @@ async function openConscienceSubpage(clickedCell) {
     container.appendChild(sidebarRight);
     document.body.appendChild(container);
 
-    // ─── Three.js Scene: συν-εἰδος vortex ───────────────────────────────
-    // A 3D stack of concentric rings made of small chalk-like dashes.
-    // Each ring slowly co-rotates around the vertical axis — "knowing together".
+    // ─── Three.js Scene: συν-εἶδος vortex ───────────────────────────────
+    // A 3D hourglass of word-meshes arranged in concentric rings; each ring
+    // (layer) rotates independently around the vertical axis — "knowing-with".
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(58, window.innerWidth / window.innerHeight, 0.1, 100);
     camera.position.set(0, 1.4, 4.6);
@@ -3017,15 +3045,29 @@ async function openConscienceSubpage(clickedCell) {
 
     // ─── Build the word field ──────────────────────────────────────────
     // Each "particle" is a Sprite displaying a word in a varied font/size.
-    // Words are sourced from the etymological + Solzhenitsyn vocabulary of
-    // CONSCIENCE — "knowing-with".
+    // The vortex is sliced into LAYER_COUNT bands, each band a Group with its
+    // own random rotation speed — so individual coils of the spiral spin at
+    // different rates, independent of each other.
     const vortex = new THREE.Group();
     scene.add(vortex);
 
+    const LAYER_COUNT = 24;
+    const layers = [];
+    const layerSpeeds = [];
+    for (let i = 0; i < LAYER_COUNT; i++) {
+        const g = new THREE.Group();
+        vortex.add(g);
+        layers.push(g);
+        // Random direction + magnitude per layer, occasionally reversed
+        const dir = Math.random() < 0.5 ? -1 : +1;
+        const mag = 0.012 + Math.random() * 0.13;       // 0.012..0.142 rad/s — slow, varied
+        layerSpeeds.push(dir * mag);
+    }
+
     const VOCAB = [
         // Greek
-        'συν', 'εἰδος', 'οἶδα', 'γνῶθι', 'σεαυτόν', 'συνείδησις', 'εἰδέναι',
-        'γιγνώσκω', 'γνῶσις', 'ψυχή', 'νοῦς', 'σύν-εἰδος', 'γνῶθι σαυτόν',
+        'συν', 'εἶδος', 'οἶδα', 'γνῶθι', 'σεαυτόν', 'συνείδησις', 'εἰδέναι',
+        'γιγνώσκω', 'γνῶσις', 'ψυχή', 'νοῦς', 'σύν-εἶδος', 'γνῶθι σεαυτόν',
         // Latin & Romance roots
         'conscientia', 'con-scientia', 'scire', 'cum', 'co-scire',
         'cognoscere', 'cognoscere se', 'sciens', 'noscere',
@@ -3053,27 +3095,51 @@ async function openConscienceSubpage(clickedCell) {
     ];
 
     const FONTS = [
-        { family: "'JetBrains Mono', monospace", weight: 400 },
-        { family: "'JetBrains Mono', monospace", weight: 700 },
-        { family: "'Inter', sans-serif", weight: 400 },
-        { family: "'Inter', sans-serif", weight: 600 },
-        { family: "'Inter', sans-serif", weight: 700 },
-        { family: "'Noto Sans', sans-serif", weight: 400 },
-        { family: "'Noto Sans', sans-serif", weight: 900 },
-        { family: "Georgia, serif", weight: 400 },
+        // Mono
+        { family: "'JetBrains Mono', monospace", weight: 400, style: 'normal'  },
+        { family: "'JetBrains Mono', monospace", weight: 700, style: 'normal'  },
+        { family: "'JetBrains Mono', monospace", weight: 400, style: 'italic'  },
+        { family: "'Courier New', monospace",     weight: 400, style: 'normal' },
+        { family: "'Courier New', monospace",     weight: 700, style: 'italic' },
+        // Sans
+        { family: "'Inter', sans-serif", weight: 400, style: 'normal' },
+        { family: "'Inter', sans-serif", weight: 400, style: 'italic' },
+        { family: "'Inter', sans-serif", weight: 600, style: 'normal' },
+        { family: "'Inter', sans-serif", weight: 700, style: 'normal' },
+        { family: "'Inter', sans-serif", weight: 700, style: 'italic' },
+        { family: "'Noto Sans', sans-serif", weight: 400, style: 'normal' },
+        { family: "'Noto Sans', sans-serif", weight: 900, style: 'normal' },
+        { family: "'Helvetica Neue', sans-serif", weight: 300, style: 'normal' },
+        { family: "Arial, sans-serif", weight: 400, style: 'normal' },
+        { family: "Arial, sans-serif", weight: 700, style: 'italic' },
+        { family: "'Trebuchet MS', sans-serif", weight: 400, style: 'normal' },
+        // Serif
+        { family: "Georgia, serif",          weight: 400, style: 'normal' },
+        { family: "Georgia, serif",          weight: 400, style: 'italic' },
+        { family: "Georgia, serif",          weight: 700, style: 'normal' },
+        { family: "'Times New Roman', serif", weight: 400, style: 'normal' },
+        { family: "'Times New Roman', serif", weight: 700, style: 'italic' },
+        { family: "'Palatino', serif",        weight: 400, style: 'normal' },
+        { family: "'Garamond', serif",        weight: 400, style: 'italic' },
+        // Display
+        { family: "Impact, sans-serif",                weight: 400, style: 'normal' },
+        { family: "'Brush Script MT', cursive",        weight: 400, style: 'italic' },
+        { family: "'Lucida Console', monospace",       weight: 400, style: 'normal' },
+        { family: "'Copperplate', serif",              weight: 400, style: 'normal' },
     ];
     const SIZE_BUCKETS = [7, 10, 14, 20, 28];    // canvas px (small → big)
 
     // Texture cache: key = word|family|weight|size
     const texCache = new Map();
     function makeWordTexture(word, font, sizePx) {
-        const key = `${word}|${font.family}|${font.weight}|${sizePx}`;
+        const style = font.style || 'normal';
+        const key = `${word}|${font.family}|${font.weight}|${style}|${sizePx}`;
         if (texCache.has(key)) return texCache.get(key);
         const padX = Math.max(8, sizePx * 0.25);
         const padY = Math.max(6, sizePx * 0.30);
         const tmp = document.createElement('canvas');
         const tctx = tmp.getContext('2d');
-        const fontStr = `${font.weight} ${sizePx}px ${font.family}`;
+        const fontStr = `${style} ${font.weight} ${sizePx}px ${font.family}`;
         tctx.font = fontStr;
         const m = tctx.measureText(word);
         const w = Math.max(8, Math.ceil(m.width) + padX * 2);
@@ -3113,12 +3179,22 @@ async function openConscienceSubpage(clickedCell) {
     const px2world = 0.0022;
     const flatPlaneGeo = new THREE.PlaneGeometry(1, 1);
 
-    // Hologram shader (chromatic aberration + scanline + red ghost on glow)
+    // Shared fog + zoom + global-alpha uniforms — single reference for all word materials
+    const _holoFogColor    = new THREE.Color(0x050505);
+    const _holoFogNear     = { value: 3.5 };
+    const _holoFogFar      = { value: 11.5 };
+    const _holoZoom        = { value: 0 };
+    const _holoGlobalAlpha = { value: 0.7 };
+
+    // Hologram shader (chromatic aberration + scanline + red ghost + distance fade)
     const HOLO_VERT = `
         varying vec2 vUv;
+        varying float vCamDist;
         void main() {
             vUv = uv;
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            vec4 mv = modelViewMatrix * vec4(position, 1.0);
+            vCamDist = -mv.z;
+            gl_Position = projectionMatrix * mv;
         }
     `;
     const HOLO_FRAG = `
@@ -3126,27 +3202,40 @@ async function openConscienceSubpage(clickedCell) {
         uniform vec3 uColor;
         uniform float uOpacity;
         uniform float uGlow;
+        uniform vec3 uFogColor;
+        uniform float uFogNear;
+        uniform float uFogFar;
+        uniform float uZoom;        // 0 = home, 1+ = stronger CRT/hologram intensity
+        uniform float uGlobalAlpha; // overall translucency clamp
         varying vec2 vUv;
+        varying float vCamDist;
         void main() {
-            float ab = 0.0035 + uGlow * 0.020;
-            float ar = texture2D(uMap, vUv + vec2(ab, 0.0)).a;
-            float ag = texture2D(uMap, vUv).a;
+            // Chromatic aberration grows with zoom + glow
+            float ab = 0.0035 + uGlow * 0.020 + uZoom * 0.012;
+            float ar  = texture2D(uMap, vUv + vec2(ab, 0.0)).a;
+            float ag  = texture2D(uMap, vUv).a;
             float ab2 = texture2D(uMap, vUv - vec2(ab, 0.0)).a;
-            // Base text + chromatic edge split
             vec3 col = uColor * ag;
-            col.r += (ar - ag) * 0.6;
-            col.b += (ab2 - ag) * 0.6;
-            // Scanline
-            float scan = sin(vUv.y * 60.0) * 0.06 + 0.94;
+            col.r += (ar  - ag) * (0.6 + uZoom * 0.5);
+            col.b += (ab2 - ag) * (0.6 + uZoom * 0.5);
+            // Scanlines — denser & stronger when zoomed
+            float scanFreq  = 60.0 + uZoom * 80.0;
+            float scanDepth = 0.06 + uZoom * 0.10;
+            float scan = sin(vUv.y * scanFreq) * scanDepth + (1.0 - scanDepth * 0.5);
             col *= scan;
-            // Red ghost trail (vertical offset, only on glow)
-            if (uGlow > 0.01) {
-                float ghostA = texture2D(uMap, vUv - vec2(0.0, 0.025 * uGlow)).a;
-                col += vec3(1.0, 0.08, 0.18) * ghostA * uGlow * 0.7;
+            // Red ghost trail (vertical offset)
+            float ghostStr = uGlow * 0.7 + uZoom * 0.20;
+            if (ghostStr > 0.01) {
+                float ghostA = texture2D(uMap, vUv - vec2(0.0, 0.025 * uGlow + 0.012 * uZoom)).a;
+                col += vec3(1.0, 0.08, 0.18) * ghostA * ghostStr;
             }
             float alpha = max(ar, max(ag, ab2));
             if (alpha < 0.04) discard;
-            gl_FragColor = vec4(col, alpha * uOpacity);
+            // Distance fade
+            float fogF = smoothstep(uFogNear, uFogFar, vCamDist);
+            col = mix(col, uFogColor, fogF);
+            alpha *= (1.0 - fogF * 0.85);
+            gl_FragColor = vec4(col, alpha * uOpacity * uGlobalAlpha);
         }
     `;
 
@@ -3226,6 +3315,11 @@ async function openConscienceSubpage(clickedCell) {
                 uColor: { value: new THREE.Color(0xffffff) },
                 uOpacity: { value: baseOpacity },
                 uGlow: { value: 0 },
+                uFogColor: { value: _holoFogColor },   // shared reference
+                uFogNear:  _holoFogNear,
+                uFogFar:   _holoFogFar,
+                uZoom:     _holoZoom,
+                uGlobalAlpha: _holoGlobalAlpha,
             },
             vertexShader: HOLO_VERT,
             fragmentShader: HOLO_FRAG,
@@ -3256,7 +3350,9 @@ async function openConscienceSubpage(clickedCell) {
         _basisMat.makeBasis(_T, _B, _N);
         mesh.quaternion.setFromRotationMatrix(_basisMat);
         mesh.scale.set(widthWorld, heightWorld, 1);
-        vortex.add(mesh);
+        // Assign to a layer band based on t (the spiral parameter)
+        const layerIdx = Math.min(LAYER_COUNT - 1, Math.floor(t * LAYER_COUNT));
+        layers[layerIdx].add(mesh);
 
         particles.push({
             sprite: mesh,
@@ -3265,6 +3361,7 @@ async function openConscienceSubpage(clickedCell) {
             baseOpacity: baseOpacity,
             glow: 0,
             targetGlow: 0,
+            layerIdx,
         });
     }
 
@@ -3289,10 +3386,10 @@ async function openConscienceSubpage(clickedCell) {
             target: center + targetJitter,
             timer: 0,
             trail: [],
-            stepSize: 1 + Math.floor(Math.random() * 2),     // 1..2
-            // Wide random range so different sparks crawl at very different speeds
-            stepInterval: 0.22 + Math.random() * 0.85,       // 0.22..1.07s
+            stepSize: 1 + Math.floor(Math.random() * 2),
+            stepInterval: 0.10 + Math.random() * 0.40,
             dead: false,
+            fadeOut: 1.0,        // when dying, lerps 1 → 0 for smooth disappearance
         });
     }
 
@@ -3319,7 +3416,182 @@ async function openConscienceSubpage(clickedCell) {
         }
         return out;
     }
+    // ── Align particles within each layer to evenly-spaced angles + shared baseline ──
+    const particlesByLayer = Array.from({ length: LAYER_COUNT }, () => []);
+    for (const p of particles) particlesByLayer[p.layerIdx].push(p);
+    for (let li = 0; li < LAYER_COUNT; li++) {
+        const lp = particlesByLayer[li];
+        const N = lp.length;
+        if (N === 0) continue;
+        let sumY = 0, sumR = 0;
+        for (const p of lp) {
+            sumY += p.basePos.y;
+            sumR += Math.sqrt(p.basePos.x * p.basePos.x + p.basePos.z * p.basePos.z);
+        }
+        const cY = sumY / N;
+        const cR = Math.max(0.05, sumR / N);
+        const phaseOffset = Math.random() * Math.PI * 2;   // each layer starts at a different angle
+        for (let i = 0; i < N; i++) {
+            const p = lp[i];
+            const theta = phaseOffset + (i / N) * Math.PI * 2;
+            const px = Math.cos(theta) * cR;
+            const pz = Math.sin(theta) * cR;
+            const py = cY + (Math.random() - 0.5) * 0.04;
+            p.basePos.set(px, py, pz);
+            p.sprite.position.set(px, py, pz);
+            // Inward orientation: word's reading direction → axis
+            const Nx = px / cR, Nz = pz / cR;
+            const inwardX = -Nx, inwardZ = -Nz;
+            const zX = -inwardZ;       // = (inwardY * upZ − inwardZ * upY) with up=(0,1,0)
+            const zZ =  inwardX;
+            _T.set(inwardX, 0, inwardZ);
+            _B.set(0, 1, 0);
+            _N.set(zX, 0, zZ).normalize();
+            _basisMat.makeBasis(_T, _B, _N);
+            p.sprite.quaternion.setFromRotationMatrix(_basisMat);
+        }
+    }
+    // Now corners are correct relative to the new (aligned) positions/orientations
     for (const p of particles) p.corners = precomputeCorners(p);
+
+    // ── Zoom state ──
+    // Cache each particle's base radial info so we can spread them outward
+    // along their (radial) axis when the user zooms in.
+    for (const p of particles) {
+        p.baseR = Math.sqrt(p.basePos.x * p.basePos.x + p.basePos.z * p.basePos.z);
+        p.baseAngle = Math.atan2(p.basePos.z, p.basePos.x);
+        p.baseY = p.basePos.y;
+    }
+    let targetZoom = 0;          // 0 = home; > 1 allowed for extra spread
+    let zoomLevel  = 0;
+    let lastZoomApplied = -1;
+    const ZOOM_MAX    = 1.6;
+    const ZOOM_RADIAL = 2.4;     // radial spread per unit zoom
+    const ZOOM_DOLLY  = 2.6;     // camera dolly per unit zoom (toward target)
+
+    // Orbit + pan state — derived from the initial camera position
+    const _zoomBaseCam = camera.position.clone();
+    const _zoomCamDist = _zoomBaseCam.length();
+    const HOME_THETA = Math.atan2(_zoomBaseCam.x, _zoomBaseCam.z);
+    const HOME_PHI   = Math.acos(Math.min(1, Math.max(-1, _zoomBaseCam.y / _zoomCamDist)));
+    let orbitTheta = HOME_THETA;
+    let orbitPhi   = HOME_PHI;
+    const panOffset = new THREE.Vector3();
+    const _orbitSpherical = new THREE.Spherical();
+    const _orbitRight = new THREE.Vector3();
+    const _orbitUp    = new THREE.Vector3();
+    const _orbitFwd   = new THREE.Vector3();
+
+    function applyZoom(z) {
+        const rScale = 1.0 + z * ZOOM_RADIAL;
+        for (const p of particles) {
+            const r = p.baseR * rScale;
+            const x = Math.cos(p.baseAngle) * r;
+            const zz = Math.sin(p.baseAngle) * r;
+            p.basePos.set(x, p.baseY, zz);
+            p.sprite.position.set(x, p.baseY, zz);
+            // Recompute corners (positions changed; orientation unchanged)
+            const halfW = p.baseScale.x / 2;
+            const halfH = p.baseScale.y / 2;
+            const signs = [[-1, +1], [+1, +1], [+1, -1], [-1, -1]];
+            for (let c = 0; c < 4; c++) {
+                p.corners[c].set(signs[c][0] * halfW, signs[c][1] * halfH, 0);
+                p.corners[c].applyQuaternion(p.sprite.quaternion);
+                p.corners[c].add(p.basePos);
+            }
+        }
+        // (Camera position handled per-frame by updateCamera() below — combines
+        // zoom-dolly with the orbit/pan state.)
+    }
+
+    function updateCamera() {
+        const r = Math.max(0.5, _zoomCamDist - zoomLevel * ZOOM_DOLLY);
+        _orbitSpherical.set(r, orbitPhi, orbitTheta);
+        camera.position.setFromSpherical(_orbitSpherical).add(panOffset);
+        camera.lookAt(panOffset);
+    }
+
+    // Wire zoom UI
+    const zoomThumb = zoomContainer.querySelector('.zoom-thumb');
+    const zoomTrack = zoomContainer.querySelector('.zoom-track');
+    function syncZoomThumb() {
+        if (zoomThumb) zoomThumb.style.top = `${(1 - targetZoom / ZOOM_MAX) * 100}%`;
+    }
+    syncZoomThumb();
+    zoomContainer.querySelector('.zoom-in').onclick  = () => { targetZoom = Math.min(ZOOM_MAX, targetZoom + 0.20); syncZoomThumb(); };
+    zoomContainer.querySelector('.zoom-out').onclick = () => { targetZoom = Math.max(0, targetZoom - 0.20); syncZoomThumb(); };
+
+    // Mouse-wheel zoom — scrolling up zooms in, down zooms out
+    function onConscienceWheel(e) {
+        if (container.classList.contains('info-active')) return;
+        e.preventDefault();
+        targetZoom = Math.max(0, Math.min(ZOOM_MAX, targetZoom - e.deltaY * 0.0014));
+        syncZoomThumb();
+    }
+    container.addEventListener('wheel', onConscienceWheel, { passive: false });
+
+    // ── Mouse orbit + pan ──
+    // Left-drag = orbit around the centre; right-drag (or Shift+drag) = pan.
+    let isDragging = false;
+    let dragMode = 'orbit';
+    let dragLastX = 0, dragLastY = 0;
+    function onCanvasDown(e) {
+        if (container.classList.contains('info-active')) return;
+        if (e.target !== renderer.domElement) return;
+        isDragging = true;
+        dragMode = (e.button === 2 || e.shiftKey) ? 'pan' : 'orbit';
+        dragLastX = e.clientX;
+        dragLastY = e.clientY;
+        try { renderer.domElement.setPointerCapture(e.pointerId); } catch {}
+    }
+    function onCanvasMove(e) {
+        if (!isDragging) return;
+        const dx = e.clientX - dragLastX;
+        const dy = e.clientY - dragLastY;
+        dragLastX = e.clientX;
+        dragLastY = e.clientY;
+        if (dragMode === 'orbit') {
+            orbitTheta -= dx * 0.0055;
+            orbitPhi   -= dy * 0.0055;
+            orbitPhi = Math.max(0.08, Math.min(Math.PI - 0.08, orbitPhi));
+        } else {
+            // Pan: convert pixel delta to world units along camera-right / camera-up
+            const r = Math.max(0.5, _zoomCamDist - zoomLevel * ZOOM_DOLLY);
+            const panSpeed = r * 0.0024;
+            camera.matrix.extractBasis(_orbitRight, _orbitUp, _orbitFwd);
+            panOffset.addScaledVector(_orbitRight, -dx * panSpeed);
+            panOffset.addScaledVector(_orbitUp,     dy * panSpeed);
+        }
+    }
+    function onCanvasUp(e) {
+        isDragging = false;
+        try { renderer.domElement.releasePointerCapture(e.pointerId); } catch {}
+    }
+    renderer.domElement.addEventListener('pointerdown', onCanvasDown);
+    renderer.domElement.addEventListener('pointermove', onCanvasMove);
+    renderer.domElement.addEventListener('pointerup',   onCanvasUp);
+    renderer.domElement.addEventListener('pointercancel', onCanvasUp);
+    renderer.domElement.addEventListener('contextmenu', (e) => e.preventDefault());
+
+    let zoomDragging = false;
+    function setFromPointer(clientY) {
+        const r = zoomTrack.getBoundingClientRect();
+        const t = Math.max(0, Math.min(1, (clientY - r.top) / r.height));
+        targetZoom = 1 - t;
+        syncZoomThumb();
+    }
+    zoomTrack.addEventListener('pointerdown', (e) => {
+        zoomDragging = true;
+        zoomTrack.setPointerCapture(e.pointerId);
+        setFromPointer(e.clientY);
+    });
+    zoomTrack.addEventListener('pointermove', (e) => {
+        if (zoomDragging) setFromPointer(e.clientY);
+    });
+    zoomTrack.addEventListener('pointerup', (e) => {
+        zoomDragging = false;
+        try { zoomTrack.releasePointerCapture(e.pointerId); } catch {}
+    });
 
     // ─── Connection-thread capacity ──
     // 2 threads per connection (top corners + bottom corners), 8 segs each.
@@ -3418,21 +3690,14 @@ async function openConscienceSubpage(clickedCell) {
         return best;
     }
 
-    // Faint outer haze (chalk dust in the void)
-    const haloCount = 350;
-    const haloPos = new Float32Array(haloCount * 3);
-    for (let i = 0; i < haloCount; i++) {
-        haloPos[i*3]     = (Math.random() - 0.5) * 22;
-        haloPos[i*3 + 1] = (Math.random() - 0.5) * 12;
-        haloPos[i*3 + 2] = (Math.random() - 0.5) * 14 - 4;
-    }
+    // (Background haze dots removed.)
     const haloGeo = new THREE.BufferGeometry();
-    haloGeo.setAttribute('position', new THREE.BufferAttribute(haloPos, 3));
-    const haloMat = new THREE.PointsMaterial({ size: 0.012, color: 0xffffff, transparent: true, opacity: 0.25, sizeAttenuation: true });
+    const haloMat = new THREE.PointsMaterial({ size: 0, opacity: 0, transparent: true });
     const halo = new THREE.Points(haloGeo, haloMat);
+    halo.visible = false;
     scene.add(halo);
 
-    let isLightMode = false;
+    let isLightMode = true;
     const _baseColor = new THREE.Color(0xffffff);
     const _redColor  = new THREE.Color(0xdc143c);
     const _tmpColor  = new THREE.Color();
@@ -3441,6 +3706,7 @@ async function openConscienceSubpage(clickedCell) {
         const bgHex = isLightMode ? 0xf4f4f4 : 0x050505;
         renderer.setClearColor(bgHex, 1);
         scene.fog.color.setHex(bgHex);
+        _holoFogColor.setHex(bgHex);                 // shared across all word materials
         _baseColor.setHex(isLightMode ? 0x141416 : 0xffffff);
         haloMat.color.setHex(isLightMode ? 0x222222 : 0xffffff);
         haloMat.opacity   = isLightMode ? 0.20 : 0.25;
@@ -3450,6 +3716,8 @@ async function openConscienceSubpage(clickedCell) {
         lineMat.needsUpdate = true;
     }
 
+    applyTheme();
+
     themeBtn.onclick = () => {
         isLightMode = !isLightMode;
         container.classList.toggle('is-light', isLightMode);
@@ -3457,18 +3725,60 @@ async function openConscienceSubpage(clickedCell) {
         applyTheme();
     };
 
+    let targetVortexScale  = 1.0;
+    let currentVortexScale = 1.0;
+
     infoBtn.onclick = () => {
-        container.classList.toggle('info-active');
+        const isActive = !container.classList.contains('info-active');
+        container.classList.toggle('info-active', isActive);
+        infoBtn.classList.toggle('active', isActive);
+        if (isActive) {
+            // Auto pull-back so the sidebar text has room to breathe.
+            targetZoom = 0;
+            targetVortexScale = 0.5;     // shrink the whole vortex too
+            orbitTheta = HOME_THETA;
+            orbitPhi   = HOME_PHI;
+            panOffset.set(0, 0, 0);
+            syncZoomThumb();
+        } else {
+            targetVortexScale = 1.0;
+        }
     };
 
     let rafId;
     let lastTime = performance.now();
+    // Cached vortex-local corner (after applying layer rotation)
+    const _vortexCorner = new THREE.Vector3();
+    function vortexCorner(p, cornerIdx) {
+        const c = p.corners[cornerIdx];
+        const ry = layers[p.layerIdx].rotation.y;
+        const cs = Math.cos(ry), sn = Math.sin(ry);
+        _vortexCorner.set(
+            c.x * cs + c.z * sn,
+            c.y,
+            -c.x * sn + c.z * cs,
+        );
+        return _vortexCorner;
+    }
     function animate(now) {
         rafId = requestAnimationFrame(animate);
         const dt = Math.min((now - lastTime) / 1000, 0.05);
         lastTime = now;
-        // Co-rotate the entire vortex slowly around Y
-        vortex.rotation.y += dt * 0.16;
+        // Smooth zoom toward target; re-layout when changed; uniform always synced
+        zoomLevel += (targetZoom - zoomLevel) * Math.min(1, dt * 4.5);
+        if (Math.abs(zoomLevel - lastZoomApplied) > 0.0008) {
+            applyZoom(zoomLevel);
+            lastZoomApplied = zoomLevel;
+        }
+        _holoZoom.value = zoomLevel;
+        // Smoothly lerp the vortex scale (info mode shrinks the whole field)
+        currentVortexScale += (targetVortexScale - currentVortexScale) * Math.min(1, dt * 4);
+        vortex.scale.setScalar(currentVortexScale);
+        updateCamera();
+        // Each layer ring rotates at its own random speed (set at init)
+        for (let i = 0; i < LAYER_COUNT; i++) {
+            layers[i].rotation.y += layerSpeeds[i] * dt;
+        }
 
         // Reset all targets
         for (let i = 0; i < particles.length; i++) particles[i].targetGlow = 0;
@@ -3482,37 +3792,47 @@ async function openConscienceSubpage(clickedCell) {
         }
 
         // Advance every spark toward its target (the spiral centre); assign trail glows.
+        // The effective step interval is modulated by the current layer's rotation
+        // speed — faster-spinning bands let the spark pass through more quickly.
         for (const spark of sparks) {
-            spark.timer += dt;
-            while (spark.timer >= spark.stepInterval) {
-                spark.timer -= spark.stepInterval;
-                spark.position += spark.direction * spark.stepSize;
-                if ((spark.direction > 0 && spark.position >= spark.target) ||
-                    (spark.direction < 0 && spark.position <= spark.target)) {
-                    spark.position = spark.target;
-                    spark.dead = true;
+            // Smoothly fade dying sparks
+            if (spark.dead) {
+                spark.fadeOut = Math.max(0, spark.fadeOut - dt * 1.4);   // ~0.7s fade
+            } else {
+                const curIdx = Math.max(0, Math.min(particleCount - 1, spark.position));
+                const layerIdx = particles[curIdx]?.layerIdx ?? 0;
+                const layerMag = Math.abs(layerSpeeds[layerIdx]);
+                const effInterval = spark.stepInterval / (1 + layerMag * 4.5);
+                spark.timer += dt;
+                while (spark.timer >= effInterval) {
+                    spark.timer -= effInterval;
+                    spark.position += spark.direction * spark.stepSize;
+                    if ((spark.direction > 0 && spark.position >= spark.target) ||
+                        (spark.direction < 0 && spark.position <= spark.target)) {
+                        spark.position = spark.target;
+                        spark.dead = true;
+                    }
+                    spark.trail.unshift({
+                        idx: spark.position,
+                        picks: pickTwoCorners(),
+                        bow: (Math.random() - 0.5) * 0.55,
+                        age: 0,
+                    });
+                    while (spark.trail.length > SPARK_TRAIL_LEN) spark.trail.pop();
+                    if (spark.dead) break;
                 }
-                spark.trail.unshift({
-                    idx: spark.position,
-                    picks: pickTwoCorners(),
-                    bow: (Math.random() - 0.5) * 0.55,   // stable per item — no per-frame flicker
-                    age: 0,                                // grows from 0 → settle (line stretches in)
-                });
-                while (spark.trail.length > SPARK_TRAIL_LEN) spark.trail.pop();
-                if (spark.dead) break;
             }
-            // Age all trail items
             for (const item of spark.trail) item.age += dt;
             for (let k = 0; k < spark.trail.length; k++) {
                 const item = spark.trail[k];
                 if (item.idx >= 0 && item.idx < particleCount) {
-                    const g = trailGlows[k] || 0;
+                    const g = (trailGlows[k] || 0) * spark.fadeOut;
                     if (g > particles[item.idx].targetGlow) particles[item.idx].targetGlow = g;
                 }
             }
         }
-        // Reap dead sparks (their trail glows linger via the per-particle lerp)
-        sparks = sparks.filter(s => !s.dead);
+        // Reap fully-faded sparks
+        sparks = sparks.filter(s => s.fadeOut > 0.001);
 
         // Per-particle update: lerp glow, derive color & scale & opacity
         for (let i = 0; i < particles.length; i++) {
@@ -3532,42 +3852,9 @@ async function openConscienceSubpage(clickedCell) {
             p.sprite.scale.set(p.baseScale.x * sc, p.baseScale.y * sc, 1);
         }
 
-        // ── Connection threads: from corners of A (newer) to corners of B (older).
-        // The newer endpoint stretches in over `FILAMENT_SETTLE_TIME` seconds,
-        // creating a viscous/sticky pull-out from the older corner — inertia.
-        let vIdx = 0;
-        const segAlphas = [0.95, 0.6, 0.32, 0.12];
-        for (const spark of sparks) {
-            for (let k = 0; k + 1 < spark.trail.length; k++) {
-                const itemA = spark.trail[k];     // newer
-                const itemB = spark.trail[k+1];   // older
-                const pa = particles[itemA.idx];
-                const pb = particles[itemB.idx];
-                if (!pa || !pb) continue;
-                const alpha = segAlphas[k] || 0;
-                if (alpha <= 0) continue;
-                // Smooth ease-out for the stretch; older filaments are fully extended (lerp=1)
-                const settleProgress = Math.min(1, itemA.age / FILAMENT_SETTLE_TIME);
-                const lerpT = 1 - Math.pow(1 - settleProgress, 2.4);
-                const bow1 = (itemA.bow + itemB.bow) * 0.5;
-                const bow2 = bow1 * -0.85;        // second filament bows opposite
-
-                // Filament 1
-                const a1Real = pa.corners[itemA.picks[0]];
-                const b1Real = pb.corners[itemB.picks[0]];
-                _stickyA.copy(b1Real).lerp(a1Real, lerpT);
-                vIdx = drawThread(_stickyA.x, _stickyA.y, _stickyA.z, b1Real.x, b1Real.y, b1Real.z, vIdx, alpha, bow1, itemA.idx + 0.13);
-
-                // Filament 2
-                const a2Real = pa.corners[itemA.picks[1]];
-                const b2Real = pb.corners[itemB.picks[1]];
-                _stickyA.copy(b2Real).lerp(a2Real, lerpT);
-                vIdx = drawThread(_stickyA.x, _stickyA.y, _stickyA.z, b2Real.x, b2Real.y, b2Real.z, vIdx, alpha * 0.85, bow2, itemA.idx + 0.71);
-            }
-        }
-        lineGeo.attributes.position.needsUpdate = true;
-        lineGeo.attributes.color.needsUpdate = true;
-        lineGeo.setDrawRange(0, vIdx);
+        // (Cascade connection threads removed — sparks now manifest only as
+        // glowing/fading word highlights without any drawn filaments.)
+        lineGeo.setDrawRange(0, 0);
 
         renderer.render(scene, camera);
     }
@@ -3595,5 +3882,869 @@ async function openConscienceSubpage(clickedCell) {
         }, 600);
     };
 
+    requestAnimationFrame(() => container.style.opacity = '1');
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// THEME 5 — RESISTANCE
+// "한 사람의 침묵이 거짓의 합창을 가른다"
+// A scrolling field of propaganda phrases. The user clicks anywhere; a
+// silent ripple expands and redacts every phrase it touches. The chorus
+// always returns — but each refusal leaves a circle that was real.
+// ─────────────────────────────────────────────────────────────────────
+function openResistanceSubpage(clickedCell) {
+    const PROPAGANDA = [
+        // Single words — pure command
+        'OBEY','PRODUCE','BELIEVE','REJOICE','SUBMIT','CONFORM',
+        'COMPLY','REPORT','DENOUNCE','APPLAUD','CONSENT',
+        // Short slogans
+        'GLORY TO THE PARTY','THE PLAN IS THE LAW','THE LEADER IS WISE',
+        'ALL IS WELL','DO NOT THINK','DOUBT IS BETRAYAL',
+        'ENEMIES ARE EVERYWHERE','SILENCE IS CONSENT','WORK IS HONOR',
+        'LIES = TRUTH','HISTORY IS WRITTEN','THE FUTURE IS DECIDED',
+        'TWO PLUS TWO IS FIVE','OBEDIENCE IS FREEDOM','REJOICE COMRADE',
+        'PRAISE THE LEADER','THE ARCHIVE IS CLOSED','WE HAVE ALWAYS WON',
+        'THE STATE PROTECTS YOU','THE COLLECTIVE IS ABOVE YOU',
+        'DENUNCIATION IS DUTY','THE PARTY IS NEVER WRONG',
+        'COMRADE, REPORT YOURSELF','THE PEOPLE ARE GRATEFUL',
+        'YOUR NEIGHBOUR IS LISTENING','SLEEP WELL, COMRADE',
+        // Mid-length propaganda
+        'THE PLAN HAS ALREADY BEEN OVERFULFILLED',
+        'HARVESTS ARE ABUNDANT EVERY YEAR',
+        'THE WORKERS REJOICE IN THEIR DUTY',
+        'LIFE HAS BECOME BETTER, LIFE HAS BECOME MORE JOYFUL',
+        'EVERY CITIZEN IS A SOLDIER OF TRUTH',
+        'WE OWE EVERYTHING TO THE WISDOM OF THE LEADER',
+        'TO DOUBT THE STATE IS TO DOUBT YOUR OWN MOTHER',
+        'THE PARTY IS THE CONSCIENCE OF OUR EPOCH',
+        'NO ENEMY HAS EVER ENTERED THESE BORDERS',
+        'THE FIVE-YEAR PLAN COMPLETED IN FOUR YEARS',
+        'THE INTELLIGENTSIA SERVES THE WORKING CLASS',
+        'NOTHING IS IMPOSSIBLE FOR THE SOVIET PEOPLE',
+        // Long sentences — official speech fragments
+        'THERE HAS NEVER BEEN A FAMINE; THERE WILL NEVER BE A FAMINE; ANY REPORT SUGGESTING OTHERWISE IS ENEMY DISINFORMATION.',
+        'OUR GLORIOUS NATION ADVANCES WITHOUT PAUSE FROM VICTORY TO VICTORY ALONG THE PATH ILLUMINATED BY THE TEACHINGS OF OUR LEADER.',
+        'ANY CITIZEN WHO HEARS WHISPERS OF DOUBT IS HEREBY OBLIGED TO REPORT THEM AT ONCE TO THE NEAREST ORGAN OF STATE SECURITY.',
+        'UNHAPPINESS IS A SYMPTOM OF IDEOLOGICAL INFECTION; SEEK TREATMENT; THE STATE PROVIDES TREATMENT; TREATMENT IS COMPULSORY.',
+        'HE WHO REMEMBERS THE OLD WAY IS THE OLD WAY; LET MEMORY BE TRIMMED LIKE FINGERNAILS, WEEKLY, WITHOUT REGRET.',
+        'STATISTICS HAVE BEEN UPDATED IN ACCORDANCE WITH HISTORICAL TRUTH; PRIOR EDITIONS ARE WITHDRAWN AND POSSESSION IS A CRIME.',
+        'THE CHORUS OF MILLIONS PROVES WHAT NO INDIVIDUAL CAN PROVE; A SOLITARY VOICE THAT DISAGREES IS, BY DEFINITION, INSANE.',
+        'PRODUCTION TARGETS HAVE BEEN EXCEEDED IN EVERY SECTOR EVERY QUARTER; ANY EVIDENCE TO THE CONTRARY HAS ALREADY BEEN ARCHIVED.',
+        'THE PROBLEM YOU ARE EXPERIENCING DOES NOT EXIST; IF IT EXISTED IT WOULD BE BEING SOLVED; IT IS NOT BEING SOLVED BECAUSE IT DOES NOT EXIST.',
+        'THERE ARE NO POLITICAL PRISONERS; THERE ARE ONLY CITIZENS UNDERGOING PERSONAL CORRECTION FOR THEIR OWN GOOD AND THE GOOD OF ALL.',
+    ];
+
+    const container = document.createElement('div');
+    container.id = 'resistance-subpage';
+    container.className = 'is-light';
+    container.style.cssText = `
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        z-index: 2000; opacity: 0; transition: opacity 0.5s ease; overflow: hidden;
+        display: grid; grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 100%; gap: 2.5rem; padding: 0 3.5rem;
+    `;
+
+    const backBtn = document.createElement('button');
+    backBtn.className = 'physics-back-btn is-light';
+    container.appendChild(backBtn);
+
+    const themeBtn = document.createElement('div');
+    themeBtn.className = 'theme-toggle-wrapper is-light';
+    themeBtn.innerHTML = '<div class="slider-knob"></div>';
+    container.appendChild(themeBtn);
+
+    const infoBtn = document.createElement('div');
+    infoBtn.className = 'info-icon-btn is-light';
+    infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+    container.appendChild(infoBtn);
+
+    const guideText = document.createElement('div');
+    guideText.className = 'overlay-text-guide is-light';
+    guideText.innerHTML = 'CLICK / HOLD ANYWHERE<br>TO REFUSE THE LIE';
+    container.appendChild(guideText);
+
+    // Sidebars (info mode)
+    const sidebarLeft = document.createElement('div');
+    sidebarLeft.className = 'physics-sidebar left';
+    const sidebarRight = document.createElement('div');
+    sidebarRight.className = 'physics-sidebar right';
+
+    const headerBox = document.createElement('div');
+    headerBox.className = 'faint-text-box';
+    headerBox.innerHTML = `
+        <div class="doc-header">
+            <div class="doc-row"><span class="doc-label">FROM:</span><span class="doc-value">AN ORDINARY PERSON</span></div>
+            <div class="doc-row"><span class="doc-label">TO:</span><span class="doc-value">THE STATE</span></div>
+            <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">EVERY HEART</span></div>
+            <div class="doc-divider"></div>
+            <div class="doc-row"><span class="doc-label">SUBJECT:</span><span class="doc-value" style="color:#dc143c; font-weight:700;">RESISTANCE</span></div>
+            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">1974.02.12</span></div>
+            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC-00005-001</span></div>
+            <div class="doc-divider"></div>
+        </div>
+    `;
+    sidebarLeft.appendChild(headerBox);
+
+    const paraBox = document.createElement('div');
+    paraBox.className = 'faint-text-box paragraph-box';
+    paraBox.innerHTML = `
+        <div class="text-content" style="max-height:none; overflow:visible;">
+            <div style="margin-bottom:24px;">
+                <span class="doc-label" style="display:block; margin-bottom:4px; color:#dc143c; font-weight:700; opacity:0.9;">Live Not by Lies, A. Solzhenitsyn</span>
+                <span style="color:#dc143c; font-weight:600;">"Let the lie come into the world, but not through me."</span><br>
+                And it is not every day and not on every shoulder that violence brings down its paw. It demands of us only a submission to lies, a daily participation in deceit — and this suffices as our fealty.
+            </div>
+            <div style="margin-bottom:24px;">
+                <span class="doc-label" style="display:block; margin-bottom:4px; color:#dc143c; font-weight:700; opacity:0.9;">The Gulag Archipelago, Part V</span>
+                <span style="color:#dc143c; font-weight:600;">"One word of truth outweighs the world."</span><br>
+                The simplest, the most accessible key to our liberation: a personal nonparticipation in lies. Even if all is covered by lies, even if all is under their rule, let us resist in the smallest way: let it not rule through me.
+            </div>
+            <div style="margin-bottom:0;">
+                <span class="doc-label" style="display:block; margin-bottom:4px; color:#dc143c; font-weight:700; opacity:0.9;">Live Not by Lies</span>
+                <span style="color:#dc143c; font-weight:600;">"The simplest, most accessible key."</span><br>
+                We do not have to be brave. We do not have to march. We have only to refuse to repeat what we know is false. The lie's whole strength rests on our voices. Withdraw the voice, and a hole opens in the air.
+            </div>
+        </div>
+    `;
+    sidebarLeft.appendChild(paraBox);
+
+    const narrativeBox = document.createElement('div');
+    narrativeBox.className = 'faint-text-box';
+    narrativeBox.innerHTML = `
+        <div class="text-content">
+            The chorus is constant. It marches across the page in every direction, the same phrases repeating until repetition becomes truth. This is how a regime sounds — not as a single voice, but as a saturated field that leaves no silence to think in.
+            <br><br>
+            A click here is not a speech. It is a refusal. From the point of refusal a quiet circle opens, and inside that circle the slogans go silent. The circle expands; the slogans return. They always return.
+            <br><br>
+            But the circle was real. It existed. It was witnessed by the very lies it interrupted. Solzhenitsyn's claim is not that one voice destroys the system — it is that one voice <em>does not participate</em>, and that absence is a fact the system cannot fully overwrite.
+            <br><br>
+            <span style="color:#dc143c; font-weight:600;">"Let the lie come into the world, but not through me."</span>
+        </div>
+    `;
+    sidebarRight.appendChild(narrativeBox);
+
+    container.appendChild(sidebarLeft);
+    container.appendChild(sidebarRight);
+    document.body.appendChild(container);
+
+    // Canvas2D field
+    const canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:absolute; inset:0; width:100vw; height:100vh; z-index:1;';
+    container.insertBefore(canvas, container.firstChild);
+    const ctx = canvas.getContext('2d');
+
+    let dpr = Math.min(2, window.devicePixelRatio || 1);
+    function sizeCanvas() {
+        canvas.width = Math.floor(window.innerWidth * dpr);
+        canvas.height = Math.floor(window.innerHeight * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    sizeCanvas();
+
+    // Build rows of marching propaganda — vertical spacing tuned so the
+    // tallest font (16px) never bleeds into the row above or below.
+    const ROW_COUNT = 9;
+    const FONTS = [
+        '600 12px "Inter", sans-serif',
+        '700 13px "Inter", sans-serif',
+        '500 11px "JetBrains Mono", monospace',
+        '800 14px "Noto Sans", sans-serif',
+        '400 11px "JetBrains Mono", monospace',
+        '700 13px "Inter", sans-serif',
+        'italic 500 12px "Inter", sans-serif',
+        '900 15px "Noto Sans", sans-serif',
+        '400 12px "Inter", sans-serif',
+        'italic 600 11px "JetBrains Mono", monospace',
+        '500 12px "Inter", sans-serif',
+        '600 14px "Inter", sans-serif',
+    ];
+
+    // Per-phrase font picker — each phrase can have its own font for max variety
+    function pickPhraseFont() { return FONTS[Math.floor(Math.random() * FONTS.length)]; }
+    let isLightMode = true;
+    function bgColor()    { return isLightMode ? '#f4f4f4' : '#050505'; }
+    function textColor()  { return isLightMode ? 'rgba(15,15,15,0.92)' : 'rgba(245,245,245,0.92)'; }
+    function silentColor(){ return isLightMode ? 'rgba(15,15,15,0.10)' : 'rgba(245,245,245,0.10)'; }
+
+    const rows = [];
+    function makePhraseAt(x, rowH) {
+        const text = PROPAGANDA[Math.floor(Math.random() * PROPAGANDA.length)];
+        const font = pickPhraseFont();
+        ctx.font = font;
+        const w = ctx.measureText(text).width;
+        const yJitter = (Math.random() - 0.5) * (rowH * 0.85);
+        // depth: 0 = far/faint, 1 = near/dense — gives the chorus visual layers
+        const depth = Math.random();
+        return { text, font, x, w, yJitter, depth, silenceT: -1 };
+    }
+    function buildRows() {
+        rows.length = 0;
+        const H = window.innerHeight;
+        const rowH = H / ROW_COUNT;
+        for (let i = 0; i < ROW_COUNT; i++) {
+            const dir = (i % 2 === 0) ? 1 : -1;
+            const speed = (15 + Math.random() * 30) * dir;
+            const y = rowH * (i + 0.5);
+            const phrases = [];
+            // Pack densely — phrases bleed into each other (chorus = saturation)
+            let x = (dir > 0 ? -window.innerWidth * 0.7 : window.innerWidth * 0.7);
+            const limit = window.innerWidth * 2.5;
+            let safety = 0;
+            while (Math.abs(x) < limit && safety++ < 320) {
+                const p = makePhraseAt(x, rowH);
+                phrases.push(p);
+                // Negative gap means deliberate overlap; phrases pile up
+                const step = (p.w * 0.45 + 20 + Math.random() * 60);
+                x += step * (dir > 0 ? 1 : -1);
+            }
+            rows.push({ y, dir, speed, phrases, rowH });
+        }
+    }
+    buildRows();
+
+    // Ripples
+    const ripples = [];
+    function spawnRipple(cx, cy) {
+        ripples.push({
+            x: cx, y: cy,
+            r: 0,
+            maxR: Math.hypot(window.innerWidth, window.innerHeight) * 0.65,
+            speed: 320 + Math.random() * 80,   // px/s
+            t: 0,
+            seen: new Set(),    // phrase keys already silenced
+        });
+    }
+
+    // Pointer interaction
+    let pointerDown = false;
+    let lastEmit = 0;
+    let cursorX = -9999, cursorY = -9999;
+    container.addEventListener('pointermove', (e) => {
+        cursorX = e.clientX; cursorY = e.clientY;
+    });
+    container.addEventListener('pointerdown', (e) => {
+        if (container.classList.contains('info-active')) return;
+        pointerDown = true;
+        spawnRipple(e.clientX, e.clientY);
+        lastEmit = performance.now();
+    });
+    window.addEventListener('pointerup', () => { pointerDown = false; });
+    container.addEventListener('pointerleave', () => { cursorX = cursorY = -9999; });
+
+    // Auto idle ripples — other quiet refusals elsewhere
+    let nextIdle = 1.5 + Math.random() * 2;
+
+    let last = performance.now();
+    let rafId;
+    function frame(now) {
+        rafId = requestAnimationFrame(frame);
+        const dt = Math.min(0.05, (now - last) / 1000);
+        last = now;
+
+        // Continuous emission while held
+        if (pointerDown && now - lastEmit > 380) {
+            spawnRipple(cursorX, cursorY);
+            lastEmit = now;
+        }
+        // Idle "other people" ripples — paused while reading info
+        if (!container.classList.contains('info-active')) {
+            nextIdle -= dt;
+            if (nextIdle <= 0) {
+                spawnRipple(
+                    Math.random() * window.innerWidth,
+                    Math.random() * window.innerHeight
+                );
+                nextIdle = 2.5 + Math.random() * 4.0;
+            }
+        }
+
+        // Background
+        ctx.fillStyle = bgColor();
+        ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+
+        // Update + draw rows
+        const W = window.innerWidth;
+        for (const row of rows) {
+            // March
+            for (const p of row.phrases) p.x += row.speed * dt;
+            // Wrap: phrases off-screen on the trailing side respawn at the leading edge as fresh slogans
+            if (row.dir > 0) {
+                let maxX = -Infinity;
+                for (const p of row.phrases) maxX = Math.max(maxX, p.x + p.w);
+                for (const p of row.phrases) {
+                    if (p.x > W + 20) {
+                        p.text = PROPAGANDA[Math.floor(Math.random() * PROPAGANDA.length)];
+                        p.font = pickPhraseFont();
+                        ctx.font = p.font;
+                        p.w = ctx.measureText(p.text).width;
+                        p.x = maxX + 80;
+                        maxX = p.x + p.w;
+                        p.silenceT = -1;
+                    }
+                }
+            } else {
+                let minX = Infinity;
+                for (const p of row.phrases) minX = Math.min(minX, p.x);
+                for (const p of row.phrases) {
+                    if (p.x + p.w < -20) {
+                        p.text = PROPAGANDA[Math.floor(Math.random() * PROPAGANDA.length)];
+                        p.font = pickPhraseFont();
+                        ctx.font = p.font;
+                        p.w = ctx.measureText(p.text).width;
+                        p.x = minX - p.w - 80;
+                        minX = p.x;
+                        p.silenceT = -1;
+                    }
+                }
+            }
+            // Update silence timers
+            for (const p of row.phrases) if (p.silenceT >= 0) p.silenceT += dt;
+        }
+
+        // Update ripples and silence collisions
+        for (const rp of ripples) {
+            const prevR = rp.r;
+            rp.r += rp.speed * dt;
+            rp.t += dt;
+            // Check phrases inside expanding band
+            for (const row of rows) {
+                for (const p of row.phrases) {
+                    if (p.silenceT >= 0) continue;
+                    const cx = p.x + p.w * 0.5;
+                    const dx = cx - rp.x;
+                    const dy = row.y - rp.y;
+                    const d  = Math.hypot(dx, dy);
+                    if (d <= rp.r && d >= prevR - 30) p.silenceT = 0;
+                }
+            }
+        }
+        // Cull dead ripples
+        for (let i = ripples.length - 1; i >= 0; i--) {
+            if (ripples[i].r > ripples[i].maxR) ripples.splice(i, 1);
+        }
+
+        // ── Render in two passes so the user can always read which phrase
+        //    the ripple just touched, even in a dense overlapping field.
+        // Pass 1: living chorus — depth-varied opacity, drawn behind.
+        ctx.textBaseline = 'middle';
+        for (const row of rows) {
+            for (const p of row.phrases) {
+                if (p.silenceT >= 0) continue;
+                if (p.x + p.w < 0 || p.x > W) continue;
+                ctx.font = p.font;
+                // Depth-based opacity: far=0.28 → near=0.95
+                ctx.globalAlpha = 0.28 + p.depth * 0.67;
+                ctx.fillStyle = textColor();
+                ctx.fillText(p.text, p.x, row.y + (p.yJitter || 0));
+            }
+        }
+        ctx.globalAlpha = 1;
+
+        // Pass 2: silenced / refusal — drawn ON TOP, brighter, with a
+        // background plate so it's legible no matter what's behind it.
+        for (const row of rows) {
+            for (const p of row.phrases) {
+                if (p.silenceT < 0) continue;
+                if (p.x + p.w < 0 || p.x > W) continue;
+                ctx.font = p.font;
+                const py = row.y + (p.yJitter || 0);
+                {
+                    const t = p.silenceT;
+                    if (t < 0.35) {
+                        // Pop a clean plate first to lift this phrase out of the pile
+                        ctx.fillStyle = bgColor();
+                        ctx.globalAlpha = 0.95;
+                        ctx.fillRect(p.x - 6, py - 12, p.w + 12, 24);
+                        ctx.globalAlpha = 1;
+                        // Bold redaction block
+                        ctx.fillStyle = '#dc143c';
+                        ctx.globalAlpha = 1 - t / 0.35 * 0.25;
+                        ctx.fillRect(p.x - 4, py - 11, p.w + 8, 22);
+                        ctx.globalAlpha = 1;
+                    } else if (t < 1.05) {
+                        const fade = Math.max(0, 1 - (t - 0.35) / 0.7);
+                        // Plate so the dying phrase reads against the pile
+                        ctx.fillStyle = bgColor();
+                        ctx.globalAlpha = 0.85 * fade;
+                        ctx.fillRect(p.x - 4, py - 11, p.w + 8, 22);
+                        ctx.globalAlpha = 0.10 + 0.7 * fade;
+                        ctx.fillStyle = silentColor();
+                        ctx.fillText(p.text, p.x, py);
+                        ctx.globalAlpha = 1;
+                        if (fade > 0) {
+                            ctx.strokeStyle = `rgba(220,20,60,${0.7 * fade})`;
+                            ctx.lineWidth = 1.5;
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, py);
+                            ctx.lineTo(p.x + p.w, py);
+                            ctx.stroke();
+                        }
+                    } else if (t < 2.0) {
+                        // Brief blank silence — the circle that was real
+                    } else {
+                        // Chorus returns — reappear as a fresh slogan of any length
+                        if (p.respawned !== true) {
+                            p.text = PROPAGANDA[Math.floor(Math.random() * PROPAGANDA.length)];
+                            p.font = pickPhraseFont();
+                            ctx.font = p.font;
+                            p.w = ctx.measureText(p.text).width;
+                            p.depth = Math.random();
+                            p.respawned = true;
+                        }
+                        const reveal = Math.min(1, (t - 2.0) / 0.5);
+                        ctx.globalAlpha = reveal * (0.28 + p.depth * 0.67);
+                        ctx.fillStyle = textColor();
+                        ctx.fillText(p.text, p.x, py);
+                        ctx.globalAlpha = 1;
+                        if (reveal >= 1) {
+                            p.silenceT = -1;
+                            p.respawned = false;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Draw ripples
+        for (const rp of ripples) {
+            const lifeT = rp.r / rp.maxR;
+            ctx.strokeStyle = `rgba(220,20,60,${(1 - lifeT) * 0.85})`;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(rp.x, rp.y, rp.r, 0, Math.PI * 2);
+            ctx.stroke();
+            // Inner softer ring
+            ctx.strokeStyle = `rgba(220,20,60,${(1 - lifeT) * 0.35})`;
+            ctx.lineWidth = 6;
+            ctx.beginPath();
+            ctx.arc(rp.x, rp.y, Math.max(0, rp.r - 12), 0, Math.PI * 2);
+            ctx.stroke();
+        }
+
+        // Cursor crosshair (subtle)
+        if (cursorX > 0 && !container.classList.contains('info-active')) {
+            ctx.strokeStyle = `rgba(220,20,60,0.7)`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(cursorX, cursorY, 6, 0, Math.PI * 2);
+            ctx.stroke();
+        }
+    }
+    rafId = requestAnimationFrame(frame);
+
+    function onResize() {
+        dpr = Math.min(2, window.devicePixelRatio || 1);
+        sizeCanvas();
+        buildRows();
+    }
+    window.addEventListener('resize', onResize);
+
+    // Theme toggle
+    themeBtn.onclick = () => {
+        isLightMode = !isLightMode;
+        themeBtn.classList.toggle('is-light', isLightMode);
+        backBtn.classList.toggle('is-light', isLightMode);
+        infoBtn.classList.toggle('is-light', isLightMode);
+        guideText.classList.toggle('is-light', isLightMode);
+        container.classList.toggle('is-dark', !isLightMode);
+        container.classList.toggle('is-light', isLightMode);
+    };
+
+    // Info toggle
+    infoBtn.onclick = () => {
+        const isActive = !container.classList.contains('info-active');
+        container.classList.toggle('info-active', isActive);
+        infoBtn.classList.toggle('active', isActive);
+    };
+
+    // Back
+    backBtn.onclick = () => {
+        container.style.opacity = '0';
+        cancelAnimationFrame(rafId);
+        window.removeEventListener('resize', onResize);
+        setTimeout(() => container.remove(), 500);
+    };
+
+    requestAnimationFrame(() => container.style.opacity = '1');
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// THEME 6 — BUT NOT THROUGH ME
+// A conveyor belt of propaganda papers. The user controls one button:
+// each press advances the belt by exactly one slot, stamping the paper
+// at the inspection station with their personal APPROVED. A wall of eyes
+// watches; the longer you don't press, the more they redden — but they
+// never punish. The lie continues, but it does not continue through you.
+// ─────────────────────────────────────────────────────────────────────
+function openNotThroughMeSubpage(clickedCell) {
+    const PHRASES = [
+        'GLORY TO THE PARTY',
+        'THE PLAN IS THE LAW',
+        'OBEY',
+        'WORK IS HONOR',
+        'TWO PLUS TWO IS FIVE',
+        'THE FUTURE IS DECIDED',
+        'DENUNCIATION IS DUTY',
+        'LIES = TRUTH',
+        'THE STATE PROTECTS YOU',
+        'WE HAVE ALWAYS WON',
+        'THE CHORUS OF MILLIONS PROVES WHAT NO INDIVIDUAL CAN PROVE.',
+        'REPEAT THE STATEMENT YOU HAVE BEEN GIVEN.',
+        'THERE HAS NEVER BEEN A FAMINE.',
+        'UNHAPPINESS IS A SYMPTOM OF IDEOLOGICAL INFECTION.',
+        'YOUR NEIGHBOUR IS LISTENING.',
+        'THE PROBLEM YOU ARE EXPERIENCING DOES NOT EXIST.',
+        'CONFIRM THAT THE STATEMENT IS TRUE.',
+        'SIGN HERE TO ACKNOWLEDGE.',
+        'STATE THAT YOU HAVE READ AND UNDERSTOOD.',
+        'PRODUCTION TARGETS HAVE BEEN EXCEEDED.',
+        'NOTHING IS IMPOSSIBLE FOR THE SOVIET PEOPLE.',
+        'SLEEP WELL, COMRADE.',
+    ];
+
+    const container = document.createElement('div');
+    container.id = 'notthroughme-subpage';
+    container.className = 'is-light';
+    container.style.cssText = `
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        z-index: 2000; opacity: 0; transition: opacity 0.5s ease; overflow: hidden;
+        display: grid; grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 100%; gap: 2.5rem; padding: 0 3.5rem;
+    `;
+
+    // UI
+    const backBtn = document.createElement('button');
+    backBtn.className = 'physics-back-btn is-light';
+    container.appendChild(backBtn);
+
+    const themeBtn = document.createElement('div');
+    themeBtn.className = 'theme-toggle-wrapper is-light';
+    themeBtn.innerHTML = '<div class="slider-knob"></div>';
+    container.appendChild(themeBtn);
+
+    const infoBtn = document.createElement('div');
+    infoBtn.className = 'info-icon-btn is-light';
+    infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+    container.appendChild(infoBtn);
+
+    const guideText = document.createElement('div');
+    guideText.className = 'overlay-text-guide is-light';
+    guideText.innerHTML = 'PRESS TO LET ONE PASS<br>THROUGH YOU';
+    container.appendChild(guideText);
+
+    // Sidebars
+    const sidebarLeft = document.createElement('div');
+    sidebarLeft.className = 'physics-sidebar left';
+    const sidebarRight = document.createElement('div');
+    sidebarRight.className = 'physics-sidebar right';
+
+    const headerBox = document.createElement('div');
+    headerBox.className = 'faint-text-box';
+    headerBox.innerHTML = `
+        <div class="doc-header">
+            <div class="doc-row"><span class="doc-label">FROM:</span><span class="doc-value">THE LIE</span></div>
+            <div class="doc-row"><span class="doc-label">TO:</span><span class="doc-value">ME</span></div>
+            <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">[REDACTED]</span></div>
+            <div class="doc-divider"></div>
+            <div class="doc-row"><span class="doc-label">SUBJECT:</span><span class="doc-value" style="color:#dc143c; font-weight:700;">BUT NOT THROUGH ME</span></div>
+            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">██/██/19██</span></div>
+            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC-████-06</span></div>
+            <div class="doc-divider"></div>
+        </div>
+    `;
+    sidebarLeft.appendChild(headerBox);
+
+    const paraBox = document.createElement('div');
+    paraBox.className = 'faint-text-box paragraph-box';
+    paraBox.innerHTML = `
+        <div class="text-content" style="max-height:none; overflow:visible;">
+            <div style="margin-bottom:24px;">
+                <span class="doc-label" style="display:block; margin-bottom:4px; color:#dc143c; font-weight:700; opacity:0.9;">Live Not by Lies, A. Solzhenitsyn</span>
+                <span style="color:#dc143c; font-weight:600;">"Let it not rule through me."</span><br>
+                The simplest, the most accessible key to our liberation: a personal nonparticipation in lies. Even if all is covered by lies, even if all is under their rule, let us resist in the smallest way: let it not rule through me.
+            </div>
+            <div style="margin-bottom:24px;">
+                <span class="doc-label" style="display:block; margin-bottom:4px; color:#dc143c; font-weight:700; opacity:0.9;">The Gulag Archipelago</span>
+                <span style="color:#dc143c; font-weight:600;">"Whoever vows to survive at any price..."</span><br>
+                Whoever vows to survive at any price has already decided to survive at someone else's expense.
+            </div>
+            <div style="margin-bottom:0;">
+                <span class="doc-label" style="display:block; margin-bottom:4px; color:#dc143c; font-weight:700; opacity:0.9;">Live Not by Lies</span>
+                <span style="color:#dc143c; font-weight:600;">"There comes a fork in the road."</span><br>
+                For every person regardless of calling there comes a great fork in the road. If you go to the right you lose your life. If you go to the left you lose your conscience.
+            </div>
+        </div>
+    `;
+    sidebarLeft.appendChild(paraBox);
+
+    const narrativeBox = document.createElement('div');
+    narrativeBox.className = 'faint-text-box';
+    narrativeBox.innerHTML = `
+        <div class="text-content">
+            Production never stops. The belt is always full. Beneath every slogan, every report, every applause line, there is a station where someone — anyone — has the power to put a hand on the lever, or not put a hand on the lever.
+            <br><br>
+            Each press is a small participation. The belt advances by exactly one piece of speech, and that piece leaves the station marked APPROVED in your hand. The wall of eyes never punishes; they only watch the lever, waiting to see whether you reach for it.
+            <br><br>
+            Solzhenitsyn's claim was not that you must overturn the belt or stop the factory. It was that, today, you may simply not press it. The lie continues — but it does not continue through you.
+            <br><br>
+            <span style="color:#dc143c; font-weight:600;">"Let the lie come into the world. Let it even triumph. But not through me."</span>
+        </div>
+    `;
+    sidebarRight.appendChild(narrativeBox);
+
+    container.appendChild(sidebarLeft);
+    container.appendChild(sidebarRight);
+
+    // Wall of eyes — keyboard-symbol eyes, only ABOVE the belt, no collisions
+    const wall = document.createElement('div');
+    wall.className = 'ntm-wall';
+    const EYE_COUNT = 70;
+    const BRACKETS = [
+        ['(', ')'],
+        ['{', '}'],
+        ['[', ']'],
+    ];
+    const VPW = window.innerWidth;
+    const VPH = window.innerHeight;
+    // Belt sits at bottom:18% with height 240px. Reserve a margin above it.
+    const BELT_TOP_PX = VPH - VPH * 0.18 - 240 - 30;
+    const placed = []; // {x, y, w, h}
+    let attempts = 0;
+    while (placed.length < EYE_COUNT && attempts < EYE_COUNT * 60) {
+        attempts++;
+        const fontSize = 22 + Math.random() * 28;   // 22–50 px (larger)
+        const w = fontSize * 1.4;
+        const h = fontSize * 2.0;
+        const x = Math.random() * (VPW - w) + w * 0.5;
+        const y = 14 + Math.random() * Math.max(20, BELT_TOP_PX - h - 14);
+        let ok = true;
+        for (const e of placed) {
+            const dx = Math.abs(x - e.x);
+            const dy = Math.abs(y - e.y);
+            if (dx < (w + e.w) * 0.5 + 4 && dy < (h + e.h) * 0.5 + 4) { ok = false; break; }
+        }
+        if (!ok) continue;
+        placed.push({ x, y, w, h });
+        const br = BRACKETS[Math.floor(Math.random() * BRACKETS.length)];
+        const eye = document.createElement('div');
+        eye.className = 'ntm-eye';
+        eye.style.left = x + 'px';
+        eye.style.top  = y + 'px';
+        eye.style.fontSize = fontSize + 'px';
+        eye.innerHTML = `<span class="ntm-br">${br[0]}</span><span class="ntm-pupil-slot"><span class="ntm-pupil">■</span></span><span class="ntm-br">${br[1]}</span>`;
+        wall.appendChild(eye);
+    }
+    container.appendChild(wall);
+
+    // Each eye normally drifts in its own random direction; on press, every
+    // pupil snaps to the conveyor centre — the moment of collective attention.
+    function setPupilOffset(eye, dx, dy) {
+        const fs = parseFloat(eye.style.fontSize) || 18;
+        const px = (dx * fs * 0.18).toFixed(2);
+        const py = (dy * fs * 0.10).toFixed(2);
+        const pupil = eye.querySelector('.ntm-pupil');
+        if (pupil) pupil.style.transform = `translate(${px}px, ${py}px)`;
+    }
+    function idleGaze() {
+        for (const eye of wall.querySelectorAll('.ntm-eye')) {
+            const a = Math.random() * Math.PI * 2;
+            setPupilOffset(eye, Math.cos(a), Math.sin(a));
+        }
+    }
+    function focusOnBelt() {
+        const r = beltStage.getBoundingClientRect();
+        const cx = r.left + r.width / 2;
+        const cy = r.top  + r.height / 2;
+        for (const eye of wall.querySelectorAll('.ntm-eye')) {
+            const er = eye.getBoundingClientRect();
+            let dx = cx - (er.left + er.width / 2);
+            let dy = cy - (er.top  + er.height / 2);
+            const len = Math.hypot(dx, dy) || 1;
+            setPupilOffset(eye, dx / len, dy / len);
+        }
+    }
+    // Backwards-compat alias used by other code paths
+    function pointPupils() { idleGaze(); }
+
+    // Conveyor stage
+    const beltStage = document.createElement('div');
+    beltStage.className = 'ntm-belt-stage';
+    beltStage.innerHTML = `
+        <div class="ntm-belt-3d">
+            <div class="ntm-belt-rail top"></div>
+            <div class="ntm-belt-track"></div>
+            <div class="ntm-belt-rail bottom"></div>
+            <div class="ntm-station"></div>
+        </div>
+    `;
+    container.appendChild(beltStage);
+    const track = beltStage.querySelector('.ntm-belt-track');
+    // Initial idle gaze; ambient drift every ~3s so eyes feel alive
+    requestAnimationFrame(idleGaze);
+    const gazeInterval = setInterval(() => {
+        if (busy) return; // don't override the focused stare during a press
+        idleGaze();
+    }, 3000);
+
+    // Paper queue
+    const PAPER_W = 280;
+    const PAPER_GAP = 24;
+    const STEP = PAPER_W + PAPER_GAP;
+    const VISIBLE_AHEAD = 6;
+    const papers = [];
+    function makePaper(text) {
+        const div = document.createElement('div');
+        div.className = 'ntm-paper';
+        div.innerHTML = `<div class="ntm-paper-text">${text}</div>
+            <div class="ntm-paper-slot">__________</div>
+            <div class="ntm-paper-stamp">APPROVED</div>`;
+        return div;
+    }
+    let nextIdx = 0;
+    function pushPaper() {
+        const text = PHRASES[Math.floor(Math.random() * PHRASES.length)];
+        const div = makePaper(text);
+        div.style.left = (nextIdx * STEP) + 'px';
+        track.appendChild(div);
+        papers.push({ div, idx: nextIdx });
+        nextIdx++;
+    }
+    for (let i = 0; i < VISIBLE_AHEAD + 3; i++) pushPaper();
+
+    // Position belt so first paper sits at the inspection station (centre)
+    let beltPos = 0;
+    function stationOffset() { return window.innerWidth * 0.5 - PAPER_W * 0.5; }
+    track.style.transform = `translateX(${stationOffset() - beltPos}px)`;
+
+    // The advance button
+    const button = document.createElement('button');
+    button.className = 'ntm-advance-btn';
+    button.innerHTML = '<span class="ntm-btn-label">ADVANCE</span><span class="ntm-btn-sub">PRESS TO STAMP &amp; PASS THROUGH</span>';
+    container.appendChild(button);
+
+    // Final overlay text — emerges with idle time
+    const finalText = document.createElement('div');
+    finalText.className = 'ntm-final-text';
+    finalText.innerHTML = `
+        <div class="ntm-quote">"LET THE LIE COME INTO THE WORLD."</div>
+        <div class="ntm-quote">"LET IT EVEN TRIUMPH."</div>
+        <div class="ntm-quote ntm-quote-emph">"BUT NOT THROUGH ME."</div>
+    `;
+    container.appendChild(finalText);
+
+    let pressCount = 0;
+    let lastPressTime = performance.now();
+    let busy = false;
+    const ANIM_MS = 600;
+
+    function advance(fromAuto = false) {
+        if (busy) return;
+        // Manual advance is locked during info mode; auto-mode bypasses the guard
+        if (!fromAuto && container.classList.contains('info-active')) return;
+        busy = true;
+        pressCount++;
+        lastPressTime = performance.now();
+
+        // Stamp whichever paper is currently at the station (paper i sits at
+        // i*STEP - beltPos + stationOffset(); station x == stationOffset())
+        const stationIdx = Math.round(beltPos / STEP);
+        const stationP = papers.find(p => p.idx === stationIdx);
+        if (stationP) stationP.div.classList.add('stamped');
+
+        beltPos += STEP;
+        track.style.transform = `translateX(${stationOffset() - beltPos}px)`;
+        wall.classList.add('blink-once');
+        // Collective attention: every pupil snaps to the belt centre
+        focusOnBelt();
+        setTimeout(() => idleGaze(), 1200);
+
+        setTimeout(() => {
+            // Always extend the trailing edge — chorus is endless
+            pushPaper();
+            // Stamped papers stay visible as they march off; only retire when
+            // they have fully cleared the left edge of the viewport
+            const leftLimit = -PAPER_W - 100;
+            for (let i = papers.length - 1; i >= 0; i--) {
+                const p = papers[i];
+                const x = p.idx * STEP - beltPos + stationOffset();
+                if (x + PAPER_W < leftLimit) {
+                    p.div.remove();
+                    papers.splice(i, 1);
+                }
+            }
+            wall.classList.remove('blink-once');
+            busy = false;
+        }, ANIM_MS);
+    }
+
+    button.addEventListener('click', advance);
+    function onKey(e) {
+        if (e.code === 'Space') {
+            e.preventDefault();
+            advance();
+        }
+    }
+    window.addEventListener('keydown', onKey);
+
+    // Idle-driven final text + eye agitation
+    let isLightMode = true;
+    let rafId;
+    function frame(now) {
+        rafId = requestAnimationFrame(frame);
+        const idleMs = now - lastPressTime;
+        // Final vow appears the LONGER you don't press (slow reveal)
+        const target = pressCount === 0
+            ? Math.min(1, Math.max(0, (idleMs - 3500) / 7500))
+            : Math.min(1, Math.max(0, (idleMs - 6000) / 8000));
+        const cur = parseFloat(finalText.style.opacity || '0');
+        const next = cur + (target - cur) * 0.03;
+        finalText.style.opacity = next.toFixed(3);
+    }
+    rafId = requestAnimationFrame(frame);
+
+    // Theme toggle
+    themeBtn.onclick = () => {
+        isLightMode = !isLightMode;
+        themeBtn.classList.toggle('is-light', isLightMode);
+        backBtn.classList.toggle('is-light', isLightMode);
+        infoBtn.classList.toggle('is-light', isLightMode);
+        guideText.classList.toggle('is-light', isLightMode);
+        container.classList.toggle('is-dark', !isLightMode);
+        container.classList.toggle('is-light', isLightMode);
+    };
+
+    let autoStampInterval = null;
+    infoBtn.onclick = () => {
+        const isActive = !container.classList.contains('info-active');
+        container.classList.toggle('info-active', isActive);
+        infoBtn.classList.toggle('active', isActive);
+        if (isActive) {
+            // While reading the explanation: belt auto-stamps; manual touch locked
+            if (!autoStampInterval) {
+                autoStampInterval = setInterval(() => advance(true), 1400);
+            }
+        } else if (autoStampInterval) {
+            clearInterval(autoStampInterval);
+            autoStampInterval = null;
+        }
+    };
+
+    function onResize() {
+        track.style.transform = `translateX(${stationOffset() - beltPos}px)`;
+        pointPupils();
+    }
+    window.addEventListener('resize', onResize);
+
+    backBtn.onclick = () => {
+        container.style.opacity = '0';
+        cancelAnimationFrame(rafId);
+        clearInterval(gazeInterval);
+        if (autoStampInterval) clearInterval(autoStampInterval);
+        window.removeEventListener('keydown', onKey);
+        window.removeEventListener('resize', onResize);
+        setTimeout(() => container.remove(), 500);
+    };
+
+    document.body.appendChild(container);
     requestAnimationFrame(() => container.style.opacity = '1');
 }
