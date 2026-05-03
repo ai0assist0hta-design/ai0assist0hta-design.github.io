@@ -6,8 +6,8 @@ const THEMES = [
         from: "THE STATE",
         to: "THE PEOPLE",
         cc: "DEPARTMENT OF TRUTH",
-        date: "██/██/19██",
-        ref: "DOC-████-01",
+        date: "██████████",
+        ref: "DOC██████",
         body: "VIOLENCE CANNOT SURVIVE ALONE. IT AGES QUICKLY AND LOSES ALL CONFIDENCE IN ITSELF SO IT SUMMONS FALSEHOOD AS ITS FAITHFUL ALLY. VIOLENCE CANNOT CONCEAL ITSELF WITHOUT LIES AND LIES CANNOT SUSTAIN THEMSELVES WITHOUT VIOLENCE. TOGETHER THEY FORM A SYSTEM THAT DOES NOT DEMAND DAILY PHYSICAL FORCE UPON EVERY SHOULDER BUT DEMANDS SOMETHING FAR MORE INSIDIOUS. OBEDIENCE TO LIES AND DAILY PARTICIPATION IN THEM. THROUGH THIS PARTNERSHIP LIES HAVE DRAGGED SOCIETY SO FAR FROM NORMALITY THAT NO ONE CAN SEE A SINGLE PILLAR THROUGH THE DENSE GRAY FOG. ONLY WHAT THE RADIO HAMMERS IN DAY AFTER DAY DRILLS INTO THE BRAIN AND EVERYTHING ELSE IS CONVENIENTLY FORGOTTEN. YET THERE EXISTS A SIMPLEST KEY TO LIBERATION. PERSONAL NON-PARTICIPATION IN LIES. THOUGH LIES CONCEAL EVERYTHING AND EMBRACE EVERYTHING THEY NEED NOT DO SO WITH ANY HELP FROM ME. WHEN PEOPLE RENOUNCE FALSEHOOD IT SIMPLY CEASES TO EXIST LIKE AN INFECTION THAT CAN SURVIVE ONLY IN A LIVING ORGANISM."
     },
     {
@@ -16,8 +16,8 @@ const THEMES = [
         from: "THE PARTY COMMITTEE",
         to: "FIELD OPERATIVES",
         cc: "BUREAU OF IDEOLOGY",
-        date: "██/██/19██",
-        ref: "DOC-████-02",
+        date: "██████████",
+        ref: "DOC██████",
         body: "SHAKESPEARES VILLAINS STOPPED AT A DOZEN CORPSES BECAUSE THEY HAD NO IDEOLOGY. MACBETHS SELF-JUSTIFICATIONS WERE FEEBLE AND HIS CONSCIENCE DEVOURED HIM. BUT IDEOLOGY CHANGES EVERYTHING. IT PROVIDES THE SOCIAL THEORY THAT ALLOWS EVIL ACTS TO APPEAR GOOD IN ONES OWN EYES AND IN THE EYES OF OTHERS. THE INQUISITION INVOKED CHRISTIANITY. COLONIZERS INVOKED CIVILIZATION. NAZIS INVOKED RACE. JACOBINS INVOKED EQUALITY AND THE HAPPINESS OF FUTURE GENERATIONS. EACH BELIEVED THEY WERE DOING WHAT WAS RIGHT AND NECESSARY. THIS IS WHY THE TWENTIETH CENTURY EXPERIENCED EVIL ON A SCALE MEASURED NOT IN DOZENS BUT IN MILLIONS. THE IDEOLOGICAL EVILDOER CROSSES THE PRECISE LINE THAT SHAKESPEARES VILLAINS COULD NOT AND HIS EYES REMAIN DRY AND CLEAR. JUST AS A WEAK BLUE LIGHT CAN TRIGGER WHAT INTENSE YELLOW LIGHT CANNOT SO EVILDOING HAS A THRESHOLD MAGNITUDE. ONCE CROSSED THE PERSON LEAVES HUMANITY BEHIND PERHAPS WITHOUT THE POSSIBILITY OF RETURN."
     },
     {
@@ -26,18 +26,18 @@ const THEMES = [
         from: "CAMP ADMINISTRATION",
         to: "PRISONER NO. ██████",
         cc: "GULAG DIRECTORATE",
-        date: "██/██/19██",
-        ref: "DOC-████-03",
-        body: "AT THE END OF THE DAY SHUKHOV FALLS ASLEEP FEELING PLEASED WITH LIFE. HE WASNT THROWN IN THE PUNISHMENT CELL. HE SWIPED EXTRA GRUEL AT DINNER. HE ENJOYED HIS WORK ON THE WALL. THE BLADE WASNT FOUND AT THE SEARCH POINT AND HE EARNED A BIT OF TOBACCO. THE END OF AN UNCLOUDED DAY. ALMOST A HAPPY ONE. THEN THE DEVASTATING ARITHMETIC. THIS WAS JUST ONE OF THREE THOUSAND SIX HUNDRED AND FIFTY-THREE DAYS OF HIS SENTENCE FROM BELL TO BELL. THE EXTRA THREE WERE FOR LEAP YEARS. NOW CONSIDER WHAT ONE YEAR CONTAINS. THREE HUNDRED AND SIXTY-FIVE DAYS MARCHING OUT TO ROLL-CALL IN DRIZZLE BLIZZARD AND BITTER COLD. THREE HUNDRED AND SIXTY-FIVE DAYS OF HATEFUL ALIEN WORK. SEVEN HUNDRED AND THIRTY BOWLS OF GRUEL AND SEVEN HUNDRED AND THIRTY PORTIONS OF GRITS. NO RADIO AND NO BOOKS AND THANK GOD FOR THAT. AND THIS IS ONLY ONE YEAR. THERE ARE TEN. THERE ARE TWENTY-FIVE. YET EVEN HERE THE PRISONERS BRAINS AND SOULS ARE NOT INACTIVE. A WEAK SPARK OF GOD WAS BREATHED INTO THEM ONCE AND THE QUESTION REMAINS WHAT HAS BECOME OF IT NOW."
+        date: "██████████",
+        ref: "DOC██████",
+        body: "AT THE END OF THE DAY SHUKHOV FALLS ASLEEP FEELING PLEASED WITH LIFE. HE WASNT THROWN IN THE PUNISHMENT CELL. HE SWIPED EXTRA GRUEL AT DINNER. HE ENJOYED HIS WORK ON THE WALL. THE BLADE WASNT FOUND AT THE SEARCH POINT AND HE EARNED A BIT OF TOBACCO. THE END OF AN UNCLOUDED DAY. ALMOST A HAPPY ONE. THEN THE DEVASTATING ARITHMETIC. THIS WAS JUST ONE OF THREE THOUSAND SIX HUNDRED AND FIFTY-THREE DAYS OF HIS SENTENCE FROM BELL TO BELL. THE EXTRA THREE WERE FOR LEAP YEARS. NOW CONSIDER WHAT ONE YEAR CONTAINS. THREE HUNDRED AND SIXTY-FIVE DAYS MARCHING OUT TO ROLL-CALL IN DRIZZLE BLIZZARD AND BITTER COLD. THREE HUNDRED AND SIXTY-FIVE DAYS OF HATEFUL ALIEN WORK. SEVEN HUNDRED AND THIRTY BOWLS OF GRUEL AND SEVEN HUNDRED AND THIRTY PORTIONS OF GRITS. NO RADIO AND NO BOOKS — AT LEAST NOT THAT. AND THIS IS ONLY ONE YEAR. THERE ARE TEN. THERE ARE TWENTY-FIVE. YET EVEN HERE THE PRISONERS MINDS ARE NOT INACTIVE. A WEAK SPARK WAS BREATHED INTO THEM ONCE AND THE QUESTION REMAINS WHAT HAS BECOME OF IT NOW."
     },
     {
         id: 4,
         subject: "CONSCIENCE",
         from: "A HUMAN BEING",
         to: "HIS OWN CONSCIENCE",
-        cc: "GOD",
-        date: "██/██/19██",
-        ref: "DOC-████-04",
+        cc: "MEMORY",
+        date: "██████████",
+        ref: "DOC██████",
         body: "THIS IS THE MAIN PROBLEM OF THE TWENTIETH CENTURY. IS IT PERMISSIBLE MERELY TO CARRY OUT ORDERS AND COMMIT ONES CONSCIENCE TO SOMEONE ELSES KEEPING. CAN A PERSON LIVE WITHOUT HIS OWN IDEAS ABOUT GOOD AND EVIL DERIVING THEM ONLY FROM PRINTED INSTRUCTIONS AND THE VERBAL COMMANDS OF SUPERIORS. THOSE SOLEMN OATHS PRONOUNCED WITH A TREMOR IN THE VOICE WERE MEANT TO DEFEND THE PEOPLE AGAINST EVILDOERS YET HOW EASILY THEY ARE REDIRECTED TO SERVE THE VERY EVIL THEY WERE SWORN TO OPPOSE. IF ONLY THE ANSWER WERE SIMPLE. IF ONLY EVIL PEOPLE EXISTED SOMEWHERE INSIDIOUSLY COMMITTING THEIR DEEDS AND IT WERE ONLY NECESSARY TO SEPARATE AND DESTROY THEM. BUT THE LINE DIVIDING GOOD AND EVIL CUTS THROUGH THE HEART OF EVERY HUMAN BEING WITHOUT EXCEPTION. DURING A LIFETIME THIS LINE SHIFTS. THE SAME PERSON STANDS AT VARIOUS AGES NEAR SAINTHOOD AND NEAR THE DEVIL. THE NAME DOES NOT CHANGE AND TO THAT NAME WE ASCRIBE EVERYTHING. SOCRATES COMMAND KNOW THYSELF HAS NEVER BEEN MORE URGENT THAN NOW."
     },
     {
@@ -45,9 +45,9 @@ const THEMES = [
         subject: "RESISTANCE",
         from: "AN ORDINARY PERSON",
         to: "THE SYSTEM",
-        cc: "EVERYONE WHO REMAINS SILENT",
-        date: "██/██/19██",
-        ref: "DOC-████-05",
+        cc: "BYSTANDERS",
+        date: "██████████",
+        ref: "DOC██████",
         body: "WE HAVE NOT MATURED ENOUGH TO MARCH INTO THE SQUARES AND SHOUT THE TRUTH ALOUD. IT IS NOT YET NECESSARY AND IT IS CERTAINLY DANGEROUS. BUT THERE IS SOMETHING WE CAN DO RIGHT NOW. LET US REFUSE TO SAY WHAT WE DO NOT THINK. THIS IS THE EASIEST AND MOST ACCESSIBLE PATH AND IT ACCOUNTS FOR THE COWARDICE ALREADY WELL ROOTED WITHIN US. IF WE DID NOT PASTE TOGETHER THE DEAD BONES AND SCALES OF IDEOLOGY AND IF WE DID NOT SEW ITS ROTTING RAGS WE WOULD BE ASTONISHED AT HOW QUICKLY THE LIES BECOME HELPLESS AND FALL AWAY. THIS IS NOT THEORY. AT SAMARKA CAMP IN NINETEEN FORTY-SIX A GROUP OF INTELLECTUALS REACHED THE BRINK OF DEATH WORN DOWN BY HUNGER COLD AND LABOR BEYOND THEIR STRENGTH. DID THEY STEAL. DID THEY INFORM ON OTHERS. DID THEY WHIMPER ABOUT THEIR RUINED LIVES. NO. FORESEEING DEATH IN DAYS RATHER THAN WEEKS THEY SAT AGAINST THE WALL AND ORGANIZED A SEMINAR SHARING THEIR FINAL KNOWLEDGE WITH ONE ANOTHER. FROM ONE SESSION TO THE NEXT PARTICIPANTS WERE MISSING. THEY WERE ALREADY IN THE MORGUE."
     },
     {
@@ -56,8 +56,8 @@ const THEMES = [
         from: "THE LIE",
         to: "ME",
         cc: "[REDACTED]",
-        date: "██/██/19██",
-        ref: "DOC-████-06",
+        date: "██████████",
+        ref: "DOC██████",
         body: "LET THE LIE COME INTO THE WORLD. LET IT EVEN TRIUMPH. BUT NOT THROUGH ME. THIS IS NOT THE BATTLE CRY OF A HERO BUT THE QUIET RESOLUTION OF AN ORDINARY PERSON WHO REFUSES TO PARTICIPATE IN FALSEHOOD. WRITERS AND ARTISTS CAN DO MORE BECAUSE THEY CAN DEFEAT THE LIE ENTIRELY. IN THE STRUGGLE AGAINST LIES ART HAS ALWAYS TRIUMPHED AND SHALL ALWAYS TRIUMPH BECAUSE LIES CAN PREVAIL AGAINST MUCH IN THIS WORLD BUT NEVER AGAINST ART. YET FOR EVERY PERSON REGARDLESS OF CALLING THERE COMES A GREAT FORK IN THE ROAD. IF YOU GO TO THE RIGHT YOU LOSE YOUR LIFE. IF YOU GO TO THE LEFT YOU LOSE YOUR CONSCIENCE. WHOEVER VOWS TO SURVIVE AT ANY PRICE HAS ALREADY DECIDED TO SURVIVE AT SOMEONE ELSES EXPENSE. IT WAS NOT THE MAJORITY WHO CHOSE THE HARDER PATH BUT NEITHER WAS IT ONLY A FEW. MANY MADE THAT CHOICE THOUGH THEY NEVER SHOUTED ABOUT IT. YOU HAD TO LOOK CLOSELY TO SEE THEM. AND IT WAS ONLY ON ROTTING PRISON STRAW THAT THE FIRST STIRRINGS OF GOOD COULD BE FELT. THE LINE SEPARATING GOOD AND EVIL PASSES NOT THROUGH STATES NOR BETWEEN PARTIES BUT RIGHT THROUGH EVERY HUMAN HEART."
     }
 ];
@@ -70,7 +70,7 @@ const THEMES = [
 
 const REDACTED_TRUTH = new Set([
     "TRUTH", "CONSCIENCE", "FREEDOM", "FREE", "GOOD", "GOODNESS",
-    "BEAUTY", "ART", "LIBERATION", "SOUL", "GOD", "INTEGRITY",
+    "BEAUTY", "ART", "LIBERATION", "SOUL", "INTEGRITY",
     "MEMORY", "LITERATURE", "SAINTHOOD", "GENUINE", "PROOF",
     "LIGHT", "SPARK", "FLAME", "HEART", "BRAVE", "PROTECT",
     "DEFEND", "JUSTICE", "KNOWLEDGE", "WISDOM", "LOVE", "HOPE"
@@ -126,7 +126,7 @@ const SEMANTIC_MAP = {
     "FREE": "sem-light", "LIGHT": "sem-light", "BEAUTY": "sem-light",
     "ART": "sem-light", "GOODNESS": "sem-light", "GOOD": "sem-light",
     "CONSCIENCE": "sem-light", "MEMORY": "sem-light", "LITERATURE": "sem-light",
-    "SOUL": "sem-light", "GOD": "sem-light", "SAINTHOOD": "sem-light",
+    "SOUL": "sem-light", "SAINTHOOD": "sem-light",
     "PROOF": "sem-light", "GENUINE": "sem-light",
 
     // Power / Violence / Oppression (visible — lies remain)
@@ -221,8 +221,6 @@ function createCell(theme) {
     // Header
     const header = document.createElement('div');
     header.className = 'doc-header';
-    const wordCount = theme.body.split(' ').length;
-    const refStr = `DOC-0000${theme.id}-${String(wordCount).padStart(3, '0')}`;
     header.innerHTML = `
         <div class="doc-row"><span class="doc-label">FROM:</span><span class="doc-value">${theme.from}</span></div>
         <div class="doc-row"><span class="doc-label">TO:</span><span class="doc-value">${theme.to}</span></div>
@@ -230,7 +228,7 @@ function createCell(theme) {
         <div class="doc-divider"></div>
         <div class="doc-row"><span class="doc-label">SUBJECT:</span><span class="doc-value doc-subject">${theme.subject}</span></div>
         <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value date-redacted">${theme.date}</span></div>
-        <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">${refStr}</span></div>
+        <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">${theme.ref}</span></div>
         <div class="doc-divider"></div>
     `;
 
@@ -1059,6 +1057,25 @@ function createPartShaderMaterial(THREE, tex, uvScale) {
     });
 }
 
+// Per-subpage guide fade: fade the guide text after the first user gesture
+// or after 6 seconds, whichever comes first.
+function armGuideFade(container) {
+    const guides = () => container.querySelectorAll('.overlay-text-guide');
+    let fired = false;
+    const fade = () => {
+        if (fired) return;
+        fired = true;
+        guides().forEach(el => el.classList.add('user-engaged'));
+        container.removeEventListener('pointerdown', fade);
+        container.removeEventListener('wheel', fade);
+        window.removeEventListener('keydown', fade);
+    };
+    container.addEventListener('pointerdown', fade, { passive: true });
+    container.addEventListener('wheel', fade, { passive: true });
+    window.addEventListener('keydown', fade, { passive: true });
+    setTimeout(fade, 6000);
+}
+
 function openPhysicsSubpage(clickedCell) {
     // Create the container
     const container = document.createElement('div');
@@ -1087,8 +1104,8 @@ function openPhysicsSubpage(clickedCell) {
             <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">DEPARTMENT OF TRUTH</span></div>
             <div class="doc-divider"></div>
             <div class="doc-row"><span class="doc-label">SUBJECT:</span><span class="doc-value" style="color: #dc143c; font-weight: 700;">THE STRUCTURE OF LIES</span></div>
-            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">1984.10.27</span></div>
-            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC-00001-155</span></div>
+            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">██████████</span></div>
+            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC██████</span></div>
             <div class="doc-divider"></div>
         </div>
     `;
@@ -1100,19 +1117,16 @@ function openPhysicsSubpage(clickedCell) {
     paraBox.innerHTML = `
         <div class="text-content" style="max-height: none; overflow: visible;">
             <div style="margin-bottom: 24px;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">Live Not by Lies, 1974</span>
                 <span style="color: #dc143c; font-weight: 600;">"violence… summons falsehood as its ally"</span><br>
                 Violence quickly grows old and loses confidence in itself. To maintain a respectable face it summons falsehood as its ally. Violence cannot conceal itself without lies, and lies cannot be sustained without violence. The system does not demand daily physical force upon every shoulder — only obedience to lies and daily participation in them. All loyalty to the regime is contained in that single demand.
             </div>
 
             <div style="margin-bottom: 24px;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, The Law as a Child</span>
                 <span style="color: #dc143c; font-weight: 600;">"the lie has… led us so far away from a normal society"</span><br>
                 Lies have dragged society so far from normality that one can no longer see a single pillar through the dense, gray fog. Even if they offered us the chance to learn the truth, would our free people even want to know it? Only what the radio hammers in day after day drills into the brain; everything else is conveniently forgotten.
             </div>
 
             <div style="margin-bottom: 0;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">Live Not by Lies, 1974</span>
                 <span style="color: #dc143c; font-weight: 600;">"personal non-participation in lies"</span><br>
                 The simplest and most accessible key to self-neglected liberation lies in personal non-participation in lies. Though lies conceal everything, though they embrace everything — not with any help from me. When people renounce lies it simply cuts short their existence — like an infection, they can survive only in a living organism. This opens a breach in the imaginary encirclement caused by our inaction.
             </div>
@@ -1125,15 +1139,13 @@ function openPhysicsSubpage(clickedCell) {
     infrastructureBox.className = 'faint-text-box';
     infrastructureBox.innerHTML = `
         <div class="text-content">
-            The red signals on the wires are lies.
+            It's a utility pole. The red sparks on the wires are words pulled from official documents — violence, obedience, falsehood.
             <br><br>
-            Each one is merely a small word. Violence. Obedience. Falsehood. Infection. Individually they appear harmless. A phrase in a speech, a line in the news. But connected through wires, they harden into a single object. A utility pole.
+            On their own, those words don't do much. You hear them once in a speech, once in a memo, and forget. The pole's job is to bundle and route them. Power doesn't have to write a new lie every day. It only needs the wire to stay live.
             <br><br>
-            A utility pole does not generate electricity. It only carries it. Likewise, this structure does not generate lies. The lies are produced at the center of power, flow through the wires, and reach everywhere through the structure. Solzhenitsyn wrote: the system does not demand daily physical force upon every shoulder. It demands only obedience to lies and daily participation in them. Stay connected to the wire. Receive the signal. Pass it on. That is enough.
+            That's all the system actually asks. Stay connected. Receive the signal. Pass it on.
             <br><br>
-            In this work, Solzhenitsyn's text leaves the flat plane of the official document and is rebuilt as a vertical structure. The red keywords become the skeleton of the pole. The remaining text wraps around and hangs from that frame. The sentences can no longer be read. They were never designed to be read. The language of the system was never meant for communication. It was meant for maintenance.
-            <br><br>
-            <span style="color: #dc143c; font-weight: 600;">Though lies conceal everything, though they embrace everything — not with any help from me.</span>
+            The full sentences still wrap around the structure, but you can't read them. They weren't meant to be read.
         </div>
     `;
     sidebarRight.appendChild(infrastructureBox);
@@ -1141,15 +1153,21 @@ function openPhysicsSubpage(clickedCell) {
     // 4. UI Controls (Back, Theme, Info, Zoom)
     const backBtn = document.createElement('button');
     backBtn.className = 'physics-back-btn is-light';
+    backBtn.title = 'BACK';
+    backBtn.setAttribute('data-tip', 'BACK TO INDEX');
     container.appendChild(backBtn);
 
     const themeBtn = document.createElement('div');
     themeBtn.className = 'theme-toggle-wrapper is-light';
+    themeBtn.title = 'DARK / LIGHT';
+    themeBtn.setAttribute('data-tip', 'DARK MODE');
     themeBtn.innerHTML = '<div class="slider-knob"></div>';
     container.appendChild(themeBtn);
 
     const infoBtn = document.createElement('div');
     infoBtn.className = 'info-icon-btn is-light';
+    infoBtn.title = 'BRIEFING';
+    infoBtn.setAttribute('data-tip', 'BRIEFING');
     infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
     container.appendChild(infoBtn);
 
@@ -1165,12 +1183,13 @@ function openPhysicsSubpage(clickedCell) {
     // Navigation Guide (Relocated to Column 1 Bottom)
     const guideText = document.createElement('div');
     guideText.className = 'overlay-text-guide is-light';
+    armGuideFade(container);
     guideText.innerHTML = 'SCROLL TO ZOOM<br>CLICK & MOVE TO ROTATE';
     container.appendChild(guideText);
 
     // Create the Layout Inspector (Visual Markers)
     const inspector = document.createElement('div');
-    inspector.className = 'layout-inspector';
+    inspector.className = 'layout-inspector is-hidden';
     inspector.innerHTML = `
         <div class="layout-marker marker-padding-top"></div><div class="layout-label label-padding-top">TOP: 3.5rem (56px)</div>
         <div class="layout-marker marker-padding-bottom"></div><div class="layout-label label-padding-bottom">BOTTOM: 3.5rem (56px)</div>
@@ -1183,7 +1202,7 @@ function openPhysicsSubpage(clickedCell) {
 
     // Create the Grid Debug Overlay (8 Columns)
     const gridOverlay = document.createElement('div');
-    gridOverlay.className = 'grid-debug-overlay';
+    gridOverlay.className = 'grid-debug-overlay is-hidden';
     for (let i = 0; i < 8; i++) {
         const col = document.createElement('div');
         col.className = 'grid-debug-column';
@@ -1191,9 +1210,9 @@ function openPhysicsSubpage(clickedCell) {
     }
     container.appendChild(gridOverlay);
 
-    // Create the Grid Toggle Button
+    // Create the Grid Toggle Button (kept for designer use; hidden by default)
     const gridToggleBtn = document.createElement('button');
-    gridToggleBtn.className = 'grid-toggle-btn';
+    gridToggleBtn.className = 'grid-toggle-btn is-hidden';
     gridToggleBtn.textContent = 'TOGGLE_GRID_GUIDE';
     // 5. Physics Subpage Interactive Logic
     infoBtn.onclick = () => {
@@ -1789,15 +1808,21 @@ function openIdeologySubpage(clickedCell) {
     // 4. UI Controls (Back, Theme, Info, Zoom)
     const backBtn = document.createElement('button');
     backBtn.className = 'physics-back-btn is-light';
+    backBtn.title = 'BACK';
+    backBtn.setAttribute('data-tip', 'BACK TO INDEX');
     container.appendChild(backBtn);
 
     const themeBtn = document.createElement('div');
     themeBtn.className = 'theme-toggle-wrapper is-light';
+    themeBtn.title = 'DARK / LIGHT';
+    themeBtn.setAttribute('data-tip', 'DARK MODE');
     themeBtn.innerHTML = '<div class="slider-knob"></div>';
     container.appendChild(themeBtn);
 
     const infoBtn = document.createElement('div');
     infoBtn.className = 'info-icon-btn is-light';
+    infoBtn.title = 'BRIEFING';
+    infoBtn.setAttribute('data-tip', 'BRIEFING');
     infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
     container.appendChild(infoBtn);
 
@@ -1813,6 +1838,7 @@ function openIdeologySubpage(clickedCell) {
     // Navigation Guide
     const guideText = document.createElement('div');
     guideText.className = 'overlay-text-guide is-light';
+    armGuideFade(container);
     guideText.innerHTML = 'SCROLL TO ZOOM<br>CLICK & MOVE TO ROTATE';
     container.appendChild(guideText);
 
@@ -1833,8 +1859,8 @@ function openIdeologySubpage(clickedCell) {
             <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">CITIZENS</span></div>
             <div class="doc-divider"></div>
             <div class="doc-row"><span class="doc-label">SUBJECT:</span><span class="doc-value" style="color: #dc143c; font-weight: 700;">JUSTIFICATION PROTOCOLS</span></div>
-            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">1973.12.28</span></div>
-            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC-00002-198</span></div>
+            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">██████████</span></div>
+            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC██████</span></div>
             <div class="doc-divider"></div>
         </div>
     `;
@@ -1846,19 +1872,16 @@ function openIdeologySubpage(clickedCell) {
     paraBox.innerHTML = `
         <div class="text-content" style="max-height: none; overflow: visible;">
             <div style="margin-bottom: 24px;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, A. Solzhenitsyn</span>
                 <span style="color: #dc143c; font-weight: 600;">"At what exact point, then, is the line crossed?"</span><br>
                 To do evil a human being must first of all believe that what he's doing is good, or else that it's a well-considered act in conformity with natural law. Fortunately, it is in the nature of the human being to seek a justification for his actions.
             </div>
             
             <div style="margin-bottom: 24px;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, A. Solzhenitsyn</span>
                 <span style="color: #dc143c; font-weight: 600;">"Macbeth's self-justifications were feeble"</span><br>
                 Ideology—that is what gives evildoing its long-sought justification and gives the evildoer the necessary steadfastness and determination. That is the social theory which helps to make his acts seem good instead of bad in his own and others' eyes.
             </div>
 
             <div style="margin-bottom: 0;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, A. Solzhenitsyn</span>
                 <span style="color: #dc143c; font-weight: 600;">"scale measured not in dozens, but in millions"</span><br>
                 Thanks to ideology, the twentieth century was fated to experience evildoing on a scale calculated in the millions. This cannot be denied, nor passed over, nor suppressed. How, then, do we dare insist that evildoers do not exist? And who was it that destroyed these millions? Without evildoers there would have been no Archipelago.
             </div>
@@ -1871,13 +1894,13 @@ function openIdeologySubpage(clickedCell) {
     narrativeBox.className = 'faint-text-box';
     narrativeBox.innerHTML = `
         <div class="text-content">
-            A villain stops at a dozen corpses. Their individual conscience is strong enough to limit the damage. 
+            Six panels playing six different official texts at once. A sermon, a manifesto, a verdict, a press release.
             <br><br>
-            But ideology changes everything. It scales violence. When an individual adopts an ideology that justifies atrocities, the natural human limits to cruelty are bypassed.
+            The red words are the load-bearing ones: IDEOLOGY, EVIL, CORPSES, MILLIONS. They don't sit still. Each panel leaves a holographic trail because the argument is never quite finished. Justification has to keep moving.
             <br><br>
-            This wall of surveillance screens represents this systematic justification. The flow of data is constant. The red keywords highlight the core concepts: IDEOLOGY, EVIL, CORPSES. The text bleeds and stretches into holographic trails because the justification never stops. It is a continuous loop that defends its own existence. 
+            A villain stops at a dozen corpses. You don't need an idea to murder twelve people. You need an idea to murder a million. Ideology turns the act from a private trespass into a duty.
             <br><br>
-            <span style="color: #dc143c; font-weight: 600;">"This is why the twentieth century experienced evil on a scale measured not in dozens, but in millions."</span>
+            The screens don't look at you. They read at you, and they don't stop.
         </div>
     `;
     sidebarRight.appendChild(narrativeBox);
@@ -1945,12 +1968,12 @@ function openIdeologySubpage(clickedCell) {
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
         renderer.setSize(w, h);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        renderer.setClearColor(0x050505);
+        renderer.setClearColor(0xf4f4f4);
         container.appendChild(renderer.domElement);
         renderer.domElement.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;';
 
         const scene = new THREE.Scene();
-        scene.fog = new THREE.FogExp2(0x050505, 0.018);
+        scene.fog = new THREE.FogExp2(0xf4f4f4, 0.018);
 
         const camera = new THREE.PerspectiveCamera(65, w / h, 0.1, 100);
         camera.position.set(0, 0, 4.0);
@@ -2041,7 +2064,7 @@ function openIdeologySubpage(clickedCell) {
                     uScale: { value: scale },
                     uTextMap: { value: textTexParam },
                     uResolution: { value: new THREE.Vector2(w, h) },
-                    uIsLightMode: { value: 0.0 },
+                    uIsLightMode: { value: 1.0 },
                     uIsTrail: { value: isTrail ? 1.0 : 0.0 },
                     uLayerIndex: { value: layerIdx || 0.0 },
                     uCamZ: { value: 4.0 }
@@ -2372,20 +2395,27 @@ function openPrisonSubpage(clickedCell) {
     // UI Controls
     const backBtn = document.createElement('button');
     backBtn.className = 'physics-back-btn is-light';
+    backBtn.title = 'BACK';
+    backBtn.setAttribute('data-tip', 'BACK TO INDEX');
     container.appendChild(backBtn);
 
     const themeBtn = document.createElement('div');
     themeBtn.className = 'theme-toggle-wrapper is-light';
+    themeBtn.title = 'DARK / LIGHT';
+    themeBtn.setAttribute('data-tip', 'DARK MODE');
     themeBtn.innerHTML = '<div class="slider-knob"></div>';
     container.appendChild(themeBtn);
 
     const infoBtn = document.createElement('div');
     infoBtn.className = 'info-icon-btn is-light';
+    infoBtn.title = 'BRIEFING';
+    infoBtn.setAttribute('data-tip', 'BRIEFING');
     infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
     container.appendChild(infoBtn);
 
     const guideText = document.createElement('div');
     guideText.className = 'overlay-text-guide is-light';
+    armGuideFade(container);
     guideText.innerHTML = 'DRAG MOUSE OUTWARD<br>TO EXTRACT CORE DATA';
     container.appendChild(guideText);
 
@@ -2416,8 +2446,8 @@ function openPrisonSubpage(clickedCell) {
             <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">GULAG DIRECTORATE</span></div>
             <div class="doc-divider"></div>
             <div class="doc-row"><span class="doc-label">SUBJECT:</span><span class="doc-value" style="color: #dc143c; font-weight: 700;">THE GULAG AND IMPRISONMENT</span></div>
-            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">1962.11.01</span></div>
-            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC-00003-365</span></div>
+            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">██████████</span></div>
+            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC██████</span></div>
             <div class="doc-divider"></div>
         </div>
     `;
@@ -2429,21 +2459,18 @@ function openPrisonSubpage(clickedCell) {
     paraBox.innerHTML = `
         <div class="text-content" style="max-height: none; overflow: visible;">
             <div style="margin-bottom: 24px;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">One Day in the Life of Ivan Denisovich</span>
                 <span style="color: #dc143c; font-weight: 600;">"The end of an unclouded day. Almost a happy one."</span><br>
                 At the end of the day Shukhov falls asleep feeling pleased with life. He wasn't thrown in the punishment cell. He swiped extra gruel at dinner. He enjoyed his work on the wall. The blade wasn't found at the search point, and he earned a bit of tobacco.
             </div>
             
             <div style="margin-bottom: 24px;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">One Day in the Life of Ivan Denisovich</span>
                 <span style="color: #dc143c; font-weight: 600;">"just one of three thousand six hundred and fifty-three days"</span><br>
                 Then the devastating arithmetic. Now consider what one year contains. Three hundred and sixty-five days marching out to roll-call in drizzle, blizzard, and bitter cold. Three hundred and sixty-five days of hateful alien work. Seven hundred and thirty bowls of gruel. There are ten years. There are twenty-five.
             </div>
 
             <div style="margin-bottom: 0;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, A. Solzhenitsyn</span>
                 <span style="color: #dc143c; font-weight: 600;">"What has become of it now"</span><br>
-                Yet even here the prisoners' brains and souls are not inactive. A weak spark of God was breathed into them once, and the question remains: what has become of it now?
+                Yet even here the prisoners' minds are not inactive. A weak spark was breathed into them once, and the question remains: what has become of it now?
             </div>
         </div>
     `;
@@ -2454,13 +2481,13 @@ function openPrisonSubpage(clickedCell) {
     narrativeBox.className = 'faint-text-box';
     narrativeBox.innerHTML = `
         <div class="text-content">
-            The Gulag reduced human beings to numerical units. A body in a cell. A digit in a ledger. The system's architecture turned living complexity into manageable data. Zeroes and ones.
+            Each digit is one prisoner. The red dot at the center is the file room.
             <br><br>
-            This sphere is that containment made visible. Binary digits orbit a dense crimson core. Each one a prisoner stripped to their simplest designation. Convergence rays map the invisible threads binding every individual to the center of power.
+            Faint lines run from every digit back to the core — the connection between a body in a barracks and the index card that records it. The whole structure breathes. Even reduced to numbers, the population has a pulse.
             <br><br>
-            The sphere breathes. A slow heartbeat pulses through the structure. Even reduced to numbers, they refuse to be static. When you drag outward, you extract data from the core. Release it, and the elastic tension snaps everything back. The system reclaims what was taken.
+            Solzhenitsyn counts the camp in days. 365 marches to roll-call. 730 bowls of gruel. Then ten years. Then twenty-five. The system wins by making a life addable.
             <br><br>
-            <span style="color: #dc143c; font-weight: 600;">"A weak spark of God was breathed into them once. What has become of it now?"</span>
+            Drag outward and you can pull a digit away from the core. Let go and elastic snaps it back. The system reclaims whatever you extract.
         </div>
     `;
     sidebarRight.appendChild(narrativeBox);
@@ -2589,13 +2616,13 @@ function openPrisonSubpage(clickedCell) {
     stageWrapper.appendChild(egg);
 
     // Reproduce the SCSS Loops in JS
-    // Start at -2, -1, 0, 1, 2, 3 to create a highly dense, extremely tight data core
-    for (let i = -2; i <= 3; i++) {
+    // 7 shells × 85 particles = 595 — denser than original (390) but lighter than the 880 spike
+    for (let i = -2; i <= 4; i++) {
         const stage = document.createElement('div');
         stage.className = 'stage';
         egg.appendChild(stage);
 
-        for (let j = 1; j <= 65; j++) {
+        for (let j = 1; j <= 85; j++) {
             const circle = document.createElement('div');
             circle.className = 'circle';
             
@@ -2663,10 +2690,9 @@ function openPrisonSubpage(clickedCell) {
                     'linear-gradient(to top, rgba(220, 20, 60, 0.4), rgba(220, 20, 60, 0) 60%)';
                 innerNode.appendChild(ray);
                 
-                // Only generate trailing holograms on outer shells to hold 60fps
+                // Trails only on outer shells; 2 per particle (was 4) for performance
                 if (!isCore) {
-                    // --- DYNAMIC HOLOGRAM FLOW ---
-                    for (let t = 1; t <= 4; t++) {
+                    for (let t = 1; t <= 2; t++) {
                         const trail = document.createElement('div');
                         trail.textContent = particleValue;
                         trail.style.position = 'absolute';
@@ -2929,20 +2955,27 @@ async function openConscienceSubpage(clickedCell) {
     // UI Controls
     const backBtn = document.createElement('button');
     backBtn.className = 'physics-back-btn is-light';
+    backBtn.title = 'BACK';
+    backBtn.setAttribute('data-tip', 'BACK TO INDEX');
     container.appendChild(backBtn);
 
     const themeBtn = document.createElement('div');
     themeBtn.className = 'theme-toggle-wrapper is-light';
+    themeBtn.title = 'DARK / LIGHT';
+    themeBtn.setAttribute('data-tip', 'DARK MODE');
     themeBtn.innerHTML = '<div class="slider-knob"></div>';
     container.appendChild(themeBtn);
 
     const infoBtn = document.createElement('div');
     infoBtn.className = 'info-icon-btn is-light';
+    infoBtn.title = 'BRIEFING';
+    infoBtn.setAttribute('data-tip', 'BRIEFING');
     infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
     container.appendChild(infoBtn);
 
     const guideText = document.createElement('div');
     guideText.className = 'overlay-text-guide is-light';
+    armGuideFade(container);
     guideText.innerHTML = 'SCROLL TO ZOOM<br>DRAG TO ROTATE';
     container.appendChild(guideText);
 
@@ -2968,11 +3001,11 @@ async function openConscienceSubpage(clickedCell) {
         <div class="doc-header">
             <div class="doc-row"><span class="doc-label">FROM:</span><span class="doc-value">A HUMAN BEING</span></div>
             <div class="doc-row"><span class="doc-label">TO:</span><span class="doc-value">HIS OWN CONSCIENCE</span></div>
-            <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">GOD</span></div>
+            <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">MEMORY</span></div>
             <div class="doc-divider"></div>
             <div class="doc-row"><span class="doc-label">SUBJECT:</span><span class="doc-value" style="color: #dc143c; font-weight: 700;">CONSCIENCE</span></div>
-            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">1974.02.12</span></div>
-            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC-00004-411</span></div>
+            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">██████████</span></div>
+            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC██████</span></div>
             <div class="doc-divider"></div>
         </div>
     `;
@@ -2983,19 +3016,16 @@ async function openConscienceSubpage(clickedCell) {
     paraBox.innerHTML = `
         <div class="text-content" style="max-height: none; overflow: visible;">
             <div style="margin-bottom: 24px;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, Part I, Ch. 4</span>
                 <span style="color: #dc143c; font-weight: 600;">"the line dividing good and evil cuts through the heart"</span><br>
                 If only the answer were simple. If only evil people existed somewhere insidiously committing their deeds, and it were only necessary to separate and destroy them. But the line dividing good and evil cuts through the heart of every human being without exception. And who is willing to destroy a piece of his own heart?
             </div>
 
             <div style="margin-bottom: 24px;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, Part I, Ch. 4</span>
                 <span style="color: #dc143c; font-weight: 600;">"during a lifetime this line shifts"</span><br>
                 During a lifetime this line shifts. The same person stands at various ages near sainthood and near the devil. The name does not change, and to that name we ascribe everything.
             </div>
 
             <div style="margin-bottom: 0;">
-                <span class="doc-label" style="display: block; margin-bottom: 4px; color: #dc143c; font-weight: 700; opacity: 0.9;">The Gulag Archipelago, Part I, Ch. 4</span>
                 <span style="color: #dc143c; font-weight: 600;">"know thyself has never been more urgent"</span><br>
                 Is it permissible merely to carry out orders and commit one's conscience to someone else's keeping? Can a person live without his own ideas about good and evil — deriving them only from printed instructions and the verbal commands of superiors? Socrates' command "know thyself" has never been more urgent than now.
             </div>
@@ -3007,15 +3037,13 @@ async function openConscienceSubpage(clickedCell) {
     narrativeBox.className = 'faint-text-box';
     narrativeBox.innerHTML = `
         <div class="text-content">
-            The hourglass is not a single object. It is a co-knowing.
+            This is what conscience looks like — the self watching the self.
             <br><br>
-            Each word in the vortex is a small recognition. Conscience. Witness. Mirror. Inner. Other. Together. A particle, alone, is barely a thought. But the rings — the layers of awareness — co-rotate. Each layer sees the rings below; each particle is shared across them. From the Greek <span style="color:#dc143c; font-weight:600;">συν + εἶδος</span> ("knowing-with"), and Latin <span style="color:#dc143c; font-weight:600;">con-scientia</span> ("knowing-together"): consciousness is never solitary. The self watches the self.
+            The word means "knowing-with": Greek <span style="color:#dc143c; font-weight:600;">συν + εἶδος</span>, Latin <span style="color:#dc143c; font-weight:600;">con-scientia</span>. Each particle in the vortex is a small recognition: witness, mirror, inner, other. One particle alone is barely a thought. The rings make it knowable.
             <br><br>
-            Solzhenitsyn writes that the line dividing good and evil cuts through the heart of every human being. Conscience is the daily redrawing of that line. It is not a fixed point but a continuous correction; not a static rule but the constant traffic between layers — small judgements that move from one ring to another and converge at the centre of the self.
+            Solzhenitsyn says the line between good and evil runs through every heart, and that line moves over a lifetime. The same person stands closer to the saint at one age, closer to the devil at another. Conscience is what redraws the line each day.
             <br><br>
-            The vortex never stops turning. Each layer at its own speed, in its own direction. They do not align. They only move together.
-            <br><br>
-            <span style="color: #dc143c; font-weight: 600;">"Know thyself has never been more urgent than now."</span>
+            The rings here turn at different speeds, in opposite directions. They never line up. They aren't supposed to. The waist of the hourglass is where the layers briefly meet before pulling apart again.
         </div>
     `;
     sidebarRight.appendChild(narrativeBox);
@@ -3035,7 +3063,7 @@ async function openConscienceSubpage(clickedCell) {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setClearColor(0x050505, 1);
+    renderer.setClearColor(0xf4f4f4, 1);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     container.appendChild(renderer.domElement);
     renderer.domElement.style.cssText = 'position:absolute; inset:0; width:100%; height:100%; z-index:1;';
@@ -3946,20 +3974,27 @@ function openResistanceSubpage(clickedCell) {
 
     const backBtn = document.createElement('button');
     backBtn.className = 'physics-back-btn is-light';
+    backBtn.title = 'BACK';
+    backBtn.setAttribute('data-tip', 'BACK TO INDEX');
     container.appendChild(backBtn);
 
     const themeBtn = document.createElement('div');
     themeBtn.className = 'theme-toggle-wrapper is-light';
+    themeBtn.title = 'DARK / LIGHT';
+    themeBtn.setAttribute('data-tip', 'DARK MODE');
     themeBtn.innerHTML = '<div class="slider-knob"></div>';
     container.appendChild(themeBtn);
 
     const infoBtn = document.createElement('div');
     infoBtn.className = 'info-icon-btn is-light';
+    infoBtn.title = 'BRIEFING';
+    infoBtn.setAttribute('data-tip', 'BRIEFING');
     infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
     container.appendChild(infoBtn);
 
     const guideText = document.createElement('div');
     guideText.className = 'overlay-text-guide is-light';
+    armGuideFade(container);
     guideText.innerHTML = 'CLICK / HOLD ANYWHERE<br>TO REFUSE THE LIE';
     container.appendChild(guideText);
 
@@ -3974,12 +4009,12 @@ function openResistanceSubpage(clickedCell) {
     headerBox.innerHTML = `
         <div class="doc-header">
             <div class="doc-row"><span class="doc-label">FROM:</span><span class="doc-value">AN ORDINARY PERSON</span></div>
-            <div class="doc-row"><span class="doc-label">TO:</span><span class="doc-value">THE STATE</span></div>
-            <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">EVERY HEART</span></div>
+            <div class="doc-row"><span class="doc-label">TO:</span><span class="doc-value">THE SYSTEM</span></div>
+            <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">BYSTANDERS</span></div>
             <div class="doc-divider"></div>
             <div class="doc-row"><span class="doc-label">SUBJECT:</span><span class="doc-value" style="color:#dc143c; font-weight:700;">RESISTANCE</span></div>
-            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">1974.02.12</span></div>
-            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC-00005-001</span></div>
+            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">██████████</span></div>
+            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC██████</span></div>
             <div class="doc-divider"></div>
         </div>
     `;
@@ -3990,17 +4025,14 @@ function openResistanceSubpage(clickedCell) {
     paraBox.innerHTML = `
         <div class="text-content" style="max-height:none; overflow:visible;">
             <div style="margin-bottom:24px;">
-                <span class="doc-label" style="display:block; margin-bottom:4px; color:#dc143c; font-weight:700; opacity:0.9;">Live Not by Lies, A. Solzhenitsyn</span>
                 <span style="color:#dc143c; font-weight:600;">"Let the lie come into the world, but not through me."</span><br>
                 And it is not every day and not on every shoulder that violence brings down its paw. It demands of us only a submission to lies, a daily participation in deceit — and this suffices as our fealty.
             </div>
             <div style="margin-bottom:24px;">
-                <span class="doc-label" style="display:block; margin-bottom:4px; color:#dc143c; font-weight:700; opacity:0.9;">The Gulag Archipelago, Part V</span>
                 <span style="color:#dc143c; font-weight:600;">"One word of truth outweighs the world."</span><br>
                 The simplest, the most accessible key to our liberation: a personal nonparticipation in lies. Even if all is covered by lies, even if all is under their rule, let us resist in the smallest way: let it not rule through me.
             </div>
             <div style="margin-bottom:0;">
-                <span class="doc-label" style="display:block; margin-bottom:4px; color:#dc143c; font-weight:700; opacity:0.9;">Live Not by Lies</span>
                 <span style="color:#dc143c; font-weight:600;">"The simplest, most accessible key."</span><br>
                 We do not have to be brave. We do not have to march. We have only to refuse to repeat what we know is false. The lie's whole strength rests on our voices. Withdraw the voice, and a hole opens in the air.
             </div>
@@ -4012,13 +4044,13 @@ function openResistanceSubpage(clickedCell) {
     narrativeBox.className = 'faint-text-box';
     narrativeBox.innerHTML = `
         <div class="text-content">
-            The chorus is constant. It marches across the page in every direction, the same phrases repeating until repetition becomes truth. This is how a regime sounds — not as a single voice, but as a saturated field that leaves no silence to think in.
+            The chorus doesn't stop. Slogans run across the page in every direction, the same phrases repeating until the repetition starts to feel like the truth.
             <br><br>
-            A click here is not a speech. It is a refusal. From the point of refusal a quiet circle opens, and inside that circle the slogans go silent. The circle expands; the slogans return. They always return.
+            That's how a regime sounds. Not one voice. A field dense enough that any quiet thought has to push against ambient noise just to be heard.
             <br><br>
-            But the circle was real. It existed. It was witnessed by the very lies it interrupted. Solzhenitsyn's claim is not that one voice destroys the system — it is that one voice <em>does not participate</em>, and that absence is a fact the system cannot fully overwrite.
+            Solzhenitsyn doesn't ask anyone to overturn it. He asks one thing: don't repeat what you know is false. The whole structure runs on borrowed voices. Take your voice back and a hole opens.
             <br><br>
-            <span style="color:#dc143c; font-weight:600;">"Let the lie come into the world, but not through me."</span>
+            A click here is that hole. The slogans inside the circle go silent. The circle expands and the chorus refills — it always does. But the silence happened. It can't be undone.
         </div>
     `;
     sidebarRight.appendChild(narrativeBox);
@@ -4377,31 +4409,6 @@ function openResistanceSubpage(clickedCell) {
 // never punish. The lie continues, but it does not continue through you.
 // ─────────────────────────────────────────────────────────────────────
 function openNotThroughMeSubpage(clickedCell) {
-    const PHRASES = [
-        'GLORY TO THE PARTY',
-        'THE PLAN IS THE LAW',
-        'OBEY',
-        'WORK IS HONOR',
-        'TWO PLUS TWO IS FIVE',
-        'THE FUTURE IS DECIDED',
-        'DENUNCIATION IS DUTY',
-        'LIES = TRUTH',
-        'THE STATE PROTECTS YOU',
-        'WE HAVE ALWAYS WON',
-        'THE CHORUS OF MILLIONS PROVES WHAT NO INDIVIDUAL CAN PROVE.',
-        'REPEAT THE STATEMENT YOU HAVE BEEN GIVEN.',
-        'THERE HAS NEVER BEEN A FAMINE.',
-        'UNHAPPINESS IS A SYMPTOM OF IDEOLOGICAL INFECTION.',
-        'YOUR NEIGHBOUR IS LISTENING.',
-        'THE PROBLEM YOU ARE EXPERIENCING DOES NOT EXIST.',
-        'CONFIRM THAT THE STATEMENT IS TRUE.',
-        'SIGN HERE TO ACKNOWLEDGE.',
-        'STATE THAT YOU HAVE READ AND UNDERSTOOD.',
-        'PRODUCTION TARGETS HAVE BEEN EXCEEDED.',
-        'NOTHING IS IMPOSSIBLE FOR THE SOVIET PEOPLE.',
-        'SLEEP WELL, COMRADE.',
-    ];
-
     const container = document.createElement('div');
     container.id = 'notthroughme-subpage';
     container.className = 'is-light';
@@ -4415,21 +4422,28 @@ function openNotThroughMeSubpage(clickedCell) {
     // UI
     const backBtn = document.createElement('button');
     backBtn.className = 'physics-back-btn is-light';
+    backBtn.title = 'BACK';
+    backBtn.setAttribute('data-tip', 'BACK TO INDEX');
     container.appendChild(backBtn);
 
     const themeBtn = document.createElement('div');
     themeBtn.className = 'theme-toggle-wrapper is-light';
+    themeBtn.title = 'DARK / LIGHT';
+    themeBtn.setAttribute('data-tip', 'DARK MODE');
     themeBtn.innerHTML = '<div class="slider-knob"></div>';
     container.appendChild(themeBtn);
 
     const infoBtn = document.createElement('div');
     infoBtn.className = 'info-icon-btn is-light';
+    infoBtn.title = 'BRIEFING';
+    infoBtn.setAttribute('data-tip', 'BRIEFING');
     infoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
     container.appendChild(infoBtn);
 
     const guideText = document.createElement('div');
     guideText.className = 'overlay-text-guide is-light';
-    guideText.innerHTML = 'PRESS TO LET ONE PASS<br>THROUGH YOU';
+    armGuideFade(container);
+    guideText.innerHTML = 'CLICK TO BLIND THE EYES<br>THEY ALWAYS RETURN';
     container.appendChild(guideText);
 
     // Sidebars
@@ -4447,8 +4461,8 @@ function openNotThroughMeSubpage(clickedCell) {
             <div class="doc-row"><span class="doc-label">CC:</span><span class="doc-value">[REDACTED]</span></div>
             <div class="doc-divider"></div>
             <div class="doc-row"><span class="doc-label">SUBJECT:</span><span class="doc-value" style="color:#dc143c; font-weight:700;">BUT NOT THROUGH ME</span></div>
-            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">██/██/19██</span></div>
-            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC-████-06</span></div>
+            <div class="doc-row"><span class="doc-label">DATE:</span><span class="doc-value">██████████</span></div>
+            <div class="doc-row"><span class="doc-label">REF:</span><span class="doc-value">DOC██████</span></div>
             <div class="doc-divider"></div>
         </div>
     `;
@@ -4459,17 +4473,14 @@ function openNotThroughMeSubpage(clickedCell) {
     paraBox.innerHTML = `
         <div class="text-content" style="max-height:none; overflow:visible;">
             <div style="margin-bottom:24px;">
-                <span class="doc-label" style="display:block; margin-bottom:4px; color:#dc143c; font-weight:700; opacity:0.9;">Live Not by Lies, A. Solzhenitsyn</span>
                 <span style="color:#dc143c; font-weight:600;">"Let it not rule through me."</span><br>
                 The simplest, the most accessible key to our liberation: a personal nonparticipation in lies. Even if all is covered by lies, even if all is under their rule, let us resist in the smallest way: let it not rule through me.
             </div>
             <div style="margin-bottom:24px;">
-                <span class="doc-label" style="display:block; margin-bottom:4px; color:#dc143c; font-weight:700; opacity:0.9;">The Gulag Archipelago</span>
                 <span style="color:#dc143c; font-weight:600;">"Whoever vows to survive at any price..."</span><br>
                 Whoever vows to survive at any price has already decided to survive at someone else's expense.
             </div>
             <div style="margin-bottom:0;">
-                <span class="doc-label" style="display:block; margin-bottom:4px; color:#dc143c; font-weight:700; opacity:0.9;">Live Not by Lies</span>
                 <span style="color:#dc143c; font-weight:600;">"There comes a fork in the road."</span><br>
                 For every person regardless of calling there comes a great fork in the road. If you go to the right you lose your life. If you go to the left you lose your conscience.
             </div>
@@ -4481,13 +4492,13 @@ function openNotThroughMeSubpage(clickedCell) {
     narrativeBox.className = 'faint-text-box';
     narrativeBox.innerHTML = `
         <div class="text-content">
-            Production never stops. The belt is always full. Beneath every slogan, every report, every applause line, there is a station where someone — anyone — has the power to put a hand on the lever, or not put a hand on the lever.
+            The eyes never stop falling — a curtain of watchers that doesn't end.
             <br><br>
-            Each press is a small participation. The belt advances by exactly one piece of speech, and that piece leaves the station marked APPROVED in your hand. The wall of eyes never punishes; they only watch the lever, waiting to see whether you reach for it.
+            Each eye is a pair of brackets around a red pupil. The pupils track the cursor. There's no angle that isn't already seen, and no waiting it out: fall through the bottom and a new column has already started at the top.
             <br><br>
-            Solzhenitsyn's claim was not that you must overturn the belt or stop the factory. It was that, today, you may simply not press it. The lie continues — but it does not continue through you.
+            Solzhenitsyn doesn't say the wall can come down. He says something smaller and harder. At every fork in the road, you can refuse to become one of the watchers. The eyes continue. The question is whether they continue through you.
             <br><br>
-            <span style="color:#dc143c; font-weight:600;">"Let the lie come into the world. Let it even triumph. But not through me."</span>
+            A click is that refusal. Every visible pupil fires inward, and the eyes in that zone go dark for a moment — blinded by being looked back at. The rain refills. But the hole was there.
         </div>
     `;
     sidebarRight.appendChild(narrativeBox);
@@ -4495,210 +4506,255 @@ function openNotThroughMeSubpage(clickedCell) {
     container.appendChild(sidebarLeft);
     container.appendChild(sidebarRight);
 
-    // Wall of eyes — keyboard-symbol eyes, only ABOVE the belt, no collisions
-    const wall = document.createElement('div');
+    // Wall of eyes — Matrix rain rendered to a single canvas (no per-eye DOM).
+    const wall = document.createElement('canvas');
     wall.className = 'ntm-wall';
-    const EYE_COUNT = 70;
-    const BRACKETS = [
-        ['(', ')'],
-        ['{', '}'],
-        ['[', ']'],
-    ];
-    const VPW = window.innerWidth;
-    const VPH = window.innerHeight;
-    // Belt sits at bottom:18% with height 240px. Reserve a margin above it.
-    const BELT_TOP_PX = VPH - VPH * 0.18 - 240 - 30;
-    const placed = []; // {x, y, w, h}
-    let attempts = 0;
-    while (placed.length < EYE_COUNT && attempts < EYE_COUNT * 60) {
-        attempts++;
-        const fontSize = 22 + Math.random() * 28;   // 22–50 px (larger)
-        const w = fontSize * 1.4;
-        const h = fontSize * 2.0;
-        const x = Math.random() * (VPW - w) + w * 0.5;
-        const y = 14 + Math.random() * Math.max(20, BELT_TOP_PX - h - 14);
-        let ok = true;
-        for (const e of placed) {
-            const dx = Math.abs(x - e.x);
-            const dy = Math.abs(y - e.y);
-            if (dx < (w + e.w) * 0.5 + 4 && dy < (h + e.h) * 0.5 + 4) { ok = false; break; }
-        }
-        if (!ok) continue;
-        placed.push({ x, y, w, h });
-        const br = BRACKETS[Math.floor(Math.random() * BRACKETS.length)];
-        const eye = document.createElement('div');
-        eye.className = 'ntm-eye';
-        eye.style.left = x + 'px';
-        eye.style.top  = y + 'px';
-        eye.style.fontSize = fontSize + 'px';
-        eye.innerHTML = `<span class="ntm-br">${br[0]}</span><span class="ntm-pupil-slot"><span class="ntm-pupil">■</span></span><span class="ntm-br">${br[1]}</span>`;
-        wall.appendChild(eye);
+    const ctx = wall.getContext('2d', { alpha: true });
+    const BRACKETS = [['(', ')'], ['{', '}'], ['[', ']']];
+    let VPW = window.innerWidth;
+    let VPH = window.innerHeight;
+    // No belt anymore — let the rain fill the full viewport, despawning at the bottom.
+    let BELT_TOP_PX = VPH - 20;
+    const EYE_FS   = 26;
+    const EYE_H    = 14;          // visual eye height
+    const COL_W    = 38;
+    let COL_COUNT = Math.max(8, Math.floor(VPW / COL_W));
+    let COL_PAD  = (VPW - COL_COUNT * COL_W) / 2 + COL_W / 2;
+    const FADE_BAND = 120;
+
+    // Pre-render bracket sprites (one per bracket pair) onto offscreen canvases.
+    // Per frame we drawImage these — vastly cheaper than fillText × N.
+    const SPRITE_W = 22, SPRITE_H = 22;
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    function buildBracketSprite(open, close, color) {
+        const c = document.createElement('canvas');
+        c.width = SPRITE_W * dpr;
+        c.height = SPRITE_H * dpr;
+        const g = c.getContext('2d');
+        g.scale(dpr, dpr);
+        g.font = `200 ${EYE_FS}px 'JetBrains Mono', monospace`;
+        g.fillStyle = color;
+        g.textAlign = 'center';
+        g.textBaseline = 'middle';
+        // Brackets rotated 90° — matches the original ('rotate(90deg)') eye look
+        g.save();
+        g.translate(SPRITE_W / 2, SPRITE_H / 2 - EYE_H * 0.42);
+        g.rotate(Math.PI / 2);
+        g.fillText(open, 0, 0);
+        g.restore();
+        g.save();
+        g.translate(SPRITE_W / 2, SPRITE_H / 2 + EYE_H * 0.42);
+        g.rotate(Math.PI / 2);
+        g.fillText(close, 0, 0);
+        g.restore();
+        return c;
     }
+    let bracketSprites = [];
+    let bracketSpritesGray = [];
+    function rebuildSprites() {
+        const dark = container.classList.contains('is-dark');
+        const color = dark ? 'rgba(230,230,230,0.85)' : 'rgba(20,20,20,0.7)';
+        const gray  = dark ? 'rgba(150,150,150,0.45)' : 'rgba(120,120,120,0.45)';
+        bracketSprites     = BRACKETS.map(([o, c]) => buildBracketSprite(o, c, color));
+        bracketSpritesGray = BRACKETS.map(([o, c]) => buildBracketSprite(o, c, gray));
+    }
+    rebuildSprites();
+
+    // Drop = pure data; no DOM per eye.
+    const columns = [];
+    for (let c = 0; c < COL_COUNT; c++) {
+        columns.push({
+            x: COL_PAD + c * COL_W,
+            speed: 60 + Math.random() * 80,
+            gap:   EYE_H + 18 + Math.random() * 14,
+            drops: [],
+        });
+    }
+    function newDrop(y) {
+        return {
+            y,
+            sprite: Math.floor(Math.random() * bracketSprites.length),
+            // Pupil offset (current and target) for tracking
+            pdx: 0, pdy: 0, tdx: 0, tdy: 0,
+        };
+    }
+    for (const col of columns) {
+        let y = -Math.random() * 200;
+        while (y < BELT_TOP_PX) {
+            col.drops.push(newDrop(y));
+            y += col.gap;
+        }
+    }
+
+    function resizeCanvas() {
+        wall.width = VPW * dpr;
+        wall.height = VPH * dpr;
+        wall.style.width = VPW + 'px';
+        wall.style.height = VPH + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resizeCanvas();
     container.appendChild(wall);
 
-    // Each eye normally drifts in its own random direction; on press, every
-    // pupil snaps to the conveyor centre — the moment of collective attention.
-    function setPupilOffset(eye, dx, dy) {
-        const fs = parseFloat(eye.style.fontSize) || 18;
-        const px = (dx * fs * 0.18).toFixed(2);
-        const py = (dy * fs * 0.10).toFixed(2);
-        const pupil = eye.querySelector('.ntm-pupil');
-        if (pupil) pupil.style.transform = `translate(${px}px, ${py}px)`;
-    }
-    function idleGaze() {
-        for (const eye of wall.querySelectorAll('.ntm-eye')) {
-            const a = Math.random() * Math.PI * 2;
-            setPupilOffset(eye, Math.cos(a), Math.sin(a));
-        }
-    }
-    function focusOnBelt() {
-        const r = beltStage.getBoundingClientRect();
-        const cx = r.left + r.width / 2;
-        const cy = r.top  + r.height / 2;
-        for (const eye of wall.querySelectorAll('.ntm-eye')) {
-            const er = eye.getBoundingClientRect();
-            let dx = cx - (er.left + er.width / 2);
-            let dy = cy - (er.top  + er.height / 2);
-            const len = Math.hypot(dx, dy) || 1;
-            setPupilOffset(eye, dx / len, dy / len);
-        }
-    }
-    // Backwards-compat alias used by other code paths
-    function pointPupils() { idleGaze(); }
+    // Pupils follow the mouse — no idle drift, no focus snap, no blink.
+    let mouseX = VPW / 2;
+    let mouseY = VPH / 2;
+    function onMouseMove(e) { mouseX = e.clientX; mouseY = e.clientY; }
+    window.addEventListener('mousemove', onMouseMove);
 
-    // Conveyor stage
-    const beltStage = document.createElement('div');
-    beltStage.className = 'ntm-belt-stage';
-    beltStage.innerHTML = `
-        <div class="ntm-belt-3d">
-            <div class="ntm-belt-rail top"></div>
-            <div class="ntm-belt-track"></div>
-            <div class="ntm-belt-rail bottom"></div>
-            <div class="ntm-station"></div>
-        </div>
-    `;
-    container.appendChild(beltStage);
-    const track = beltStage.querySelector('.ntm-belt-track');
-    // Initial idle gaze; ambient drift every ~3s so eyes feel alive
-    requestAnimationFrame(idleGaze);
-    const gazeInterval = setInterval(() => {
-        if (busy) return; // don't override the focused stare during a press
-        idleGaze();
-    }, 3000);
-
-    // Paper queue
-    const PAPER_W = 280;
-    const PAPER_GAP = 24;
-    const STEP = PAPER_W + PAPER_GAP;
-    const VISIBLE_AHEAD = 6;
-    const papers = [];
-    function makePaper(text) {
-        const div = document.createElement('div');
-        div.className = 'ntm-paper';
-        div.innerHTML = `<div class="ntm-paper-text">${text}</div>
-            <div class="ntm-paper-slot">__________</div>
-            <div class="ntm-paper-stamp">APPROVED</div>`;
-        return div;
-    }
-    let nextIdx = 0;
-    function pushPaper() {
-        const text = PHRASES[Math.floor(Math.random() * PHRASES.length)];
-        const div = makePaper(text);
-        div.style.left = (nextIdx * STEP) + 'px';
-        track.appendChild(div);
-        papers.push({ div, idx: nextIdx });
-        nextIdx++;
-    }
-    for (let i = 0; i < VISIBLE_AHEAD + 3; i++) pushPaper();
-
-    // Position belt so first paper sits at the inspection station (centre)
-    let beltPos = 0;
-    function stationOffset() { return window.innerWidth * 0.5 - PAPER_W * 0.5; }
-    track.style.transform = `translateX(${stationOffset() - beltPos}px)`;
-
-    // The advance button
-    const button = document.createElement('button');
-    button.className = 'ntm-advance-btn';
-    button.innerHTML = '<span class="ntm-btn-label">ADVANCE</span><span class="ntm-btn-sub">PRESS TO STAMP &amp; PASS THROUGH</span>';
-    container.appendChild(button);
-
-    // Final overlay text — emerges with idle time
-    const finalText = document.createElement('div');
-    finalText.className = 'ntm-final-text';
-    finalText.innerHTML = `
-        <div class="ntm-quote">"LET THE LIE COME INTO THE WORLD."</div>
-        <div class="ntm-quote">"LET IT EVEN TRIUMPH."</div>
-        <div class="ntm-quote ntm-quote-emph">"BUT NOT THROUGH ME."</div>
-    `;
-    container.appendChild(finalText);
-
-    let pressCount = 0;
-    let lastPressTime = performance.now();
-    let busy = false;
-    const ANIM_MS = 600;
-
-    function advance(fromAuto = false) {
-        if (busy) return;
-        // Manual advance is locked during info mode; auto-mode bypasses the guard
-        if (!fromAuto && container.classList.contains('info-active')) return;
-        busy = true;
-        pressCount++;
-        lastPressTime = performance.now();
-
-        // Stamp whichever paper is currently at the station (paper i sits at
-        // i*STEP - beltPos + stationOffset(); station x == stationOffset())
-        const stationIdx = Math.round(beltPos / STEP);
-        const stationP = papers.find(p => p.idx === stationIdx);
-        if (stationP) stationP.div.classList.add('stamped');
-
-        beltPos += STEP;
-        track.style.transform = `translateX(${stationOffset() - beltPos}px)`;
-        wall.classList.add('blink-once');
-        // Collective attention: every pupil snaps to the belt centre
-        focusOnBelt();
-        setTimeout(() => idleGaze(), 1200);
-
-        setTimeout(() => {
-            // Always extend the trailing edge — chorus is endless
-            pushPaper();
-            // Stamped papers stay visible as they march off; only retire when
-            // they have fully cleared the left edge of the viewport
-            const leftLimit = -PAPER_W - 100;
-            for (let i = papers.length - 1; i >= 0; i--) {
-                const p = papers[i];
-                const x = p.idx * STEP - beltPos + stationOffset();
-                if (x + PAPER_W < leftLimit) {
-                    p.div.remove();
-                    papers.splice(i, 1);
-                }
+    // Click → every visible pupil fires a laser converging at the click point,
+    // and a circular zone of dimmed/grayed eyes persists at the impact site.
+    const lasers = [];
+    const zones = [];
+    const ZONE_RADIUS = 160;
+    const LASER_LIFE = 260; // ms
+    const ZONE_RECOVERY = 3500; // ms — eyes inside the click zone gradually return
+    function onClickWall(e) {
+        const r = wall.getBoundingClientRect();
+        const cx = e.clientX - r.left;
+        const cy = e.clientY - r.top;
+        const PUPIL_DX_RANGE = EYE_FS * 0.18;
+        const PUPIL_DY_RANGE = EYE_FS * 0.10;
+        const sources = [];
+        for (const col of columns) {
+            for (const d of col.drops) {
+                if (d.y < -10 || d.y > VPH + 10) continue;
+                sources.push({
+                    x: col.x + d.pdx * PUPIL_DX_RANGE,
+                    y: d.y   + d.pdy * PUPIL_DY_RANGE,
+                });
             }
-            wall.classList.remove('blink-once');
-            busy = false;
-        }, ANIM_MS);
-    }
-
-    button.addEventListener('click', advance);
-    function onKey(e) {
-        if (e.code === 'Space') {
-            e.preventDefault();
-            advance();
         }
+        const tNow = performance.now();
+        lasers.push({ sources, cx, cy, t0: tNow });
+        zones.push({ cx, cy, r2: ZONE_RADIUS * ZONE_RADIUS, t0: tNow });
     }
-    window.addEventListener('keydown', onKey);
+    wall.addEventListener('click', onClickWall);
 
-    // Idle-driven final text + eye agitation
     let isLightMode = true;
     let rafId;
+    let lastT = performance.now();
     function frame(now) {
         rafId = requestAnimationFrame(frame);
-        const idleMs = now - lastPressTime;
-        // Final vow appears the LONGER you don't press (slow reveal)
-        const target = pressCount === 0
-            ? Math.min(1, Math.max(0, (idleMs - 3500) / 7500))
-            : Math.min(1, Math.max(0, (idleMs - 6000) / 8000));
-        const cur = parseFloat(finalText.style.opacity || '0');
-        const next = cur + (target - cur) * 0.03;
-        finalText.style.opacity = next.toFixed(3);
+        const dt = Math.min(0.05, (now - lastT) / 1000);
+        lastT = now;
+
+        // --- Matrix rain (canvas) ---
+        const infoActive = container.classList.contains('info-active');
+        const dimFactor = 1;
+        // Soft elliptical mask applied per-eye when info-active so the rain
+        // stays out of the sidebar columns. Computed in canvas, not CSS, so
+        // there is no visible boundary on the dark container background.
+        const cx0 = VPW * 0.5, cy0 = VPH * 0.5;
+        const rx = VPW * 0.30, ry = VPH * 0.40;
+        function infoAlpha(x, y) {
+            if (!infoActive) return 1;
+            const nx = (x - cx0) / rx;
+            const ny = (y - cy0) / ry;
+            const r = Math.sqrt(nx * nx + ny * ny);
+            // Full alpha until 0.6r, smooth fade to 0 at 1.0r
+            if (r <= 0.6) return 1;
+            if (r >= 1) return 0;
+            const t = (r - 0.6) / 0.4;
+            return 1 - t * t * (3 - 2 * t); // smoothstep
+        }
+        ctx.clearRect(0, 0, VPW, VPH);
+        const PUPIL_SIZE = Math.round(EYE_FS * 0.28);
+        const PUPIL_HALF = PUPIL_SIZE / 2;
+        const PUPIL_DX_RANGE = EYE_FS * 0.18;
+        const PUPIL_DY_RANGE = EYE_FS * 0.10;
+        const SPRITE_HALF_W = SPRITE_W / 2;
+        const SPRITE_HALF_H = SPRITE_H / 2;
+        // Decay click zones; drop ones that have fully recovered
+        for (let z = zones.length - 1; z >= 0; z--) {
+            const zn = zones[z];
+            zn.strength = Math.max(0, 1 - (now - zn.t0) / ZONE_RECOVERY);
+            if (zn.strength <= 0) zones.splice(z, 1);
+        }
+
+        for (const col of columns) {
+            const speedDt = col.speed * dt;
+            let topY = Infinity;
+            const drops = col.drops;
+            for (let i = drops.length - 1; i >= 0; i--) {
+                const d = drops[i];
+                d.y += speedDt;
+                if (d.y > BELT_TOP_PX) { drops.splice(i, 1); continue; }
+
+                let op = 1;
+                if (d.y < 40) op = d.y < 0 ? Math.max(0, 1 + d.y / 60) : d.y / 40;
+                const distToBelt = BELT_TOP_PX - d.y;
+                if (distToBelt < FADE_BAND) op *= distToBelt / FADE_BAND;
+                if (op <= 0.01) { if (d.y < topY) topY = d.y; continue; }
+
+                // Pupil aims at the mouse cursor
+                let mdx = mouseX - col.x;
+                let mdy = mouseY - d.y;
+                const mlen = Math.hypot(mdx, mdy) || 1;
+                const tdx = mdx / mlen;
+                const tdy = mdy / mlen;
+                d.pdx += (tdx - d.pdx) * Math.min(1, dt * 8);
+                d.pdy += (tdy - d.pdy) * Math.min(1, dt * 8);
+
+                // Pick the strongest active zone covering this drop
+                let dim = 0;
+                for (let z = 0; z < zones.length; z++) {
+                    const zn = zones[z];
+                    const ddx = col.x - zn.cx, ddy = d.y - zn.cy;
+                    if (ddx * ddx + ddy * ddy < zn.r2 && zn.strength > dim) dim = zn.strength;
+                }
+
+                const ia = infoAlpha(col.x, d.y);
+                if (ia <= 0.01) { if (d.y < topY) topY = d.y; continue; }
+                if (dim > 0) {
+                    ctx.globalAlpha = op * (1 - dim) * dimFactor * ia;
+                    ctx.drawImage(bracketSprites[d.sprite],     col.x - SPRITE_HALF_W, d.y - SPRITE_HALF_H, SPRITE_W, SPRITE_H);
+                    ctx.globalAlpha = op * dim * 0.55 * dimFactor * ia;
+                    ctx.drawImage(bracketSpritesGray[d.sprite], col.x - SPRITE_HALF_W, d.y - SPRITE_HALF_H, SPRITE_W, SPRITE_H);
+                } else {
+                    ctx.globalAlpha = op * dimFactor * ia;
+                    ctx.drawImage(bracketSprites[d.sprite],     col.x - SPRITE_HALF_W, d.y - SPRITE_HALF_H, SPRITE_W, SPRITE_H);
+                }
+                const pupilA = op * (1 - dim) * dimFactor * ia;
+                if (pupilA > 0.02) {
+                    ctx.globalAlpha = pupilA;
+                    ctx.fillStyle = '#dc143c';
+                    const px = col.x + d.pdx * PUPIL_DX_RANGE - PUPIL_HALF;
+                    const py = d.y   + d.pdy * PUPIL_DY_RANGE - PUPIL_HALF;
+                    ctx.fillRect(px, py, PUPIL_SIZE, PUPIL_SIZE);
+                }
+                if (d.y < topY) topY = d.y;
+            }
+            if (topY > col.gap * 0.5) {
+                drops.push(newDrop(topY === Infinity ? -EYE_H : topY - col.gap));
+            }
+        }
+
+        // Lasers — short streak that slides from each source toward the click
+        // point; the source end disappears almost immediately as the streak moves.
+        if (lasers.length) {
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = '#dc143c';
+            for (let li = lasers.length - 1; li >= 0; li--) {
+                const L = lasers[li];
+                const k = (now - L.t0) / LASER_LIFE;
+                const headT = Math.min(1, k / 0.45);
+                const tailT = Math.min(1, Math.max(0, k - 0.12) / 0.45);
+                if (tailT >= 1) { lasers.splice(li, 1); continue; }
+                ctx.globalAlpha = 1;
+                ctx.beginPath();
+                for (let s = 0; s < L.sources.length; s++) {
+                    const src = L.sources[s];
+                    const dx  = L.cx - src.x;
+                    const dy  = L.cy - src.y;
+                    ctx.moveTo(src.x + dx * tailT, src.y + dy * tailT);
+                    ctx.lineTo(src.x + dx * headT, src.y + dy * headT);
+                }
+                ctx.stroke();
+            }
+        }
+
+        ctx.globalAlpha = 1;
     }
     rafId = requestAnimationFrame(frame);
 
@@ -4711,37 +4767,71 @@ function openNotThroughMeSubpage(clickedCell) {
         guideText.classList.toggle('is-light', isLightMode);
         container.classList.toggle('is-dark', !isLightMode);
         container.classList.toggle('is-light', isLightMode);
+        rebuildSprites();
     };
 
-    let autoStampInterval = null;
+    let autoInteractInterval = null;
+    function fireAutoClick() {
+        const r = wall.getBoundingClientRect();
+        const padX = r.width * 0.22;
+        const padY = r.height * 0.18;
+        const cx = r.left + padX + Math.random() * (r.width - padX * 2);
+        const cy = r.top  + padY + Math.random() * (r.height - padY * 2);
+        onClickWall({ clientX: cx, clientY: cy });
+    }
     infoBtn.onclick = () => {
         const isActive = !container.classList.contains('info-active');
         container.classList.toggle('info-active', isActive);
         infoBtn.classList.toggle('active', isActive);
         if (isActive) {
-            // While reading the explanation: belt auto-stamps; manual touch locked
-            if (!autoStampInterval) {
-                autoStampInterval = setInterval(() => advance(true), 1400);
-            }
-        } else if (autoStampInterval) {
-            clearInterval(autoStampInterval);
-            autoStampInterval = null;
+            fireAutoClick();
+            autoInteractInterval = setInterval(fireAutoClick, 3200);
+        } else if (autoInteractInterval) {
+            clearInterval(autoInteractInterval);
+            autoInteractInterval = null;
         }
     };
 
     function onResize() {
-        track.style.transform = `translateX(${stationOffset() - beltPos}px)`;
-        pointPupils();
+        VPW = window.innerWidth;
+        VPH = window.innerHeight;
+        BELT_TOP_PX = VPH - 20;
+        resizeCanvas();
+        // Rebuild columns to match the new width
+        const oldCount = COL_COUNT;
+        COL_COUNT = Math.max(8, Math.floor(VPW / COL_W));
+        COL_PAD = (VPW - COL_COUNT * COL_W) / 2 + COL_W / 2;
+        if (COL_COUNT !== oldCount) {
+            columns.length = 0;
+            for (let c = 0; c < COL_COUNT; c++) {
+                columns.push({
+                    x: COL_PAD + c * COL_W,
+                    speed: 60 + Math.random() * 80,
+                    gap:   EYE_H + 18 + Math.random() * 14,
+                    drops: [],
+                });
+            }
+            for (const col of columns) {
+                let y = -Math.random() * 200;
+                while (y < BELT_TOP_PX) {
+                    col.drops.push(newDrop(y));
+                    y += col.gap;
+                }
+            }
+        } else {
+            // Keep columns but reposition x to current pad
+            for (let c = 0; c < COL_COUNT; c++) columns[c].x = COL_PAD + c * COL_W;
+        }
     }
     window.addEventListener('resize', onResize);
 
     backBtn.onclick = () => {
         container.style.opacity = '0';
         cancelAnimationFrame(rafId);
-        clearInterval(gazeInterval);
-        if (autoStampInterval) clearInterval(autoStampInterval);
-        window.removeEventListener('keydown', onKey);
+        if (autoInteractInterval) clearInterval(autoInteractInterval);
         window.removeEventListener('resize', onResize);
+        window.removeEventListener('mousemove', onMouseMove);
+        wall.removeEventListener('click', onClickWall);
         setTimeout(() => container.remove(), 500);
     };
 

@@ -55,23 +55,44 @@ body.is-loading .grid-cell {
 .grid-cell {
     position: relative;
     padding: 0;
-    overflow: hidden;
+    overflow: visible;
     cursor: zoom-in;
     background: transparent;
     max-height: 420px;
-    will-change: transform, font-size, filter, opacity;
-    transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+    will-change: filter, opacity;
+    transition: filter 0.2s ease, opacity 0.2s ease;
 }
 
-/* Interaction: Subtle pop without scale raster blur */
 .grid-cell:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     z-index: 100;
 }
 
 .grid-system:has(.grid-cell:hover) .grid-cell:not(:hover) {
-    filter: blur(3px) opacity(0.7);
+    filter: blur(3px) opacity(0.55);
+}
+
+/* Hover affordance — red "OPEN_FILE" label leaks out above the cell,
+   suggesting a peek through the redacted file */
+.grid-cell::after {
+    content: '↗ OPEN_FILE';
+    position: absolute;
+    top: -16px;
+    right: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #dc143c;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    pointer-events: none;
+    z-index: 50;
+    white-space: nowrap;
+}
+.grid-cell:hover::after {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ─── LAYERS ───────────────────────────────────────────── */
@@ -510,9 +531,10 @@ body.is-loading .grid-cell {
     clip-path: inset(0 0 0 0);
 }
 #resistance-subpage.info-active canvas {
-    /* Clip the chorus to the centre — never bleed into sidebar columns */
-    clip-path: inset(0 26% 0 26%);
-    transform: scale(0.95);
+    /* Visibly recede the chorus, the way Themes 4 & 6 do, so the testimony
+       reads as a quieter centre — not just a hard side-cropped rectangle */
+    transform: scale(0.55);
+    clip-path: inset(0 22% 0 22%);
 }
 
 #conscience-subpage.info-active .physics-sidebar {
@@ -823,11 +845,16 @@ body.is-loading .grid-cell {
     line-height: 1.5;
     letter-spacing: 0.15em;
     color: #ffffff;
-    opacity: 0.6;
+    opacity: 0.85;
     z-index: 50;
     pointer-events: none;
     text-align: center;
-    transition: opacity 0.3s ease, visibility 0.3s;
+    transition: opacity 0.6s ease, visibility 0.6s;
+}
+
+/* After first user interaction, the guide quietly fades out */
+.overlay-text-guide.user-engaged {
+    opacity: 0.18;
 }
 
 .overlay-text-guide.is-light {
@@ -844,6 +871,42 @@ body.is-loading .grid-cell {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+}
+
+/* Hover tooltips for top-bar UI controls */
+.physics-back-btn::after,
+.theme-toggle-wrapper::after,
+.info-icon-btn::after {
+    content: attr(data-tip);
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translate(-50%, -4px);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 4px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 999;
+}
+.physics-back-btn.is-light::after,
+.theme-toggle-wrapper.is-light::after,
+.info-icon-btn.is-light::after {
+    color: #fff;
+    background: rgba(20, 20, 20, 0.9);
+}
+.physics-back-btn:hover::after,
+.theme-toggle-wrapper:hover::after,
+.info-icon-btn:hover::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
 }
 
 .overlay-text-bottom-left {
@@ -1024,309 +1087,10 @@ body.is-loading .grid-cell {
 #notthroughme-subpage .ntm-wall {
     position: absolute;
     inset: 0;
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: crosshair;
     --ntm-eye-tint: 0;
     z-index: 1;
 }
-#notthroughme-subpage .ntm-eye {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    color: rgba(20,20,20,0.7);
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 200;
-    line-height: 1;
-    user-select: none;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-#notthroughme-subpage.is-dark .ntm-eye {
-    color: rgba(230,230,230,0.85);
-}
-#notthroughme-subpage .ntm-eye .ntm-br {
-    display: block;
-    transform: rotate(90deg);
-    transform-origin: 50% 50%;
-    line-height: 0.6;
-    margin: -0.42em 0;           /* tight: collapse spacing onto pupil */
-}
-#notthroughme-subpage .ntm-eye .ntm-pupil-slot {
-    display: block;
-    width: 1ch;
-    text-align: center;
-    overflow: visible;
-    margin: -0.02em 0;
-}
-#notthroughme-subpage .ntm-eye .ntm-pupil {
-    display: inline-block;
-    color: #dc143c;
-    /* size in em → automatically proportional to each eye's own font-size */
-    font-size: 0.5em;
-    line-height: 1;
-    vertical-align: middle;
-    transform-origin: 50% 50%;
-    animation: ntm-blink 6.5s infinite;
-    transition: transform 0.6s ease;
-}
-@keyframes ntm-blink {
-    0%, 92%, 100% { opacity: 1; }
-    95%           { opacity: 0; }
-}
-#notthroughme-subpage .ntm-wall.blink-once .ntm-eye .ntm-pupil {
-    animation: ntm-blink-once 0.4s 1;
-}
-@keyframes ntm-blink-once {
-    0%, 100% { opacity: 1; }
-    50%      { opacity: 0; }
-}
-
-/* Conveyor stage — laid flat in 3D so the user looks down the line */
-#notthroughme-subpage .ntm-belt-stage {
-    position: absolute;
-    bottom: 18%;
-    left: 0;
-    right: 0;
-    height: 240px;
-    z-index: 3;
-    perspective: 1100px;
-    perspective-origin: 50% 0%;
-    pointer-events: none; /* button handles input */
-}
-#notthroughme-subpage .ntm-belt-3d {
-    position: absolute;
-    inset: 0;
-    transform: rotateX(58deg);
-    transform-origin: 50% 50%;
-    transform-style: preserve-3d;
-    pointer-events: auto;
-}
-#notthroughme-subpage .ntm-belt-rail {
-    position: absolute;
-    /* Extend far beyond the viewport so the belt has no visible end */
-    left: -100vw;
-    right: -100vw;
-    height: 8px;
-    background: repeating-linear-gradient(
-        90deg,
-        #2a2a2a 0 14px,
-        #5a5a5a 14px 28px
-    );
-}
-#notthroughme-subpage.is-dark .ntm-belt-rail {
-    background: repeating-linear-gradient(
-        90deg,
-        #3a3a3a 0 14px,
-        #7a7a7a 14px 28px
-    );
-}
-#notthroughme-subpage .ntm-belt-rail.top    { top: 0; }
-#notthroughme-subpage .ntm-belt-rail.bottom { bottom: 0; }
-#notthroughme-subpage .ntm-belt-track {
-    position: absolute;
-    top: 8px; bottom: 8px;
-    left: 0;
-    width: 1px;
-    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-    will-change: transform;
-    /* Lift papers slightly above the rails on Z so they sit on top */
-    transform-style: preserve-3d;
-}
-
-/* Paper card */
-#notthroughme-subpage .ntm-paper {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 280px;
-    min-height: 150px;
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.18);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.18), inset 0 0 0 1px rgba(0,0,0,0.04);
-    padding: 16px 18px 44px 18px;
-    box-sizing: border-box;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: #111;
-    line-height: 1.45;
-    overflow: hidden;
-}
-#notthroughme-subpage.is-dark .ntm-paper {
-    background: #1c1c1c;
-    border-color: rgba(255,255,255,0.18);
-    color: #eee;
-    box-shadow: 0 10px 22px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.04);
-}
-#notthroughme-subpage .ntm-paper-text {
-    font-weight: 700;
-    letter-spacing: 0.04em;
-}
-#notthroughme-subpage .ntm-paper-slot {
-    position: absolute;
-    bottom: 14px;
-    left: 18px;
-    right: 18px;
-    color: rgba(0,0,0,0.35);
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.6em;
-}
-#notthroughme-subpage.is-dark .ntm-paper-slot { color: rgba(255,255,255,0.35); }
-#notthroughme-subpage .ntm-paper-stamp {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-9deg) scale(0.5);
-    color: #dc143c;
-    font-family: 'Inter', sans-serif;
-    font-weight: 900;
-    font-size: 14px;
-    letter-spacing: 0.18em;
-    border: 3px solid #dc143c;
-    padding: 4px 12px;
-    border-radius: 2px;
-    opacity: 0;
-    transition: opacity 0.35s ease, transform 0.35s ease;
-    pointer-events: none;
-    background: transparent;
-}
-#notthroughme-subpage .ntm-paper.stamped .ntm-paper-stamp {
-    opacity: 0.92;
-    transform: translateX(-50%) rotate(-9deg) scale(1);
-}
-
-/* Inspection station — vertical lane at centre */
-#notthroughme-subpage .ntm-station {
-    position: absolute;
-    left: 50%;
-    top: -16px; bottom: -16px;
-    transform: translateX(-50%);
-    width: 280px;
-    pointer-events: none;
-    border-left: 1px solid rgba(220,20,60,0.45);
-    border-right: 1px solid rgba(220,20,60,0.45);
-    z-index: 2;
-}
-#notthroughme-subpage .ntm-station::before,
-#notthroughme-subpage .ntm-station::after {
-    content: '';
-    position: absolute;
-    width: 10px; height: 10px;
-    background: #dc143c;
-}
-#notthroughme-subpage .ntm-station::before { top: -10px; left: -5px; }
-#notthroughme-subpage .ntm-station::after  { bottom: -10px; right: -5px; }
-
-/* Advance button — matches the 12px rounded radius used by theme/info toggles */
-#notthroughme-subpage .ntm-advance-btn {
-    position: absolute;
-    bottom: 7%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #dc143c;
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    padding: 18px 60px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 14px;
-    letter-spacing: 0.32em;
-    cursor: pointer;
-    box-shadow: 0 8px 22px rgba(220,20,60,0.45);
-    z-index: 6;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    align-items: center;
-    transition: transform 0.08s ease, box-shadow 0.2s ease;
-}
-#notthroughme-subpage .ntm-advance-btn:active {
-    transform: translateX(-50%) translateY(2px);
-    box-shadow: 0 3px 10px rgba(220,20,60,0.4);
-}
-#notthroughme-subpage .ntm-btn-sub {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    opacity: 0.9;
-}
-
-/* Counter */
-#notthroughme-subpage .ntm-counter {
-    position: absolute;
-    bottom: 7%;
-    right: 6%;
-    color: rgba(0,0,0,0.7);
-    font-family: 'JetBrains Mono', monospace;
-    text-align: right;
-    z-index: 4;
-    pointer-events: none;
-}
-#notthroughme-subpage.is-dark .ntm-counter { color: rgba(255,255,255,0.7); }
-#notthroughme-subpage .ntm-c-num {
-    display: block;
-    font-size: 56px;
-    font-weight: 400;
-    font-variant-numeric: tabular-nums;
-    line-height: 1;
-}
-#notthroughme-subpage .ntm-c-lbl {
-    display: block;
-    font-size: 9px;
-    letter-spacing: 0.32em;
-    margin-top: 4px;
-    opacity: 0.7;
-}
 
 /* Final vow text */
-#notthroughme-subpage .ntm-final-text {
-    position: absolute;
-    top: 11%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    pointer-events: none;
-    opacity: 0;
-    z-index: 4;
-    font-family: 'Inter', sans-serif;
-    color: rgba(0,0,0,0.85);
-}
-#notthroughme-subpage.is-dark .ntm-final-text { color: rgba(255,255,255,0.85); }
-#notthroughme-subpage .ntm-quote {
-    font-size: 14px;
-    letter-spacing: 0.2em;
-    font-weight: 500;
-    margin: 4px 0;
-}
-#notthroughme-subpage .ntm-quote-emph {
-    font-size: 22px;
-    color: #dc143c;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    margin-top: 14px;
-}
-
-/* Info-active: clip eyes & belt to the centre band so the sidebar
-   testimony is never covered. Same rule as Theme 5. */
-#notthroughme-subpage .ntm-wall,
-#notthroughme-subpage .ntm-belt-stage {
-    transition: clip-path 0.6s ease, opacity 0.5s ease, transform 0.6s ease;
-    clip-path: inset(0 0 0 0);
-}
-#notthroughme-subpage.info-active .ntm-wall {
-    clip-path: inset(0 26% 0 26%);
-}
-#notthroughme-subpage.info-active .ntm-belt-stage {
-    clip-path: inset(0 26% 0 26%);
-    transform: scale(0.95);
-}
-#notthroughme-subpage.info-active .ntm-advance-btn {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-}
-#notthroughme-subpage.info-active .ntm-final-text {
-    opacity: 0 !important;
-    transition: opacity 0.4s ease;
-}

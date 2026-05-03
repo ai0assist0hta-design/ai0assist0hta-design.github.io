@@ -37,5 +37,5 @@ This is a static project. To run locally:
 ```bash
 # Using Python
 python3 -m http.server 8000
-# Then open http://localhost:8000/website/index.html
+# Then open http://localhost:8000/solzhenitsyn-digital-art/index.html
 ```
